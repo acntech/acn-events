@@ -1,6 +1,12 @@
 var mongoose = require('mongoose'),
     Registration = mongoose.model('Registration');
 
+var actions = require('../../config/actions');
+var registered = 'registered';
+var unregistered = 'unregistered';
+var confirmed = 'confirmed';
+var checkedIn = 'checkedIn';
+
 // Hello World function
 exports.helloWorld = function () {
     return function (req, res) {
@@ -17,7 +23,7 @@ exports.readAllRegistrations = function () {
     return function (req, res) {
         Registration.find(function (error, registrations) {
             if (error)
-                res.json(error);
+                res.json(400, error);
             else
                 res.json(registrations);
         });
@@ -29,7 +35,7 @@ exports.readRegistration = function () {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
-                res.json(error);
+                res.json(400, error);
             else
                 res.json(registration);
         });
@@ -43,71 +49,70 @@ exports.register = function (selfUrl) {
     return function (req, res) {
         var newRegistration = new Registration(req.body);
 
-        Registration.count({
-                $and: [
-                    {email: newRegistration.email},
-                    {state: 'registered'}
-                ]
-            },
-            function (error, count) {
-                if (error) {
-                    res.json(400, error);
+        Registration.findOne({ 'person.email': newRegistration.person.email}, function (error, reg) {
+            if (error) {
+                res.json(400, error);
+            }
+            else if (reg) {
+                var validAction = actions.isValidNextAction(reg.state, actions.register.name);
+                if (!validAction) {
+                    res.json(400, 'You are already registered or you tried to perform non valid action.');
                 }
                 else {
-                    if (count > 0) {
-                        res.json(400, {error: 'User with this email is already registered.'});
-                    }
-                    else {
-                        newRegistration.state = 'registered';
-                        newRegistration.save(function (error, registration) {
-                            if (error || !newRegistration) {
-                                res.json(400, error);
-                            } else {
-                                res.links({
-                                    self: selfUrl + "/" + newRegistration.id,
-                                });
-                                res.json(newRegistration);
-                            }
-                        });
-                    }
+                    newRegistration.state = actions.register.endState;
+                    newRegistration.save(function (error, registration) {
+                        if (error || !newRegistration) {
+                            res.json(400, error);
+                        } else {
+                            res.links(actions.register.links());
+                            res.json(newRegistration);
+                        }
+                    });
                 }
             }
-
-        )
-        ;
+            else {
+                newRegistration.state = actions.register.endState;
+                newRegistration.save(function (error, registration) {
+                    if (error || !registration) {
+                        res.json(400, error);
+                    } else {
+                        res.links(actions.register.links());
+                        res.json(registration);
+                    }
+                });
+            }
+        });
     };
 }
 ;
-
-var isRegistered = function(email){
-    Registration.count({
-        $and: [
-            {email: email},
-            {state: 'registered'}
-        ]
-    }
-}
 
 // Unregister the user for this event
 exports.unregister = function (req, res) {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
-                res.json(error);
+                res.json(400, error);
             else {
-                if (registration == null) {
-                    res.status(404).send('Registration with id ' + req.params.id + ' not found');
+                if (!registration) {
+                    res.status(404).send("We couldn't find your registration with id " + req.params.id);
                 }
                 else {
-                    registration.state = 'unregistered';
-                    registration.updated = new Date();
-                    registration.save(function (err, unRegistration) {
-                        if (err)
-                            res.json(err);
-                        else {
-                            res.json(unRegistration);
-                        }
-                    });
+                    var validAction = actions.isValidNextAction(registration.state, actions.unregister.name);
+                    if (!validAction) {
+                        res.json(400, 'You are already unregistered or you tried to perform invalid action.');
+                    }
+                    else {
+                        registration.state = actions.unregister.endState;
+                        registration.updated = new Date();
+                        registration.save(function (error, unRegistration) {
+                            if (error)
+                                res.json(400, error);
+                            else {
+                                res.links(actions.unregister.links());
+                                res.json(unRegistration);
+                            }
+                        });
+                    }
                 }
             }
         });
@@ -119,21 +124,28 @@ exports.confirm = function (req, res) {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
-                res.json(error);
+                res.json(400, error);
             else {
-                if (registration == null) {
-                    res.status(404).send('Registration with id ' + req.params.id + ' not found');
+                if (!registration) {
+                    res.status(404).send("We couldn't find your registration with id " + req.params.id);
                 }
                 else {
-                    registration.state = 'confirmed';
-                    registration.updated = new Date();
-                    registration.save(function (err, unRegistration) {
-                        if (err)
-                            res.json(err);
-                        else {
-                            res.json(unRegistration);
-                        }
-                    });
+                    var validAction = actions.isValidNextAction(registration.state, actions.confirm.name);
+                    if (!validAction) {
+                        res.json(400, 'You are already confirmed or you tried to perform invalid action.');
+                    }
+                    else {
+                        registration.state = actions.confirm.endState;
+                        registration.updated = new Date();
+                        registration.save(function (error, confirmedReg) {
+                            if (error)
+                                res.json(400, error);
+                            else {
+                                res.links(actions.confirm.links());
+                                res.json(confirmedReg);
+                            }
+                        });
+                    }
                 }
             }
         });
@@ -141,25 +153,32 @@ exports.confirm = function (req, res) {
 };
 
 // Checking the user for this event
-exports.checkin = function (req, res) {
+exports.checkIn = function (req, res) {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
-                res.json(error);
+                res.json(400, error);
             else {
-                if (registration == null) {
-                    res.status(404).send('Registration with id ' + req.params.id + ' not found');
+                if (!registration) {
+                    res.status(404).send("We couldn't find your registration with id " + req.params.id);
                 }
                 else {
-                    registration.state = 'checkedin';
-                    registration.updated = new Date();
-                    registration.save(function (err, unRegistration) {
-                        if (err)
-                            res.json(err);
-                        else {
-                            res.json(unRegistration);
-                        }
-                    });
+                    var validAction = actions.isValidNextAction(registration.state, actions.checkIn.name);
+                    if (!validAction) {
+                        res.json(400, 'You have already checked in or you tried to perform invalid action.');
+                    }
+                    else {
+                        registration.state = actions.checkIn.endState;
+                        registration.updated = new Date();
+                        registration.save(function (error, checkedInReg) {
+                            if (error)
+                                res.json(400, error);
+                            else {
+                                res.links(actions.checkIn.links());
+                                res.json(checkedInReg);
+                            }
+                        });
+                    }
                 }
             }
         });

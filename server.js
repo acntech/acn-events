@@ -1,5 +1,6 @@
 var express = require('express'),
     mongoose = require('mongoose'),
+    app = express(),
     fs = require('fs'),
     config = require('./config/config');
 
@@ -16,11 +17,8 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
-var app = express();
-
 require('./config/express')(app, config);
 require('./config/routes')(app);
-//require('./config/testdata')(app);
 
 app.listen(config.port, function () {
     console.log('Express server listening on port ' + app.get('port'));
