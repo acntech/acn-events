@@ -77,7 +77,7 @@ function sendMail(subject, text, sendCalendarFile) {
         mailOptions["attachments"] = [
             {
                 fileName: "accenture-fagkveld.ics",
-                streamSource: fs.createReadStream(path.join(__dirname, "accenture-fagkveld.ics"))
+                streamSource: fs.createReadStream(path.join(__dirname, "../email", "accenture-fagkveld.ics"))
             }
         ]
     }
