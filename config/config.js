@@ -13,8 +13,8 @@ var config = {
         fromEmail: "Ismar Slomic <ismar@slomic.no>",
         toEmail: "Ismar Slomic <ismar.slomic@accenture.com>",
         host: "http://go.accenture.com/acnfagkveld",
-        mailAutUser: "ismar@slomic.no",
-        mailAutPass: "FrefA6uv"
+        mailAutUser: "Dummy name",//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
+        mailAutPass: "Dummy pass"//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
     },
     test: {
         root: rootPath,
@@ -26,8 +26,8 @@ var config = {
         fromEmail: "Ismar Slomic <ismar@slomic.no>",
         toEmail: "Ismar Slomic <ismar@slomic.no>",
         host: "http://localhost:5000",
-        mailAutUser: "ismar@slomic.no",
-        mailAutPass: "FrefA6uv"
+        mailAutUser: "Dummy name",//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
+        mailAutPass: "Dummy pass"//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
     }
 
 };
