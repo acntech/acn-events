@@ -2,10 +2,7 @@ var nodemailer = require("nodemailer");
 var fs = require('fs');
 var path = require('path');
 var mailOptions, transport;
-
-// Constants
-var fromEmail = "Ismar Slomic <ismar@slomic.no>";
-var toEmail = "Ismar Slomic <ismar@slomic.no>";
+var config = require('./config');
 
 // Registered constants
 var registeredText = "Hei {name}, \n" +
@@ -13,10 +10,10 @@ var registeredText = "Hei {name}, \n" +
     "Takk for din interesse for \"Brukeropplevelse i moderne tid\"! \n" +
     "\n" +
     "Du må bekrefte din deltakelse ved å klikke her: \n" +
-    "http://go.accenture.com/acnfagkveld/registrations/{id}/confirm \n" +
+    config.host + "/registrations/{id}/confirm \n" +
     "\n" +
     "For å avregistrere deg klikk her: \n" +
-    "http://go.accenture.com/acnfagkveld/registrations/{id}/unregister \n" +
+    config.host + "/registrations/{id}/unregister \n" +
     "\n" +
     "Jeg ser fram til en faglig og sosial kveld! \n" +
     "\n" +
@@ -62,15 +59,15 @@ transport = nodemailer.createTransport("SMTP", {
     secureConnection: true,
     port: 465,
     auth: {
-        user: "ismar@slomic.no",
-        pass: "FrefA6uv"
+        user: config.mailAutUser,
+        pass: config.mailAutPass
     }
 });
 
 function sendMail(subject, text, sendCalendarFile) {
     mailOptions = {
-        from: fromEmail,
-        to: toEmail,
+        from: config.fromEmail,
+        to: config.toEmail,
         subject: subject,
         text: text
     };

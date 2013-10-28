@@ -16,20 +16,19 @@ actions = require(configdir + 'actions')
 # REST API module "Request"
 request = require("request")
 
-# Base url of test REST API
-baseUrl = "http://localhost:5000"
-
 describe "registration", ->
   it 'should respond with hello world', (done) ->
-    request.get "http://localhost:5000/api/event/registrations/helloworld", (error, response, body) ->
+    request.get config.host + "/api/event/registrations/helloworld", (error, response, body) ->
       expect(body).toEqual "Hello World"
-      expect(response.headers.link).toEqual "<http://localhost:5000/api/event/registrations/helloworld>; rel=\"self\", <http://localhost:5000/api/event/registrations/helloworld2>; rel=\"next\""
+      link1 = "<" + config.host + "/api/event/registrations/helloworld>; rel=\"self\""
+      link2 = "<" + config.host + "/api/event/registrations/helloworld2>; rel=\"next\""
+      expect(response.headers.link).toEqual(link1 + ", " + link2)
       done()
 
   it 'should retreive error when required fields are not filled out', (done) ->
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
     , (error, response, body) ->
       expect(response.statusCode).toEqual(400)
       done()
@@ -43,7 +42,7 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       expect(response.statusCode).toEqual(200)
@@ -62,14 +61,14 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       console.log("Finished registering")
       expect(response.statusCode).toEqual(200)
       request
         method: actions.register.httpVerb
-        uri: baseUrl + actions.register.route
+        uri: config.host + actions.register.route
         json: newRegistration
       , (error, response, body) ->
         console.log("Finished registering")
@@ -85,7 +84,7 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       console.log("Finished registering")
@@ -93,7 +92,7 @@ describe "registration", ->
       expect(response.statusCode).toEqual(200)
       request
         method: actions.unregister.httpVerb
-        uri: baseUrl + actions.unregister.resolveRoute(newRegistration._id)
+        uri: config.host + actions.unregister.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->
         console.log("Finished unregistering")
@@ -110,14 +109,14 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       newRegistration = body
       expect(response.statusCode).toEqual(200)
       request
         method: actions.confirm.httpVerb
-        uri: baseUrl + actions.confirm.resolveRoute(newRegistration._id)
+        uri: config.host + actions.confirm.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->
         expect(response.statusCode).toEqual(200)
@@ -133,21 +132,21 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       newRegistration = body
       expect(response.statusCode).toEqual(200)
       request
         method: actions.confirm.httpVerb
-        uri: baseUrl + actions.confirm.resolveRoute(newRegistration._id)
+        uri: config.host + actions.confirm.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->
         expect(response.statusCode).toEqual(200)
         expect(body.state).toEqual(actions.confirm.endState)
         request
           method: actions.unregister.httpVerb
-          uri: baseUrl + actions.unregister.resolveRoute(newRegistration._id)
+          uri: config.host + actions.unregister.resolveRoute(newRegistration._id)
           json: newRegistration
         , (error, response, body) ->
           expect(response.statusCode).toEqual(200)
@@ -163,21 +162,21 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       newRegistration = body
       expect(response.statusCode).toEqual(200)
       request
         method: actions.confirm.httpVerb
-        uri: baseUrl + actions.confirm.resolveRoute(newRegistration._id)
+        uri: config.host + actions.confirm.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->
         expect(response.statusCode).toEqual(200)
         expect(body.state).toEqual(actions.confirm.endState)
         request
           method: actions.checkIn.httpVerb
-          uri: baseUrl + actions.checkIn.resolveRoute(newRegistration._id)
+          uri: config.host + actions.checkIn.resolveRoute(newRegistration._id)
           json: newRegistration
         , (error, response, body) ->
           expect(response.statusCode).toEqual(200)
@@ -192,14 +191,14 @@ describe "registration", ->
 
     request
       method: actions.register.httpVerb
-      uri: baseUrl + actions.register.route
+      uri: config.host + actions.register.route
       json: newRegistration
     , (error, response, body) ->
       newRegistration = body
       expect(response.statusCode).toEqual(200)
       request
         method: actions.checkIn.httpVerb
-        uri: baseUrl + actions.checkIn.resolveRoute(newRegistration._id)
+        uri: config.host + actions.checkIn.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->
         expect(response.statusCode).toEqual(400)

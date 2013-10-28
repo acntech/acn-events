@@ -2,17 +2,15 @@ var mongoose = require('mongoose'),
     Registration = mongoose.model('Registration');
 
 var actions = require('../../config/actions');
-var registered = 'registered';
-var unregistered = 'unregistered';
-var confirmed = 'confirmed';
-var checkedIn = 'checkedIn';
+var email = require('../../config/email')
+var config = require('../../config/config')
 
 // Hello World function
 exports.helloWorld = function () {
     return function (req, res) {
         res.links({
-            self: 'http://localhost:5000/api/event/registrations/helloworld',
-            next: 'http://localhost:5000/api/event/registrations/helloworld2'
+            self: config.host + '/api/event/registrations/helloworld',
+            next: config.host + '/api/event/registrations/helloworld2'
         });
         res.send('Hello World')
     };
@@ -61,11 +59,13 @@ exports.register = function (selfUrl) {
                 else {
                     newRegistration.state = actions.register.endState;
                     newRegistration.save(function (error, registration) {
-                        if (error || !newRegistration) {
+                        if (error || !registration) {
                             res.json(400, error);
                         } else {
+                            email.sendRegisteredMail(registration._id, registration.person.name,
+                                registration.person.email, registration.person.phone);
                             res.links(actions.register.links());
-                            res.json(newRegistration);
+                            res.json(registration);
                         }
                     });
                 }
@@ -76,6 +76,8 @@ exports.register = function (selfUrl) {
                     if (error || !registration) {
                         res.json(400, error);
                     } else {
+                        email.sendRegisteredMail(registration._id, registration.person.name,
+                            registration.person.email, registration.person.phone);
                         res.links(actions.register.links());
                         res.json(registration);
                     }
@@ -108,6 +110,8 @@ exports.unregister = function (req, res) {
                             if (error)
                                 res.json(400, error);
                             else {
+                                email.sendUnRegisteredMail(unRegistration._id, unRegistration.person.name,
+                                    unRegistration.person.email, unRegistration.person.phone);
                                 res.links(actions.unregister.links());
                                 res.json(unRegistration);
                             }
