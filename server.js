@@ -1,6 +1,7 @@
 var express = require('express'),
     mongoose = require('mongoose'),
     app = express(),
+    https = require('https'),
     fs = require('fs'),
     config = require('./config/config');
 
@@ -17,10 +18,14 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
+var options = {
+  key:  fs.readFileSync('ssl/privatekey.pem'),
+  cert: fs.readFileSync('ssl/certificate.pem')
+};
+
+var server = https.createServer(options, app).listen(config.port, function () {
+  console.log('Express server listening on port ' + app.get('port'));
+})
+
 require('./config/express')(app, config);
 require('./config/routes')(app);
-
-app.listen(config.port, function () {
-    console.log('Express server listening on port ' + app.get('port'));
-});
-
