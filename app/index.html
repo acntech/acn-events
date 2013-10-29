@@ -10,7 +10,6 @@
     <title>Brukeropplevelse realisert med moderne frontend teknologi</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
 
@@ -22,7 +21,6 @@
     <!--[if lt IE 9]>
     <script src="vendor/bootstrap/assets/js/html5shiv.js"></script>
     <script src="vendor/bootstrap/assets/js/respond.min.js"></script>
-    <link href="vendor/font-awesome/css/font-awesome-ie7.min.css" rel="stylesheet">
     <![endif]-->
 </head>
 
@@ -32,37 +30,27 @@
 <header class="masthead">
     <div class="jumbotron">
         <div class="container">
-            <h1>Fengende tittel</h1>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
-
-            <p style="margin-top: 30px;">
-                <a href="#registrer" class="btn btn-success btn-lg">
-                    <span class="glyphicon glyphicon-plus"></span> Registrer
-                </a>
-            </p>
-
-            <div class="btn-group pull-right">
-                <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-share"></span> Del <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ul>
+            <div>
+                <p>
+                    Lyst å høre mer om hvordan oppnå god brukeropplevelse ved bruk av moderne teknologi?<br/>
+                    Bli med på Accentures fagkveld onsdag 20. november på Teknologihuset!
+                </p>
+                <div id="jump-to-register"><a href="#registrer" class="registrer">
+                    <i class="fa fa-thumbs-up fa-lg"></i> Registrer
+                </a></div>
             </div>
+
+            <!--<p style="margin-top: 30px;" id="jump-to-register">-->
+
+            <!--</p>-->
+
         </div>
     </div>
 </header>
 
 <!-- Fixed navbar -->
 <div id="nav">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -77,14 +65,7 @@
                     <li><a href="#intro">Intro</a></li>
                     <li><a href="#agenda">Agenda</a></li>
                     <li><a href="#sted">Sted</a></li>
-                    <li>
-                        <a href="#registrer">
-                            <span class="badge pull-right" data-toggle="tooltip" title=""
-                                  data-original-title="18 ledige plasser" data-placement="bottom">18</span>
-                            <span class="badge pull-right" data-toggle="tooltip" title=""
-                                  data-original-title="42 påmeldte så langt" data-placement="bottom">42</span> Registrer
-                        </a>
-                    </li>
+                    <li><a href="#registrering">Registrering</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -92,106 +73,135 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="main-content">
     <div class="row">
-        <h2 id="intro">Intro</h2>
+        <div class="intro">
+            <h2 id="intro">Intro</h2>
 
-        <p>Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.
-            Aliquam hendrerit leo vel nibh adipiscing faucibus. Nullam bibendum tortor et velit blandit, a condimentum
-            odio cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel vulputate tortor, quis bibendum
-            neque. Suspendisse faucibus urna vitae nisl venenatis, elementum egestas lectus aliquet. Curabitur nec erat
-            lobortis, facilisis ante vitae, faucibus turpis. Integer a auctor nisi. Donec lacinia augue est. Donec
-            sollicitudin elit id risus dignissim posuere. Aliquam non mi at sapien pulvinar placerat at eu mauris. Nunc
-            egestas lectus vel ullamcorper sagittis. Donec at urna faucibus dolor ornare adipiscing et sed dui. Quisque
-            mollis fermentum aliquam. Aliquam felis turpis, sollicitudin vel tellus ac, vestibulum adipiscing eros.</p>
+            <p>Nåtidens brukere forventer å være dypt involvert i hvordan applikasjonen de bruker ser ut og oppfører seg. De skal ha et responsivt design, det skal ha universell utforming,
+                det skal være tilgjengelig for alle type brukere og det skal brukes moderne teknologier for å oppnå disse målene. Accenture inviterer til fagmøte hvor vi vil dele erfaringer
+                rundt hvordan slik brukerinvolvering kan oppnås, og hvordan kravene fra nåtidens brukere kan realiseres igjennom moderne rammeverk. Vi vil først gå igjennom prosesser for
+                brukerinvolvering og hvordan dette leder til et visuelt design, før vi gjør et teknisk dykk ned i rammeverkene som kan brukes til realiseringen. Rammeverkene vi vil gå igjennom
+                er Backbone og Angular, og vi deler erfaringer hvordan disse rammeverkene har blitt brukt til å implementere store og viktige løsninger.
+            </p>
+        </div>
+        <div class="agenda">
+            <h2 id="agenda">Agenda</h2>
+            <p>18. november, 17:00 - 21:00</p>
+            <p>
+                Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
+            </p>
+            <ul>
+                <li>
+                    <span class="profilbilde margareth" data-toggle="tooltip" data-original-title="Margareth Knutsen: UX queen"></span>
+                    <div>
+                        17:00 - 17:30<br />
+                        Brukeropplevelse og responsivt design
+                        <p class="presentername">Margareth Knutsen</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="profilbilde lars-olof" data-toggle="tooltip" data-original-title="Lars-Olof Moilanen: Frontend nerd"></span>
+                    <div>
+                        17:30 - 18:00<br/>
+                        Responsivt design med HTML5 og CSS3
+                        <p class="presentername">Lars-Olof Moilanen</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="profilbilde joar" data-toggle="tooltip" data-original-title="Joar Aurdal: Geek"></span>
+                    <div>
+                        18:10 - 18:55<br />
+                        Tilgjengelighet, responsivt design og semantisk web
+                        <p class="presentername">Joar Aurdal</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="profilbilde aksel" data-toggle="tooltip" data-original-title="Aksel Gresvig: Frontend guru"></span>
+                    <div>
+                        19:00 - 20:00<br />
+                        Frontend utvikling med modern Javascript teknologi
+                        <p class="presentername">Aksel Gresvig</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="row">
-        <h2 id="agenda">Agenda</h2>
-        <ol>
-            <li>Brukerinnvolvering, visuelt design, UX prosesser. <a href="#" data-toggle="tooltip" title=""
-                                                                     data-original-title="Margareth Knutsen: Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.">Margareth
-                Knutsen</a></li>
-            <li>Responsivt design og tilgjengelighet. <a href="#" data-toggle="tooltip" title=""
-                                                         data-original-title="Joar Aurdal: Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.">Joar
-                Aurdal</a></li>
-            <li>Frontend utvikling med JavaScript
-                <ol>
-                    <li>Erfaringer fra Kjernejournal med bruk av Backbone. <a href="#" data-toggle="tooltip" title=""
-                                                                              data-original-title="Aksel Gresvig:  Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.">Aksel
-                        Gresvig</a></li>
-                    <li>Erfaringer fra MB med bruk av Angular. <a href="#" data-toggle="tooltip" title=""
-                                                                  data-original-title="Lars-Olof:  Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.">Lars-Olof
-                        Moilanen</a> og <a href="#" data-toggle="tooltip" title=""
-                                           data-original-title="Henning Engen:  Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.">Henning
-                        Engen</a></li>
-                </ol>
-            </li>
-        </ol>
-    </div>
-    <div class="row">
+    <div class="row sted">
         <h2 id="sted">Sted</h2>
 
         <p><a href="http://www.teknologihuset.no/">Teknologihuset</a>, Pilestredet 56, 0167 Oslo (like ved Dalsbergstien
             trikkestopp)</p>
-        <div class="Flexible-container">
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.no/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A">Vis større kart</a></small>
+        <div class="Flexible-container kart">
+            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.no/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A">Vis større kart</a></small>
+            <!--<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.no/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A">Vis større kart</a></small>-->
         </div>
     </div>
-    <div class="row">
-        <h2 id="registrer">
-            <span class="badge pull-right" data-toggle="tooltip" title=""
-                  data-original-title="18 ledige plasser">18</span>
-            <span class="badge pull-right" data-toggle="tooltip" title=""
-                  data-original-title="42 påmeldte så langt">42</span>
-            Registrer
-        </h2>
+    <div class="registrering">
+        <div class="registreringsinfo">
+            <h2>Registrering</h2>
+        </div>
+        <div class="antall-registrerte">
+            <i class="fa fa-thumbs-up fa-lg">48</i>
+        </div>
+    </div>
+    <div class="registrering">
+        <div class="registreringsinfo">
+            <p>
+                Deltakelse er gratis. Vi har en begrensning på 100 platser, 50 av disse er forbeholdt Accenture ansatte så vær tidlig ute med å registrere deg!
+                Du vil få en bekreftelse på mail som du må ta med når du ankommer Teknologihuset.
+            </p>
 
-        <p>
-            Deltakelsen er gratis og åpent for alle som har utvikler, arkitekt og user experience bakgrunn.
-            Begrenset plass til kun 60 første som registrerer seg. Du vil motta en bekreftelsesmail og påminnelse to
-            dager i forkant
-            ved å fylle ut informasjonen nedenfor. Det er viktig at du tar vare på bekreftelsesmailen da den inneholder
-            barcode som må vises ved ankomst
-            og avmeldingslink i tilfellet du blir forhindret til å delta.
-        </p>
-        <span class="label label-info">Info</span> Informasjonen vil ikke bli brukt til andre formål enn det som er
-        angitt over.
-        </p>
-        <form class="form" role="form">
-            <div class="form-group">
-                <label class="sr-only" for="navn">Navn</label>
+            <h3>Passer for:</h3>
+            <ul>
+                <li>Visuelle designer</li>
+                <li>Frontendutviklere</li>
+                <li>Arkitekter</li>
+                <li>Interaksjonsdesignere</li>
+                <li>backendutviklere nysgjerrige på frontendteknologier</li>
+            </ul>
+        </div>
+        <div class="registreringsformulaer">
+            <div class="registered-users">
+                <form class="form" role="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="navn">Navn</label>
 
-                <div class="input-group" style="width:300px">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                             <span class="fa fa-user fa-md"></span>
+                        </span>
+                            <input id="navn" type="text" class="form-control" placeholder="Navn">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="email">Email</label>
+
+                        <div class="input-group">
                     <span class="input-group-addon">
-                         <span class="glyphicon glyphicon-user"></span>
+                         <span class="fa fa-envelope fa-md"></span>
                     </span>
-                    <input id="navn" type="text" class="form-control" placeholder="Navn">
-                </div>
+                            <input id="email" type="email" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="telefon">Telefon</label>
+
+                        <div class="input-group phone">
+                        <span class="input-group-addon">
+                             <span class="fa fa-phone fa-md"></span>
+                        </span>
+                            <input id="telefon" type="tel" class="form-control" placeholder="Telefon">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-default registrer">
+                        <i class="fa fa-thumbs-up fa-lg"></i> Registrer
+                    </button>
+                    <!--<button type="submit" class="btn btn-default">Registrer</button>-->
+                </form>
             </div>
-            <div class="form-group">
-                <label class="sr-only" for="email">Email</label>
-
-                <div class="input-group" style="width:300px">
-                <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-envelope"></span>
-                </span>
-                    <input id="email" type="email" class="form-control" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="sr-only" for="telefon">Telefon</label>
-
-                <div class="input-group" style="width:150px">
-                    <span class="input-group-addon">
-                         <span class="glyphicon glyphicon-phone"></span>
-                    </span>
-                    <input id="telefon" type="tel" class="form-control" placeholder="Telefon">
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-default">Registrer</button>
-        </form>
-
+        </div>
     </div>
     <div class="row">
         <h2>Om Accenture</h2>
@@ -206,20 +216,28 @@
             mollis fermentum aliquam. Aliquam felis turpis, sollicitudin vel tellus ac, vestibulum adipiscing eros.</p>
     </div>
 
-    <div class="row" style="font-size: 24px; line-height: 1.5em;">
+    <div class="del">
         <a href="http://www.accenture.com/no-en/company/overview/Pages/have-question-accenture-norway.aspx"
            data-toggle="tooltip" title=""
-           data-original-title="Har du spørsmål? Ta kontakt med oss da vel!" target="_blank"><i
-                class="icon-question-sign"></i></a>
+           data-original-title="Har du spørsmål? Ta kontakt med oss da vel!" target="_blank">
+            <i class="fa fa-home fa-3x"></i>
+        </a>
         <a href="http://www.linkedin.com/company/accenture?trk=company_name" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på LinkedIn"><i class="icon-linkedin-sign" target="_blank"></i></a>
+           data-original-title="Koble til Accenture på LinkedIn" target="_blank">
+            <i class="fa fa-linkedin-square fa-3x"></i>
+        </a>
         <a href="http://www.facebook.com/AccentureNorge?fref=ts" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på Facebook"><i class="icon-facebook-sign" target="_blank"></i></a>
+           data-original-title="Koble til Accenture på Facebook" target="_blank">
+            <i class="fa fa-facebook-square fa-3x"></i>
+        </a>
         <a href="https://twitter.com/accenture" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på Twitter"><i class="icon-twitter-sign" target="_blank"></i></a>
+           data-original-title="Koble til Accenture på Twitter" target="_blank">
+            <i class="fa fa-twitter-square fa-3x"></i>
+        </a>
         <a href="https://plus.google.com/+Accenture/posts" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på Google+"><i class="icon-google-plus-sign"
-                                                                   target="_blank"></i></a>
+           data-original-title="Koble til Accenture på Google+" target="_blank">
+            <i class="fa fa-google-plus-square fa-3x"></i>
+        </a>
 
     </div>
 </div>
@@ -228,16 +246,47 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="vendor/bootstrap/assets/js/jquery.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/sass-bootstrap/dist/js/bootstrap.min.js"></script>
 <script type='text/javascript'>
-    $('a').tooltip();
-    $('span').tooltip();
-
+    var sw = document.body.clientWidth,
+        breakpoint = 991,
+        wasMobile = true,
+        mobile = true,
+        first = true;
 
     $(document).ready(function () {
+        $('span').tooltip({placement: 'auto left'});
+        $('.del a').tooltip({placement: 'auto left'});
 
         var offset = $('.nav').height();
+
+        // Check if is mobile view on window resize
+        var checkMobile = function() {
+            wasMobile = mobile;
+            mobile = sw <= breakpoint;
+            reorder();
+        };
+        // Rearrange the sections for mobile
+        var reorder = function() {
+            var $registrering = $('.registrering'),
+                $intro = $('#main-content >div').eq(0),
+                $sted = $('.sted');
+
+            if (mobile && (!wasMobile || first)) {
+                first = false;
+                $registrering.remove().insertBefore($intro);
+            } else if (!mobile && (wasMobile || first)){
+                first = false;
+                $registrering.remove().insertAfter($sted);
+            }
+        };
+
+        checkMobile();
+        $(window).resize(function(){
+            sw = window.innerWidth;
+            checkMobile();
+        });
 
         /*
          $(window).resize(function() {

@@ -1,0 +1,190 @@
+@import '../bower_components/sass-bootstrap/lib/bootstrap';
+
+html, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Arial, sans-serif;
+}
+
+$bluegreen: #32a3a1;
+$darkishbluegreen: #086260;
+$white: #ffffff;
+$orange: #f45212;
+$lightorange: #f47441;
+$lightblue: #cee0df;
+
+h1, h2, h3 {
+  color: $bluegreen;
+}
+
+@mixin circle($color, $radius: 50px) {
+  border-radius: 50%;
+  border: 5px solid $color;
+  height: $radius;
+  width: $radius;
+}
+
+.navbar-inverse {
+  background-color: $bluegreen;
+}
+.navbar {
+  @extend .navbar-inverse;
+  @extend .navbar-fixed-top;
+  color: $white;
+  .navbar-brand {
+    color: $white;
+  }
+  .navbar-nav {
+    li > a {
+      color: $white;
+    }
+    .active {
+      a {
+        background-color: $darkishbluegreen;
+      }
+    }
+  }
+}
+
+.agenda {
+  border-left: 1px solid $darkishbluegreen;
+}
+
+.intro, .agenda, .registreringsinfo, .registreringsformulaer, antall-registrerte {
+  @include make-lg-column(6);
+  @include make-md-column(6);
+}
+.antall-registrerte {
+  @extend .pull-right;
+  padding-right: 15px;
+  color: $lightblue;
+}
+
+.agenda ul {
+  padding-left: 0;
+  li {
+    list-style: none;
+    padding-top: 5px;
+    div {
+      color: $darkishbluegreen;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 1px;
+      padding-left: 10px;
+    }
+    .presentername {
+      color: $orange;
+      clear: left;
+    }
+  }
+}
+.profilbilde {
+  $size: 60px;
+  @include circle($bluegreen, $size);
+  &.margareth {
+    background-image: url('../images/margareth.jpg');
+  }
+  &.joar {
+    background-image: url('../images/joar.jpg');
+  }
+  &.aksel {
+    background-image: url('../images/aksel.jpg');
+  }
+  &.henning {
+    background-image: url('../images/henning.jpg');
+  }
+  background-size: $size * 1.1;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  display: inline-block;
+}
+
+.registrering {
+  @include make-row(0);
+  background-color: $darkishbluegreen;
+  h2, h3, p, span, ul {
+    color: #ffffff;
+  }
+  /* top right bottom left */
+  padding: 15px 70px 30px 50px;
+}
+@media (max-width: $screen-sm-max) {
+  .jumbotron {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 650px) {
+  .jumbotron {
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .jumbotron {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+.jumbotron {
+  @include make-row(0);
+  margin-top: $navbar-height;
+  background: url('../images/top-background.png') no-repeat;
+  background-size: 100%;
+  color: $white;
+  .container div {
+    @include make-lg-column(6);
+    @include make-md-column(6);
+  }
+}
+
+.registrer {
+  @extend .btn;
+  @extend .btn-success;
+  @extend .btn-lg;
+  border-radius: 0;
+  background-color: $orange;
+  border: none;
+  &:hover {
+    background-color: $lightorange;
+  }
+}
+
+.input-group-addon {
+  background-color: $bluegreen;
+  border: 0;
+  width: 38px;
+}
+.input-group {
+  width: 100%;
+  &.phone {
+    width: 50%;
+  }
+}
+
+.kart, #jump-to-register {
+  @extend .visible-md;
+  @extend .visible-lg;
+}
+#jump-to-register {
+  padding-left: 0;
+}
+
+.container,
+#main-content {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  >div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.del {
+  @include make-row(0);
+  a {
+    color: $orange;
+  }
+}
