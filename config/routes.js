@@ -18,14 +18,15 @@ module.exports = function (app) {
         res.send('Hello World - No Authentication');
     });
 
-    // Read
-    app.get(baseUrl + '/helloworld', auth, registrationCtrl.helloWorld());
-    app.get(baseUrl, auth, registrationCtrl.readAllRegistrations());
+    // Public routes
     app.get(baseUrl + '/:id', registrationCtrl.readRegistration());
-
-    // Change state
     app.post(actions.register.route, registrationCtrl.register(baseUrl));
     app.delete(actions.unregister.route, registrationCtrl.unregister());
-    app.post(actions.checkIn.route, registrationCtrl.checkIn());
     app.post(actions.confirm.route, registrationCtrl.confirm());
+
+    // Private routes
+    app.get(baseUrl + '/helloworld', auth, registrationCtrl.helloWorld());
+    app.get(baseUrl, auth, registrationCtrl.readAllRegistrations());
+    app.post(actions.checkIn.route, auth, registrationCtrl.checkIn());
+
 };
