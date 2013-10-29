@@ -43,7 +43,7 @@ exports.readRegistration = function () {
 // Register user to this event. If the user with same email already exists, return 400 with error message
 // TODO: do user see resource URL of newly created registration?
 // TODO: how to put allowed states as hyperlinks to the registration?
-exports.register = function (selfUrl) {
+exports.register = function () {
     return function (req, res) {
         var newRegistration = new Registration(req.body);
 
@@ -89,7 +89,7 @@ exports.register = function (selfUrl) {
 ;
 
 // Unregister the user for this event
-exports.unregister = function (req, res) {
+exports.unregister = function () {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
@@ -124,7 +124,7 @@ exports.unregister = function (req, res) {
 };
 
 // Confirm the user for this event
-exports.confirm = function (req, res) {
+exports.confirm = function () {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
@@ -157,7 +157,7 @@ exports.confirm = function (req, res) {
 };
 
 // Checking the user for this event
-exports.checkIn = function (req, res) {
+exports.checkIn = function () {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)

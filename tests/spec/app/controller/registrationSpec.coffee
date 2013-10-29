@@ -16,9 +16,16 @@ actions = require(configdir + 'actions')
 # REST API module "Request"
 request = require("request")
 
+authentication = {
+  auth:
+    user: config.autUser
+    pass: config.autPass,
+    sendImmediately: false
+}
+
 describe "registration", ->
   it 'should respond with hello world', (done) ->
-    request.get config.host + "/api/event/registrations/helloworld", (error, response, body) ->
+    request.get config.host + "/api/helloworld", authentication, (error, response, body) ->
       expect(body).toEqual "Hello World"
       link1 = "<" + config.host + "/api/event/registrations/helloworld>; rel=\"self\""
       link2 = "<" + config.host + "/api/event/registrations/helloworld2>; rel=\"next\""
@@ -169,6 +176,10 @@ describe "registration", ->
       expect(response.statusCode).toEqual(200)
       request
         method: actions.confirm.httpVerb
+        auth:
+          user: config.autUser
+          pass: config.autPass
+          sendImmediately: false
         uri: config.host + actions.confirm.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->
@@ -176,6 +187,10 @@ describe "registration", ->
         expect(body.state).toEqual(actions.confirm.endState)
         request
           method: actions.checkIn.httpVerb
+          auth:
+            user: config.autUser
+            pass: config.autPass
+            sendImmediately: false
           uri: config.host + actions.checkIn.resolveRoute(newRegistration._id)
           json: newRegistration
         , (error, response, body) ->
@@ -198,6 +213,10 @@ describe "registration", ->
       expect(response.statusCode).toEqual(200)
       request
         method: actions.checkIn.httpVerb
+        auth:
+          user: config.autUser
+          pass: config.autPass
+          sendImmediately: false
         uri: config.host + actions.checkIn.resolveRoute(newRegistration._id)
         json: newRegistration
       , (error, response, body) ->

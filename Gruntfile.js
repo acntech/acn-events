@@ -23,7 +23,9 @@ module.exports = function (grunt) {
         config: 'config',
         dist: 'dist',
         heroku: 'heroku',
-        distHeroku: 'distHeroku'
+        distHeroku: 'distHeroku',
+        email: 'email',
+        ssl: 'ssl'
     };
 
     var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
@@ -46,9 +48,9 @@ module.exports = function (grunt) {
                     }
                 },
                 command: [
-                    'git add .',
-                    'git commit -m "See commit messages in the Github repository"',
-                    'git push origin master'
+                    'git add -A .',
+                    'git commit -m "See commit messages in the Innersource repository"',
+                    'git push'
                 ].join('&&')
             },
             runHeroku: {
@@ -234,6 +236,24 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: '<%= yeoman.config %>',
                         dest: '<%= yeoman.dist %>/<%= yeoman.config %>',
+                        src: [
+                            './**/*'
+                        ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.email %>',
+                        dest: '<%= yeoman.dist %>/<%= yeoman.email %>',
+                        src: [
+                            './**/*'
+                        ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.ssl %>',
+                        dest: '<%= yeoman.dist %>/<%= yeoman.ssl %>',
                         src: [
                             './**/*'
                         ]

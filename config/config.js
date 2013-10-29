@@ -10,11 +10,14 @@ var config = {
         },
         port: process.env.PORT || 5000,
         db: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/heroku_app18823270',
-        fromEmail: "Ismar Slomic <ismar@slomic.no>",
+        fromEmail: "Fagkveld mailer <mailer.acn@gmail.com>",
         toEmail: "Ismar Slomic <ismar.slomic@accenture.com>",
-        host: "http://go.accenture.com/acnfagkveld",
-        mailAutUser: "Dummy name",//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
-        mailAutPass: "Dummy pass"//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
+        host: "https://acnfagkveld-backend.herokuapp.com",
+        frontendHost: "http://acnfagkveld.herokuapp.com",
+        mailAutUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        mailAutPass: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        autUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        autPass: "Dummy"//TODO: FIX THIS SO IT ISN'T HARD CODED!
     },
     test: {
         root: rootPath,
@@ -23,11 +26,14 @@ var config = {
         },
         port: process.env.PORT || 5000,
         db: 'mongodb://localhost/heroku_app18823270_test',
-        fromEmail: "Ismar Slomic <ismar@slomic.no>",
+        fromEmail: "Fagkveld mailer <mailer.acn@gmail.com>",
         toEmail: "Ismar Slomic <ismar@slomic.no>",
         host: "http://localhost:5000",
-        mailAutUser: "Dummy name",//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
-        mailAutPass: "Dummy pass"//TODO: FIX THIS SO IT ISN'T HARD CODED!!!!!!!!!!!!!!!!
+        frontendHost: "http://localhost:4000",
+        mailAutUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        mailAutPass: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        autUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        autPass: "Dummy" //TODO: FIX THIS SO IT ISN'T HARD CODED!
     }
 
 };

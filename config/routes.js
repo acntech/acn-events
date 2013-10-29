@@ -2,20 +2,13 @@ module.exports = function (app) {
     var registrationCtrl = require('../app/controllers/registration'),
         actions = require('./actions'),
         express = require('express'),
+        config = require('./config'),
         baseUrl = "/api/event/registrations";
 
-    // Asynchronous
+    // Authentication
     var auth = express.basicAuth(function (user, pass, callback) {
-        var result = (user === 'accenture' && pass === 'blåhimmel');
+        var result = (user === config.autUser && pass === config.autPass);
         callback(null /* error */, result);
-    });
-
-    app.get('/home', auth, function (req, res) {
-        res.send('Hello World');
-    });
-
-    app.get('/noAuth', function (req, res) {
-        res.send('Hello World - No Authentication');
     });
 
     // Public routes
@@ -25,8 +18,7 @@ module.exports = function (app) {
     app.post(actions.confirm.route, registrationCtrl.confirm());
 
     // Private routes
-    app.get(baseUrl + '/helloworld', auth, registrationCtrl.helloWorld());
+    app.get('/api/helloworld', auth, registrationCtrl.helloWorld());
     app.get(baseUrl, auth, registrationCtrl.readAllRegistrations());
     app.post(actions.checkIn.route, auth, registrationCtrl.checkIn());
-
 };
