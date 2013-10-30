@@ -17,7 +17,8 @@ var config = {
         mailAutUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
         mailAutPass: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
         autUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
-        autPass: "Dummy"//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        autPass: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        maxSeats: 100
     },
     test: {
         root: rootPath,
@@ -33,7 +34,8 @@ var config = {
         mailAutUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
         mailAutPass: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
         autUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
-        autPass: "Dummy" //TODO: FIX THIS SO IT ISN'T HARD CODED!
+	autUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+        maxSeats: 100
     }
 
 };
