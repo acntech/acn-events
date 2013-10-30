@@ -6,6 +6,7 @@ html, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 $bluegreen: #32a3a1;
 $darkishbluegreen: #086260;
+$darkgreen: #043e3d;
 $white: #ffffff;
 $orange: #f45212;
 $lightorange: #f47441;
@@ -178,10 +179,10 @@ h1, h2, h3 {
   background-color: $orange;
   border: none;
   &:hover, &:active {
-    background-color: $lightorange;
+    background-color: $darkgreen;
   }
   &:disabled {
-    background-color: $lightorange;
+    background-color: $darkgreen;
   }
 }
 
