@@ -213,6 +213,10 @@ h1, h2, h3 {
   >div {
     padding-left: 15px;
     padding-right: 15px;
+    &.sted {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 .row {
