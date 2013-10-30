@@ -111,6 +111,12 @@ h1, h2, h3 {
 .profilbilde {
   $size: 60px;
   @include circle($bluegreen, $size);
+
+  background-size: $size * 1.1;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  display: inline-block;
+
   &.margareth {
     background-image: url('../images/margareth.jpg');
   }
@@ -120,13 +126,10 @@ h1, h2, h3 {
   &.aksel {
     background-image: url('../images/aksel.jpg');
   }
-  &.henning {
-    background-image: url('../images/henning.jpg');
+  &.lars-olof {
+    background-image: url('../images/lars-olof.jpg');
+    background-size: $size * 2/3;
   }
-  background-size: $size * 1.1;
-  background-repeat: no-repeat;
-  background-position: 30%;
-  display: inline-block;
 }
 
 .registrering {
