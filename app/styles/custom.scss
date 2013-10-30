@@ -63,6 +63,11 @@ h1, h2, h3 {
 .agenda {
   border-left: 1px solid $darkishbluegreen;
 }
+@media (max-width: $screen-sm-max) {
+  .agenda {
+    border: none;
+  }
+}
 
 .intro, .agenda, .registreringsinfo, .registreringsformulaer, antall-registrerte {
   @include make-lg-column(6);
