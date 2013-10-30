@@ -29,6 +29,13 @@ h1, h2, h3 {
   @extend .navbar-inverse;
   @extend .navbar-fixed-top;
   color: $white;
+  .navbar-toggle {
+    background-color: $darkishbluegreen;
+    border: none;
+    &:hover, &:focus {
+      background-color: $darkishbluegreen;
+    }
+  }
   .navbar-brand {
     position: absolute;
     left: 50px;
