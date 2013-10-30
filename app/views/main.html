@@ -143,10 +143,10 @@
                             <span class="input-group-addon">
                                  <span class="fa fa-user fa-md"></span>
                             </span>
-                            <input id="navn" ng-model="registration.person.name" type="text" class="form-control" placeholder="Navn">
-                            <span ng-show="registrationForm.registration.person.name.$dirty && registrationForm.registration.person.name.$error.required">Navn er påkrevd!</span>
-                            <span ng-show="registrationForm.person.name.$error.serverMessage">{{registrationForm.person.name.$error.serverMessage}}</span>
+                            <input id="navn" name="name" ng-model="registration.person.name" required type="text" class="form-control" placeholder="Navn">
                         </div>
+                        <span ng-show="registrationForm.name.$dirty && registrationForm.name.$error.required">Navn er påkrevd!</span>
+                        <span ng-show="registrationForm.name.$error.serverMessage">{{registrationForm.person.name.$error.serverMessage}}</span>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="email">Email</label>
@@ -155,8 +155,10 @@
                             <span class="input-group-addon">
                                  <span class="fa fa-envelope fa-md"></span>
                             </span>
-                            <input id="email" ng-model="registration.person.email" required type="email" class="form-control" placeholder="Email">
+                            <input id="email" name="email" ng-model="registration.person.email" required type="email" class="form-control" placeholder="Email">
                         </div>
+                        <span ng-show="registrationForm.email.$dirty && registrationForm.email.$error.required">Mail er påkrevd!</span>
+                        <span ng-show="registrationForm.email.$error.serverMessage">{{registrationForm.person.email.$error.serverMessage}}</span>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="telefon">Telefon</label>
@@ -165,13 +167,17 @@
                             <span class="input-group-addon">
                                  <span class="fa fa-phone fa-md"></span>
                             </span>
-                            <input id="telefon" ng-model="registration.person.phone" type="tel" class="form-control" placeholder="Telefon">
+                            <input id="telefon" name="phone" ng-model="registration.person.phone" required type="tel" class="form-control" placeholder="Telefon">
                         </div>
+                        <span ng-show="registrationForm.phone.$dirty && registrationForm.phone.$error.required">Telefon er påkrevd!</span>
+                        <span ng-show="registrationForm.phone.$error.serverMessage">{{registrationForm.person.phone.$error.serverMessage}}</span>
                     </div>
 
-                    <button ng-click="create(registration)" class="btn btn-default registrer">
+                    <button ng-disabled="registrationForm.$invalid" ng-click="create(registration)" class="btn btn-default registrer">
                         <i class="fa fa-thumbs-up fa-lg"></i> Registrer
                     </button>
+
+                    <p ng-show="error">Melding fra server: {{error}}</p>
                 </form>
             </div>
         </div>
