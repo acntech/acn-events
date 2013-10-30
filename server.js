@@ -17,7 +17,6 @@ app.set('port',port);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 
-var auth = 'Basic ' + new Buffer("USER:PASS //TODO: THIS CANT BE HARD CODED!!!").toString('base64');
 var proxy = new httpProxy.HttpProxy({
   target: {
     host: 'localhost',
@@ -28,7 +27,6 @@ var proxy = new httpProxy.HttpProxy({
 });
 
 app.all('/api/*', function (req, res) {
-  req.headers['authorization'] = auth;
   proxy.proxyRequest(req, res);
 });
 
