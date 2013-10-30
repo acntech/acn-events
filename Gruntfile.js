@@ -7,7 +7,9 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        heroku: 'heroku',
+        distHeroku: 'distHeroku'
     };
 
     try {
@@ -75,6 +77,17 @@ module.exports = function (grunt) {
                             '.tmp',
                             '<%= yeoman.dist %>/*',
                             '!<%= yeoman.dist %>/.git*'
+                        ]
+                    }
+                ]
+            },
+            distHeroku: {
+                files: [
+                    {
+                        dot: true,
+                        src: [
+                            '<%= yeoman.distHeroku %>/*',
+                            '!<%= yeoman.distHeroku %>/.git*'
                         ]
                     }
                 ]
@@ -255,7 +268,42 @@ module.exports = function (grunt) {
                             '.htaccess',
                             'components/**/*',
                             'images/{,*/}*.{gif,webp}',
-                            'styles/fonts/*'
+                            'styles/fonts/*',
+                            'vendor/**/*'
+                        ]
+                    }
+                ]
+            },
+            distHeroku: {
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.dist %>',
+                        dest: '<%= yeoman.distHeroku %>/<%= yeoman.app %>',
+                        src: [
+                            './**/*'
+                        ]
+                    },
+
+                    {
+                        expand: true,
+                        cwd: '.',
+                        dest: '<%= yeoman.distHeroku %>',
+                        src: [
+                            'package.json',
+                            '.bowerrc',
+                            'bower.json',
+                            'server.js'
+                        ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.heroku %>',
+                        dest: '<%= yeoman.distHeroku %>',
+                        src: [
+                            './**/*'
                         ]
                     }
                 ]
@@ -281,9 +329,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'jshint',
-        'test',
-        'coffee',
         'compass:dist',
         'useminPrepare',
         'imagemin',
@@ -296,6 +341,12 @@ module.exports = function (grunt) {
         'uglify',
         'rev',
         'usemin'
+    ]);
+
+    grunt.registerTask('build:heroku', [
+        'clean:distHeroku',
+        'build',
+        'copy:distHeroku'
     ]);
 
     grunt.registerTask('default', ['build']);
