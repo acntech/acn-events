@@ -20,10 +20,14 @@ exports.helloWorld = function () {
 exports.readAllRegistrations = function () {
     return function (req, res) {
         Registration.find(function (error, registrations) {
-            if (error)
-                res.json(400, error);
-            else
+            if (error) {
+                res.json(500, error);
+                console.log("Error reading all registrations: ");
+                console.log(error);
+            }
+            else {
                 res.json(registrations);
+            }
         });
     };
 };
@@ -33,9 +37,20 @@ exports.readRegistration = function () {
     return function (req, res) {
         Registration.findById(req.params.id, function (error, registration) {
             if (error)
-                res.json(400, error);
+            {
+                res.json(500, error);
+                console.log("Error reading registration: ");
+                console.log(error);
+            }
+            else if(!registration)
+            {
+                res.json(400, {message: "Vi kunne ikke finne din registrasjon med id " + req.params.id } + ". Prøv igjen!");
+                console.log("Could not read registration for id: " + req.params.id);
+            }
             else
+            {
                 res.json(registration);
+            }
         });
     };
 };
@@ -48,8 +63,11 @@ exports.register = function () {
         var newRegistration = new Registration(req.body);
 
         Registration.findOne({ 'person.email': newRegistration.person.email}, function (error, reg) {
-            if (error) {
-                res.json(400, error);
+            if (error)
+            {
+                res.json(500, error);
+                console.log("Error finding person by email in register() with email: " + newRegistration.email);
+                console.log(error);
             }
             else if (reg) {
                 var validAction = actions.isValidNextAction(reg.state, actions.register.name);

@@ -10,19 +10,19 @@ var RegistrationSchema = new Schema({
     person: {
         name: {
             type: String,
-            required: true,
+            required: [true, "Navn er påkrevd" ],
             trim: true
         },
         email: {
             type: String,
-            required: true,
+            required: [true, "Email er påkrevd" ],
             trim: true,
             index: true,
             unique: true
         },
         phone: {
             type: Number,
-            required: true,
+            required: [true, "Telefon er påkrevd" ],
             trim: true
         }
     },
