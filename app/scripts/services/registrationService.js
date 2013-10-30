@@ -2,13 +2,14 @@
 
 angular.module('acnfagkveldApp')
   .factory('registrationService', function ($resource, $q) {
+    var eventResource = $resource('/api/event/');
     var registrationResource = $resource('/api/event/registrations/:id', {id: '@id' }, {update: {method: 'PUT'} });
 
     return {
       count: function () {
         var deferred = $q.defer();
-        registrationResource.query(function (result) {
-          deferred.resolve(result.length);
+        eventResource.get(function (result) {
+          deferred.resolve(result['countConfirmed']);
         }, function (error) {
           deferred.reject(error);
         });
