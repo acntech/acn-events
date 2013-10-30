@@ -2,6 +2,7 @@ var express = require('express');
 
 module.exports = function (app, config) {
     app.configure(function () {
+        app.enable('trust proxy');
         app.use(express.compress());
         app.set('port', config.port);
         app.set('views', config.root + '/app/views');
