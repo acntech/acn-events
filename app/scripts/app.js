@@ -9,7 +9,7 @@ var acnfagkveldApp = angular.module('acnfagkveldApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'AddCtrl'
+        controller: 'RegistrationCtrl'
       })
       .when('/confirm', {
         templateUrl: 'views/confirm.html'

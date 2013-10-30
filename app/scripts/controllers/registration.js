@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('acnfagkveldApp')
-  .controller('AddCtrl', function ($scope, $modal, registrationService) {
+  .controller('RegistrationCtrl', function ($scope, $modal, registrationService) {
 
     var reset = function () {
       $scope.registration = {
@@ -11,6 +11,10 @@ angular.module('acnfagkveldApp')
         $scope.registrationForm.$pristine = true;
       }
     };
+
+    registrationService.count().then(function (count) {
+      $scope.numRegistrations = count;
+    });
 
     $scope.create = function (registration) {
       $scope.error = null;
