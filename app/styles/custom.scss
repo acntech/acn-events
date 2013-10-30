@@ -28,7 +28,18 @@ h1, h2, h3 {
 .navbar {
   @extend .navbar-inverse;
   @extend .navbar-fixed-top;
+
+  $navHeight: 70px;
+
   color: $white;
+  height: $navHeight;
+  font-weight: bolder;
+  li {
+    height: $navHeight;
+    a {
+      line-height: 70px;
+    }
+  }
   .navbar-toggle {
     background-color: $darkishbluegreen;
     border: none;
