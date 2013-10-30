@@ -30,9 +30,18 @@ h1, h2, h3 {
   @extend .navbar-fixed-top;
   color: $white;
   .navbar-brand {
+    position: absolute;
+    left: 50px;
+    top: 8px;
+
     color: $white;
+    background: url('../images/accenture_logo_white.png') no-repeat;
+    background-size: 100%;
+    width: 135px;
+    height: 56px;
   }
   .navbar-nav {
+    margin-left: 165px;
     li > a {
       color: $white;
     }
@@ -115,6 +124,9 @@ h1, h2, h3 {
   .jumbotron {
     font-size: 16px;
     padding-bottom: 10px;
+    br {
+      display: none;
+    }
   }
 }
 @media (max-width: 480px) {
@@ -187,4 +199,15 @@ h1, h2, h3 {
   a {
     color: $orange;
   }
+}
+
+.modal {
+  display: block;
+  background-color: $white;
+  width: 430px;
+  height: 260px;
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
 }

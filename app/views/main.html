@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Fengende tittel</a>
+                <div class="navbar-brand"></div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -133,8 +133,20 @@
                 <li>backendutviklere nysgjerrige på frontendteknologier</li>
             </ul>
         </div>
+        <script type="text/ng-template" id="successModal.html">
+            <div class="modal-header">
+                <!--<a class="close" ng-click="close()">×</a>-->
+                <h1>Du er registrert</h1>
+            </div>
+            <div class="modal-body">
+                <p>Velkommen til fagkveld. Du vil få en bekreftelsemail, denne må du svare på før du blir påmeldt.</p>
+            </div>
+            <!--<div class="modal-footer">
+                <button class="btn btn-primary" ng-click="close()">Lukk</button>
+            </div>-->
+        </script>
         <div class="registreringsformulaer">
-            <div class="registered-users" ng-controller="AddCtrl">
+            <div class="registered-users">
                 <form class="form" name="registrationForm" role="form" novalidate>
                     <div class="form-group">
                         <label class="sr-only" for="navn">Navn</label>

@@ -1,6 +1,10 @@
 'use strict';
 
-var acnfagkveldApp = angular.module('acnfagkveldApp', ['ngResource'])
+var acnfagkveldApp = angular.module('acnfagkveldApp', [
+    'ngResource',
+    'ui.bootstrap',
+    'ui.bootstrap.modal'
+  ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
