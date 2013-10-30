@@ -28,6 +28,15 @@ function sendMail(subject, text, sendCalendarFile) {
         text: text
     };
 
+    if (sendCalendarFile) {
+        mailOptions["attachments"] = [
+            {
+                fileName: "accenture-fagkveld.ics",
+                streamSource: fs.createReadStream(path.join(__dirname, "../email", "accenture-fagkveld.ics"))
+            }
+        ]
+    }
+
     console.log("Sending email: ")
     transport.sendMail(mailOptions, function (error, responseStatus) {
 
@@ -54,5 +63,5 @@ exports.sendUnRegisteredMail = function (id, name, email, phone) {
     renderedText = renderedText.replace(/%email%/g, email);
     renderedText = renderedText.replace(/%phone%/g, phone);
     renderedText = renderedText.replace(/%frontendHost%/g, config.frontendHost);
-    sendMail(unregisteredSubject, renderedText, true);
+    sendMail(unregisteredSubject, renderedText, false);
 }
