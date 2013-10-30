@@ -4,7 +4,8 @@
 
 var express = require('express')
     , http = require('http')
-    , path = require('path');
+    , path = require('path')
+    , httpProxy = require('http-proxy');
 
 var app = express();
 
@@ -15,6 +16,22 @@ app.set('port',port);
 
 app.use(express.favicon());
 app.use(express.logger('dev'));
+
+var auth = 'Basic ' + new Buffer("USER:PASS //TODO: THIS CANT BE HARD CODED!!!").toString('base64');
+var proxy = new httpProxy.HttpProxy({
+  target: {
+    host: 'localhost',
+    port: 5000 // todo: read from config
+//    https: true,
+//    rejectUnauthorized: false
+  }
+});
+
+app.all('/api/*', function (req, res) {
+  req.headers['authorization'] = auth;
+  proxy.proxyRequest(req, res);
+});
+
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);

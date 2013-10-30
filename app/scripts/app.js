@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('acnfagkveldApp', [])
+var acnfagkveldApp = angular.module('acnfagkveldApp', ['ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'AddCtrl'
       })
       .otherwise({
         redirectTo: '/'

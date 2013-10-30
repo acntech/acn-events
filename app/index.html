@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="acnfagkveldApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,229 +25,18 @@
 </head>
 
 <body data-spy="scroll" data-target="#nav">
-
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<header class="masthead">
-    <div class="jumbotron">
-        <div class="container">
-            <div>
-                <p>
-                    Lyst å høre mer om hvordan oppnå god brukeropplevelse ved bruk av moderne teknologi?<br/>
-                    Bli med på Accentures fagkveld onsdag 20. november på Teknologihuset!
-                </p>
-                <div id="jump-to-register"><a href="#registrer" class="registrer">
-                    <i class="fa fa-thumbs-up fa-lg"></i> Registrer
-                </a></div>
-            </div>
-
-            <!--<p style="margin-top: 30px;" id="jump-to-register">-->
-
-            <!--</p>-->
-
-        </div>
-    </div>
-</header>
-
-<!-- Fixed navbar -->
-<div id="nav">
-    <div class="navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Fengende tittel</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#intro">Intro</a></li>
-                    <li><a href="#agenda">Agenda</a></li>
-                    <li><a href="#sted">Sted</a></li>
-                    <li><a href="#registrering">Registrering</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
-
-<div class="container" id="main-content">
-    <div class="row">
-        <div class="intro">
-            <h2 id="intro">Intro</h2>
-
-            <p>Nåtidens brukere forventer å være dypt involvert i hvordan applikasjonen de bruker ser ut og oppfører seg. De skal ha et responsivt design, det skal ha universell utforming,
-                det skal være tilgjengelig for alle type brukere og det skal brukes moderne teknologier for å oppnå disse målene. Accenture inviterer til fagmøte hvor vi vil dele erfaringer
-                rundt hvordan slik brukerinvolvering kan oppnås, og hvordan kravene fra nåtidens brukere kan realiseres igjennom moderne rammeverk. Vi vil først gå igjennom prosesser for
-                brukerinvolvering og hvordan dette leder til et visuelt design, før vi gjør et teknisk dykk ned i rammeverkene som kan brukes til realiseringen. Rammeverkene vi vil gå igjennom
-                er Backbone og Angular, og vi deler erfaringer hvordan disse rammeverkene har blitt brukt til å implementere store og viktige løsninger.
-            </p>
-        </div>
-        <div class="agenda">
-            <h2 id="agenda">Agenda</h2>
-            <p>18. november, 17:00 - 21:00</p>
-            <p>
-                Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
-            </p>
-            <ul>
-                <li>
-                    <span class="profilbilde margareth" data-toggle="tooltip" data-original-title="Margareth Knutsen: UX queen"></span>
-                    <div>
-                        17:00 - 17:30<br />
-                        Brukeropplevelse og responsivt design
-                        <p class="presentername">Margareth Knutsen</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="profilbilde lars-olof" data-toggle="tooltip" data-original-title="Lars-Olof Moilanen: Frontend nerd"></span>
-                    <div>
-                        17:30 - 18:00<br/>
-                        Responsivt design med HTML5 og CSS3
-                        <p class="presentername">Lars-Olof Moilanen</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="profilbilde joar" data-toggle="tooltip" data-original-title="Joar Aurdal: Geek"></span>
-                    <div>
-                        18:10 - 18:55<br />
-                        Tilgjengelighet, responsivt design og semantisk web
-                        <p class="presentername">Joar Aurdal</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="profilbilde aksel" data-toggle="tooltip" data-original-title="Aksel Gresvig: Frontend guru"></span>
-                    <div>
-                        19:00 - 20:00<br />
-                        Frontend utvikling med modern Javascript teknologi
-                        <p class="presentername">Aksel Gresvig</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="row sted">
-        <h2 id="sted">Sted</h2>
-
-        <p><a href="http://www.teknologihuset.no/">Teknologihuset</a>, Pilestredet 56, 0167 Oslo (like ved Dalsbergstien
-            trikkestopp)</p>
-        <div class="Flexible-container kart">
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.no/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A">Vis større kart</a></small>
-            <!--<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.no/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Pilestredet+56,+Oslo&amp;aq=0&amp;oq=Pilestredet+56+&amp;sll=59.923449,10.731785&amp;sspn=0.009108,0.033023&amp;g=Pilestredet+56,+Oslo&amp;ie=UTF8&amp;hq=&amp;hnear=Pilestredet+56,+St.+Hanshaugen,+0167+Oslo&amp;ll=59.923449,10.731785&amp;spn=0.002277,0.008256&amp;t=m&amp;z=14&amp;iwloc=A">Vis større kart</a></small>-->
-        </div>
-    </div>
-    <div class="registrering">
-        <div class="registreringsinfo">
-            <h2>Registrering</h2>
-        </div>
-        <div class="antall-registrerte">
-            <i class="fa fa-thumbs-up fa-lg">48</i>
-        </div>
-    </div>
-    <div class="registrering">
-        <div class="registreringsinfo">
-            <p>
-                Deltakelse er gratis. Vi har en begrensning på 100 platser, 50 av disse er forbeholdt Accenture ansatte så vær tidlig ute med å registrere deg!
-                Du vil få en bekreftelse på mail som du må ta med når du ankommer Teknologihuset.
-            </p>
-
-            <h3>Passer for:</h3>
-            <ul>
-                <li>Visuelle designer</li>
-                <li>Frontendutviklere</li>
-                <li>Arkitekter</li>
-                <li>Interaksjonsdesignere</li>
-                <li>backendutviklere nysgjerrige på frontendteknologier</li>
-            </ul>
-        </div>
-        <div class="registreringsformulaer">
-            <div class="registered-users">
-                <form class="form" role="form">
-                    <div class="form-group">
-                        <label class="sr-only" for="navn">Navn</label>
-
-                        <div class="input-group">
-                        <span class="input-group-addon">
-                             <span class="fa fa-user fa-md"></span>
-                        </span>
-                            <input id="navn" type="text" class="form-control" placeholder="Navn">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" for="email">Email</label>
-
-                        <div class="input-group">
-                    <span class="input-group-addon">
-                         <span class="fa fa-envelope fa-md"></span>
-                    </span>
-                            <input id="email" type="email" class="form-control" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" for="telefon">Telefon</label>
-
-                        <div class="input-group phone">
-                        <span class="input-group-addon">
-                             <span class="fa fa-phone fa-md"></span>
-                        </span>
-                            <input id="telefon" type="tel" class="form-control" placeholder="Telefon">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-default registrer">
-                        <i class="fa fa-thumbs-up fa-lg"></i> Registrer
-                    </button>
-                    <!--<button type="submit" class="btn btn-default">Registrer</button>-->
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <h2>Om Accenture</h2>
-
-        <p>Aliquam ullamcorper, leo ut tincidunt dictum, nulla dui faucibus neque, vel dapibus orci leo aliquam leo.
-            Aliquam hendrerit leo vel nibh adipiscing faucibus. Nullam bibendum tortor et velit blandit, a condimentum
-            odio cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel vulputate tortor, quis bibendum
-            neque. Suspendisse faucibus urna vitae nisl venenatis, elementum egestas lectus aliquet. Curabitur nec erat
-            lobortis, facilisis ante vitae, faucibus turpis. Integer a auctor nisi. Donec lacinia augue est. Donec
-            sollicitudin elit id risus dignissim posuere. Aliquam non mi at sapien pulvinar placerat at eu mauris. Nunc
-            egestas lectus vel ullamcorper sagittis. Donec at urna faucibus dolor ornare adipiscing et sed dui. Quisque
-            mollis fermentum aliquam. Aliquam felis turpis, sollicitudin vel tellus ac, vestibulum adipiscing eros.</p>
-    </div>
-
-    <div class="del">
-        <a href="http://www.accenture.com/no-en/company/overview/Pages/have-question-accenture-norway.aspx"
-           data-toggle="tooltip" title=""
-           data-original-title="Har du spørsmål? Ta kontakt med oss da vel!" target="_blank">
-            <i class="fa fa-home fa-3x"></i>
-        </a>
-        <a href="http://www.linkedin.com/company/accenture?trk=company_name" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på LinkedIn" target="_blank">
-            <i class="fa fa-linkedin-square fa-3x"></i>
-        </a>
-        <a href="http://www.facebook.com/AccentureNorge?fref=ts" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på Facebook" target="_blank">
-            <i class="fa fa-facebook-square fa-3x"></i>
-        </a>
-        <a href="https://twitter.com/accenture" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på Twitter" target="_blank">
-            <i class="fa fa-twitter-square fa-3x"></i>
-        </a>
-        <a href="https://plus.google.com/+Accenture/posts" data-toggle="tooltip" title=""
-           data-original-title="Koble til Accenture på Google+" target="_blank">
-            <i class="fa fa-google-plus-square fa-3x"></i>
-        </a>
-
-    </div>
-</div>
-
+<div ng-view></div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/sass-bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/services/registrationService.js"></script>
+<script src="scripts/controllers/add.js"></script>
 <script type='text/javascript'>
     var sw = document.body.clientWidth,
         breakpoint = 991,
