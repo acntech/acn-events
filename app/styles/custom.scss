@@ -211,3 +211,18 @@ h1, h2, h3 {
   margin-right: auto;
   top: 100px;
 }
+
+.del {
+  $size: 2em;
+  .fa {
+    font-size: $size;
+  }
+  .fa-home {
+    color: $white;
+    background-color: $orange;
+    border-radius: 5px;
+    font-size: $size * 0.85;
+    position: relative;
+    top: -2px;
+  }
+}
