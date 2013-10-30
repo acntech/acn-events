@@ -8,19 +8,15 @@ angular.module('acnfagkveldApp')
     };
 
     $scope.create = function (registration) {
-      console.log("creating");
-      console.log(registration);
-
+      $scope.error = null;
       registrationService
         .create(registration)
         .then(
         function (success) {
-          console.log("Win!");
-          console.log(success);
+          console.log(success); //todo: redirect to "registered" page
         },
         function (error) {
-          console.log("Fail =/");
-          console.log(error);
+          $scope.error = error.data || error;
         }
       );
     };
