@@ -146,12 +146,15 @@ h1, h2, h3 {
 
 .registrer {
   @extend .btn;
-  @extend .btn-success;
   @extend .btn-lg;
+  color: $white;
   border-radius: 0;
   background-color: $orange;
   border: none;
   &:hover, &:active {
+    background-color: $lightorange;
+  }
+  &:disabled {
     background-color: $lightorange;
   }
 }
