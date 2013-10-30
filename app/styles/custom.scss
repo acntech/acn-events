@@ -37,7 +37,7 @@ h1, h2, h3 {
   li {
     height: $navHeight;
     a {
-      line-height: 70px;
+      line-height: $navHeight;
     }
   }
   .navbar-toggle {
