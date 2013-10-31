@@ -197,8 +197,7 @@ a.anchor {
   }
 }
 
-.masthead
-{
+.masthead {
   background: $darkgrey;
 }
 
@@ -246,13 +245,13 @@ a.anchor {
   @include border-radius(0);
   background-color: $orange;
   border: none;
-  &:hover, &:active {
+  &:hover, &:active, &:focus {
     background-color: $darkorange;
-    color: $white;
+    color: $white !important;
   }
   &:disabled {
     background-color: $darkdarkgreen;
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -338,6 +337,12 @@ a.anchor {
       color: $white;
     }
   }
+}
+
+.alert-danger {
+  background-color: $bluegreen !important;
+  border: 0;
+  border-radius: 0;
 }
 
 p.error {
