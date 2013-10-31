@@ -3,7 +3,7 @@ Hei %name%,
 Takk for din interesse for "Brukeropplevelse i moderne tid"! 
 
 Vi holder av plass for deg hvis du bekrefter din deltakelse ved å klikke her:
-%frontendHost%/registrations/%id%/confirm
+%frontendHost%/#/registrations/%id%/confirm
 
 Jeg ser fram til en faglig og sosial kveld! 
 
@@ -15,7 +15,7 @@ leder Accenture Architecture, Delivery and Integration
 =================================================
 
 For å avregistrere deg klikk her: 
-%frontendHost%/registrations/%id%/unregister
+%frontendHost%/#/registrations/%id%/unregister
 
 =================================================
 
