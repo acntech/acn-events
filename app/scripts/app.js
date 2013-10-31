@@ -11,11 +11,13 @@ var acnfagkveldApp = angular.module('acnfagkveldApp', [
         templateUrl: 'views/main.html',
         controller: 'RegistrationCtrl'
       })
-      .when('/confirm', {
-        templateUrl: 'views/confirm.html'
+      .when('/registrations/:id/confirm', {
+        templateUrl: 'views/main.html',
+        controller: 'ConfirmRegistrationCtrl'
       })
-      .when('/unregister', {
-        templateUrl: 'views/unregister.html'
+      .when('/registrations/:id/unregister', {
+        templateUrl: 'views/main.html',
+        controller: 'DeleteRegistrationCtrl'
       })
       .otherwise({
         redirectTo: '/'
