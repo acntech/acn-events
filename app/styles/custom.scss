@@ -256,7 +256,7 @@ a.anchor {
 }
 
 .input-group-addon {
-  background-color: $bluegreen;
+  background-color: $bluegreen !important;
   border: 0;
   width: 38px;
 }
@@ -341,8 +341,8 @@ a.anchor {
 
 .alert-danger {
   background-color: $bluegreen !important;
-  border: 0;
-  border-radius: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
 }
 
 p.error {
