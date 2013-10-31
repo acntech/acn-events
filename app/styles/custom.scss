@@ -56,6 +56,9 @@ a.anchor {
     &:hover, &:focus {
       background-color: $darkishbluegreen;
     }
+    span {
+      background-color: white;
+    }
   }
   .navbar-brand {
     position: absolute;
