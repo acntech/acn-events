@@ -22,7 +22,7 @@ CLASS:PUBLIC
 CREATED:20131028T194353Z
 DESCRIPTION:Lyst å høre mer om hvordan oppnå god brukeropplevelse ved br
 	uk av moderne teknologi? Bli med på Accentures fagkveld!\n\nLes mer på h
-	ttp://go.accenture.com/acnfagkveld\n\n
+	ttp://acnfagkveld.herokuapp.com\n\n
 DTEND;TZID="Romance Standard Time":20131120T210000
 DTSTAMP:20131028T194353Z
 DTSTART;TZID="Romance Standard Time":20131120T170000
@@ -43,7 +43,7 @@ X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
 	rne teknologi? Bli med på Accentures fagkveld!</FONT></SPAN></P>\n\n<P DI
 	R=LTR><SPAN LANG="no"></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="no"><FONT FACE
 	="Calibri">Les mer på</FONT></SPAN><SPAN LANG="no"> </SPAN><A HREF="http:
-	//go.accenture.com/acnfagkveld"><SPAN LANG="no"><U><FONT COLOR="#0000FF" F
+	//acnfagkveld.herokuapp.com"><SPAN LANG="no"><U><FONT COLOR="#0000FF" F
 	ACE="Calibri">http://go.accenture.com/acnfagkveld</FONT></U></SPAN><SPAN L
 	ANG="no"></SPAN></A><SPAN LANG="no"></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="
 	no"></SPAN></P>\n\n</BODY>\n</HTML>
