@@ -10,23 +10,25 @@ var express = require('express')
 var app = express();
 
 // all environments
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 9000;
 
-app.set('port',port);
+app.set('port', port);
 
 app.use(express.logger('dev'));
 
 var proxy = new httpProxy.HttpProxy({
-  target: {
-    host: 'localhost',
-    port: 5000 // todo: read from config
-//    https: true,
+    target: {
+        host: 'acnfagkveld-backend.herokuapp.com',
+        //port: 5000 // todo: read from config
+        https: true
 //    rejectUnauthorized: false
-  }
+    }
 });
 
 app.all('/api/*', function (req, res) {
-  proxy.proxyRequest(req, res);
+    req.headers.host = 'acnfagkveld-backend.herokuapp.com';
+    req.headers.https = true;
+    proxy.proxyRequest(req, res);
 });
 
 app.use(express.bodyParser());

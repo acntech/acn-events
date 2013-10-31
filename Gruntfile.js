@@ -12,6 +12,8 @@ module.exports = function (grunt) {
         distHeroku: 'distHeroku'
     };
 
+    grunt.loadNpmTasks('grunt-shell');
+
     try {
         yeomanConfig.app = require('./component.json').appPath || yeomanConfig.app;
     } catch (e) {
@@ -19,6 +21,55 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
+        shell: {
+            deployHeroku: {
+                options: {
+                    stdout: true,
+                    execOptions: {
+                        cwd: '<%= yeoman.distHeroku%>'
+                    }
+                },
+                command: [
+                    'git add -A .',
+                    'git commit -m "See commit messages in the Innersource repository"',
+                    'git push'
+                ].join('&&')
+            },
+            runHeroku: {
+                options: {
+                    stdout: true,
+                    execOptions: {
+                        cwd: '<%= yeoman.distHeroku%>'
+                    }
+                },
+                command: [
+                    'heroku ps:scale web=1',
+                    'heroku open'
+                ].join('&&')
+            },
+            stopHeroku: {
+                options: {
+                    stdout: true,
+                    execOptions: {
+                        cwd: '<%= yeoman.distHeroku%>'
+                    }
+                },
+                command: [
+                    'heroku ps:scale web=0'
+                ].join('&&')
+            },
+            bowerInstall: {
+                options: {
+                    stdout: true,
+                    execOptions: {
+                        cwd: '.'
+                    }
+                },
+                command: [
+                    'bower install'
+                ].join('&&')
+            }
+        },
         express: {
             options: {
                 port: process.env.PORT || 9000
@@ -270,7 +321,8 @@ module.exports = function (grunt) {
                             'components/**/*',
                             'images/{,*/}*.{gif,webp}',
                             'styles/fonts/*',
-                            'vendor/**/*'
+                            'vendor/**/*',
+                            'bower_components/**/*'
                         ]
                     }
                 ]
@@ -346,8 +398,22 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build:heroku', [
         'clean:distHeroku',
+        'shell:bowerInstall',
         'build',
         'copy:distHeroku'
+    ]);
+
+    grunt.registerTask('deploy:heroku', [
+        'build:heroku',
+        'shell:deployHeroku'
+    ]);
+
+    grunt.registerTask('run:heroku', [
+        'shell:runHeroku'
+    ]);
+
+    grunt.registerTask('stop:heroku', [
+        'shell:stopHeroku'
     ]);
 
     grunt.registerTask('default', ['build']);
