@@ -87,7 +87,18 @@ a.anchor {
   }
   .navbar-collapse {
     &.in, &.collapsing {
+      $height: 30px;
       background-color: $bluegreen;
+      ul {
+        width: 150px;
+        margin: 8px 10px 0 auto;
+      }
+      li, li a {
+        height: initial;
+        line-height: initial;
+        margin: 10px 0;
+        padding: 0;
+      }
     }
   }
 }
