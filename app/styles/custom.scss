@@ -72,6 +72,9 @@ a.anchor {
     margin-left: 165px;
     li > a {
       color: $white;
+      &:hover, &:focus {
+        background-color: $darkishbluegreen;
+      }
     }
     .active {
       a {
