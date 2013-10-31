@@ -16,29 +16,32 @@ h1, h2, h3 {
   color: $bluegreen;
 }
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 @mixin circle($color, $radius: 50px) {
-  border-radius: 50%;
+  @include border-radius(50%);
   border: 5px solid $color;
   height: $radius;
   width: $radius;
 }
 
-.navbar-inverse {
-  background-color: $bluegreen;
-}
 .navbar {
-  @extend .navbar-inverse;
   @extend .navbar-fixed-top;
 
   $navHeight: 70px;
 
+  background-color: $bluegreen;
   color: $white;
   height: $navHeight;
   font-weight: bolder;
   li {
     height: $navHeight;
     a {
-      line-height: $navHeight;
+      line-height: $navHeight - 30px;
     }
   }
   .navbar-toggle {
@@ -153,6 +156,20 @@ h1, h2, h3 {
     padding-bottom: 10px;
   }
 }
+.jumbotron {
+  @include make-row(0);
+  margin-top: $navbar-height;
+  background: url('../images/top-background.png') no-repeat;
+  background-size: 100%;
+  color: $white;
+  p {
+    color: $white;
+  }
+  .container div {
+    @include make-lg-column(6);
+    @include make-md-column(6);
+  }
+}
 @media (max-width: $screen-sm-max) {
   .jumbotron {
     margin-bottom: 0;
@@ -170,23 +187,12 @@ h1, h2, h3 {
     font-weight: bold;
   }
 }
-.jumbotron {
-  @include make-row(0);
-  margin-top: $navbar-height;
-  background: url('../images/top-background.png') no-repeat;
-  background-size: 100%;
-  color: $white;
-  .container div {
-    @include make-lg-column(6);
-    @include make-md-column(6);
-  }
-}
 
 .registrer {
   @extend .btn;
   @extend .btn-lg;
   color: $white;
-  border-radius: 0;
+  @include border-radius(0);
   background-color: $orange;
   border: none;
   &:hover, &:active {
@@ -262,7 +268,7 @@ h1, h2, h3 {
   .fa-home {
     color: $white;
     background-color: $orange;
-    border-radius: 5px;
+    @include border-radius(5px);
     font-size: $size * 0.85;
     position: relative;
     top: -2px;
