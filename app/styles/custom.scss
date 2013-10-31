@@ -29,6 +29,12 @@ h1, h2, h3 {
   width: $radius;
 }
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
 .navbar {
   @extend .navbar-fixed-top;
 
