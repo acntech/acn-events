@@ -4,16 +4,28 @@ html, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Arial, sans-serif;
 }
 
-$bluegreen: #32a3a1;
-$darkishbluegreen: #086260;
-$darkgreen: #043e3d;
+$bluegreen: #00919c;
+$darkgreen: #025a61;
+$darkdarkgreen: #014146;
 $white: #ffffff;
-$orange: #f45212;
+$orange: #f58426;
+$darkorange: #d37f02;
 $lightorange: #f47441;
 $lightblue: #cee0df;
+$darkgrey: #504a4a;
+$max-page-width: 980px;
+
+body {
+  max-width: $max-page-width;
+  margin: 0 auto;
+}
 
 h1, h2, h3 {
   color: $bluegreen;
+}
+
+a, a:hover {
+  color: $darkgreen;
 }
 
 @mixin border-radius($radius) {
@@ -35,9 +47,11 @@ a.anchor {
   top: -75px;
   visibility: hidden;
 }
+
 .navbar {
   @extend .navbar-fixed-top;
-
+  max-width: $max-page-width;
+  margin: 0 auto;
   $navHeight: 70px;
 
   background-color: $bluegreen;
@@ -51,10 +65,10 @@ a.anchor {
     }
   }
   .navbar-toggle {
-    background-color: $darkishbluegreen;
+    background-color: $darkdarkgreen;
     border: none;
     &:hover, &:focus {
-      background-color: $darkishbluegreen;
+      background-color: $darkdarkgreen;
     }
     span {
       background-color: white;
@@ -76,12 +90,12 @@ a.anchor {
     li > a {
       color: $white;
       &:hover, &:focus {
-        background-color: $darkishbluegreen;
+        background-color: $darkdarkgreen;
       }
     }
     .active {
       a {
-        background-color: $darkishbluegreen;
+        background-color: $darkdarkgreen;
       }
     }
   }
@@ -104,8 +118,9 @@ a.anchor {
 }
 
 .agenda {
-  border-left: 1px solid $darkishbluegreen;
+  border-left: 1px solid $darkgreen;
 }
+
 @media (max-width: $screen-sm-max) {
   .agenda {
     border: none;
@@ -119,6 +134,7 @@ a.anchor {
     margin-top: 0;
   }
 }
+
 .antall-registrerte {
   @extend .pull-right;
   padding-right: 15px;
@@ -131,7 +147,7 @@ a.anchor {
     list-style: none;
     padding-top: 5px;
     div {
-      color: $darkishbluegreen;
+      color: $darkgreen;
       display: inline-block;
       vertical-align: top;
       padding-top: 1px;
@@ -143,6 +159,7 @@ a.anchor {
     }
   }
 }
+
 .profilbilde {
   $size: 60px;
   @include circle($bluegreen, $size);
@@ -169,7 +186,7 @@ a.anchor {
 
 .registrering {
   @include make-row(0);
-  background-color: $darkishbluegreen;
+  background-color: $darkgreen;
   h2, h3, p, span, ul {
     color: #ffffff;
   }
@@ -179,11 +196,19 @@ a.anchor {
     padding-bottom: 10px;
   }
 }
+
+.masthead
+{
+  background: $darkgrey;
+}
+
 .jumbotron {
   @include make-row(0);
   margin-top: $navbar-height;
-  background: url('../images/top-background.png') no-repeat;
-  background-size: 100%;
+  background: url('../images/top-banner-diffuse.png') no-repeat;
+  background-color: $darkgrey !important;
+  background-position: 80%;
+  background-size: 30%;
   color: $white;
   p {
     color: $white;
@@ -193,17 +218,20 @@ a.anchor {
     @include make-md-column(6);
   }
 }
+
 @media (max-width: $screen-sm-max) {
   .jumbotron {
     margin-bottom: 0;
   }
 }
+
 @media (max-width: 650px) {
   .jumbotron {
     font-size: 16px;
     padding-bottom: 10px;
   }
 }
+
 @media (max-width: 480px) {
   .jumbotron {
     font-size: 12px;
@@ -219,10 +247,12 @@ a.anchor {
   background-color: $orange;
   border: none;
   &:hover, &:active {
-    background-color: $lightorange;
+    background-color: $darkorange;
+    color: $white;
   }
   &:disabled {
-    background-color: $darkgreen;
+    background-color: $darkdarkgreen;
+    color: $white;
   }
 }
 
@@ -231,6 +261,7 @@ a.anchor {
   border: 0;
   width: 38px;
 }
+
 .input-group {
   width: 100%;
   &.phone {
@@ -242,6 +273,7 @@ a.anchor {
   @extend .visible-md;
   @extend .visible-lg;
 }
+
 #jump-to-register {
   padding-left: 0;
 }
@@ -251,7 +283,7 @@ a.anchor {
   max-width: 100%;
   padding-left: 0;
   padding-right: 0;
-  >div {
+  > div {
     padding-left: 15px;
     padding-right: 15px;
     &.sted {
@@ -260,6 +292,7 @@ a.anchor {
     }
   }
 }
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -268,7 +301,11 @@ a.anchor {
 .del {
   @include make-row(0);
   a {
+    margin-right: 6px;
     color: $orange;
+    &:hover, &:active {
+      color: $darkorange;
+    }
   }
 }
 
@@ -295,6 +332,11 @@ a.anchor {
     font-size: $size * 0.85;
     position: relative;
     top: -2px;
+
+    &:hover, &:active {
+      background-color: $darkorange;
+      color: $white;
+    }
   }
 }
 
