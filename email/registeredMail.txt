@@ -1,11 +1,11 @@
 Hei %name%, 
 
-Takk for din interesse for "Brukeropplevelse i moderne tid"! 
+Du har registrert deg på fagkvelden "Brukeropplevelse realisert med moderne web-teknologi" med Accenture.
 
-Vi holder av plass for deg hvis du bekrefter din deltakelse ved å klikke her:
+Vi holder av plass til deg hvis du bekrefter din deltakelse ved å klikke på lenken under:
 %frontendHost%/#/registrations/%id%/confirm
 
-Jeg ser fram til en faglig og sosial kveld! 
+Jeg ser fram til en faglig og sosial kveld sammen med deg!
 
 Mvh
 Tonny Gundersen,

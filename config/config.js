@@ -11,7 +11,7 @@ var config = {
         port: process.env.PORT || 5000,
         db: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/heroku_app18823270',
         fromEmail: "Fagkveld mailer <mailer.acn@gmail.com>",
-        toEmail: "Ismar Slomic <ismar.slomic@accenture.com>",
+        toEmail: "Ismar Slomic <ismar.slomic@accenture.com>, Tonny Gundersen <tonny.gundersen@accenture.com>",
         host: "https://acnfagkveld-backend.herokuapp.com",
         frontendHost: "http://acnfagkveld.herokuapp.com",
         mailAutUser: "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
