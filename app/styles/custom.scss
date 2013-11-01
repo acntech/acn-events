@@ -13,7 +13,9 @@ $darkorange: #d37f02;
 $lightorange: #f47441;
 $lightblue: #cee0df;
 $darkgrey: #504a4a;
+
 $max-page-width: 980px;
+$navbar-height: 50px;
 
 body {
   max-width: $max-page-width;
@@ -52,16 +54,15 @@ a.anchor {
   @extend .navbar-fixed-top;
   max-width: $max-page-width;
   margin: 0 auto;
-  $navHeight: 70px;
 
   background-color: $bluegreen;
   color: $white;
-  height: $navHeight;
+  height: $navbar-height;
   font-weight: bolder;
   li {
-    height: $navHeight;
+    height: $navbar-height;
     a {
-      line-height: $navHeight - 30px;
+      line-height: $navbar-height - 30px;
     }
   }
   .navbar-toggle {
@@ -80,7 +81,7 @@ a.anchor {
     top: 8px;
 
     color: $white;
-    background: url('../images/accenture_logo_white.png') no-repeat;
+    background: url('../images/accenture.png') no-repeat;
     background-size: 100%;
     width: 135px;
     height: 56px;
@@ -115,6 +116,15 @@ a.anchor {
       }
     }
   }
+}
+#highperformance {
+  background: url('../images/high-performance.png') no-repeat;
+  width: 135px;
+  height: 16px;
+  background-size: 100%;
+  margin-top: $navbar-height;
+  left: 35px;
+  position: relative;
 }
 
 .agenda {
