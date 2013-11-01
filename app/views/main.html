@@ -159,15 +159,14 @@
     </div>
     <script type="text/ng-template" id="successModal.html">
         <div class="modal-header">
-            <!--<a class="close" ng-click="close()">×</a>-->
             <h1>Du er registrert</h1>
         </div>
         <div class="modal-body">
             <p>For å fullføre registreringen må du bekrefte din påmelding. Sjekk din email.</p>
         </div>
-        <!--<div class="modal-footer">
-            <button class="btn btn-primary" ng-click="close()">Lukk</button>
-        </div>-->
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
+        </div>
     </script>
     <script type="text/ng-template" id="confirmModal.html">
         <div class="modal-header">
@@ -177,6 +176,9 @@
         <div class="modal-body">
             <p>Velkommen til fagkveld. Vi sees den 20. november.</p>
         </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
+        </div>
     </script>
     <script type="text/ng-template" id="confirmErrorModal.html">
         <div class="modal-header">
@@ -184,6 +186,9 @@
         </div>
         <div class="modal-body">
             <p>Beklager, noe gikk galt med registreringen din: {{error}}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
         </div>
     </script>
     <script type="text/ng-template" id="unregisterModal.html">
@@ -195,6 +200,9 @@
                 Du er nå avregistrert. Ta kontakt med <a href="mailto:tonny.gundersen@accenture.com">tonny.gundersen@accenture.com</a>
                 hvis du ombestemmer deg.
             </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
         </div>
     </script>
     <div class="registreringsformulaer">

@@ -312,7 +312,7 @@ a.anchor {
   display: block;
   background-color: $white;
   max-width: 300px;
-  height: 260px;
+  height: 310px;
   overflow: visible;
   margin-left: auto;
   margin-right: auto;
@@ -343,6 +343,18 @@ a.anchor {
   background-color: $bluegreen !important;
   border: 0 !important;
   border-radius: 0 !important;
+}
+
+.btn-lukk
+{
+  color: $white;
+  @include border-radius(0);
+  background-color: $orange;
+  border: none;
+  &:hover, &:active, &:focus {
+    background-color: $darkorange;
+    color: $white !important;
+  }
 }
 
 p.error {

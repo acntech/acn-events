@@ -17,13 +17,18 @@ angular.module('acnfagkveldApp')
         };
         poll();
 
+        $scope.ok = function () {
+            $scope.modal.close();
+        };
+
         registrationService.delete($routeParams.id).then(function (success) {
                 console.log(success); //todo: redirect to "registered" page
                 $scope.modal = $modal.open({
                     templateUrl: 'unregisterModal.html',
                     backdrop: true,
                     keyboard: true,
-                    backdropClick: true
+                    backdropClick: true,
+                    scope: $scope
                 });
             },
             function (error) {

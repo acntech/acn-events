@@ -17,13 +17,19 @@ angular.module('acnfagkveldApp')
         };
         poll();
 
-        console.log("confirm controller")
-        registrationService.confirm($routeParams.id).then(function (success) {
+        $scope.ok = function () {
+            console.log("confirm ok()")
+            $scope.modal.close();
+        };
+
+        registrationService.confirm($routeParams.id).then(function (success)
+            {
                 $scope.modal = $modal.open({
                     templateUrl: 'confirmModal.html',
                     backdrop: true,
                     keyboard: true,
-                    backdropClick: true
+                    backdropClick: true,
+                    scope: $scope
                 });
             },
             function (error) {

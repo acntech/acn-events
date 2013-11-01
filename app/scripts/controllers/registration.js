@@ -27,6 +27,10 @@ angular.module('acnfagkveldApp')
         };
         poll();
 
+        $scope.ok = function () {
+            $scope.modal.close();
+        };
+
         $scope.create = function (registration) {
             $scope.error = null;
             registrationService
@@ -38,7 +42,8 @@ angular.module('acnfagkveldApp')
                         templateUrl: 'successModal.html',
                         backdrop: true,
                         keyboard: true,
-                        backdropClick: true
+                        backdropClick: true,
+                        scope: $scope
                     });
 
 //          $scope.modal.result.then(reset, reset);
