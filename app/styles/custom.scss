@@ -77,7 +77,7 @@ a.anchor {
   }
   .navbar-brand {
     position: absolute;
-    left: 50px;
+    left: 35px;
     top: 8px;
 
     color: $white;
@@ -85,6 +85,7 @@ a.anchor {
     background-size: 100%;
     width: 135px;
     height: 56px;
+    margin-left: 0px !important;
   }
   .navbar-nav {
     margin-left: 165px;
