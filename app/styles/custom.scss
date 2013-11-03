@@ -22,6 +22,12 @@ body {
   margin: 0 auto;
 }
 
+.Flexible-container iframe
+{
+  width: 100%;
+  height: 100%;
+}
+
 h1, h2, h3 {
   color: $bluegreen;
 }
@@ -150,6 +156,12 @@ a.anchor {
   @extend .pull-right;
   padding-right: 15px;
   color: $lightblue;
+
+  span{
+    font-size: 1.3333333333333333em;
+    color: $lightblue !important;
+    vertical-align: middle;
+  }
 }
 
 .agenda ul {
