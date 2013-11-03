@@ -40,6 +40,7 @@ if ('production' == app.get('env')) {
     app.use(express.static(path.join(__dirname, 'dist')));
 } else {
     app.use(express.static(path.join(__dirname, 'app')));
+    app.use("/admin", express.static(path.join(__dirname, 'adminApp')));
     app.use(express.static(path.join(__dirname, '.tmp')));
     app.use(express.errorHandler());
 }
