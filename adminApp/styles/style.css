@@ -1,4 +1,25 @@
-.gridStyle {
-    border: 1px solid rgb(212,212,212);
+.tabell {
+    border: 1px solid rgb(212, 212, 212);
     height: 500px;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.tittel {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.sokefelt {
+    width: 30%;
+}
+
+.statuser{
+    text-align: right
+}
+
+.tabell-operasjoner{
+    margin-bottom: 20px;
 }

@@ -1,20 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html ng-app="myApp">
 <head lang="en">
     <meta charset="utf-8">
     <title>Fagkveld administrasjon</title>
-    <link rel="stylesheet" type="text/css" href="admin/styles/ng-grid.css"/>
-    <link rel="stylesheet" type="text/css" href="admin/styles/style.css"/>
-    <script type="text/javascript" src="admin/vendor/jquery/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="admin/vendor/jquery-ui/jquery-ui.js"></script>
-    <script type="text/javascript" src="admin/vendor/angular/angular.js"></script>
-    <script type="text/javascript" src="admin/vendor/angular-resource/angular-resource.js"></script>
-    <script type="text/javascript" src="admin/vendor/ng-grid/ng-grid.js"></script>
-    <script type="text/javascript" src="admin/scripts/app.js"></script>
-    <script type="text/javascript" src="admin/scripts/controllers/admin.js"></script>
-    <script src="admin/scripts/services/registrationService.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="admin/styles/style.css" rel="stylesheet" media="screen">
+    <link href="admin/vendor/ng-grid/ng-grid.min.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body ng-controller="AdminCtrl">
-<div class="gridStyle" ng-grid="gridOptions"></div>
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Fagkveld admin</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Event</a></li>
+                <li class="active"><a href="#about">Registreringer</a></li>
+                <li><a href="#contact">Email</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="tittel">
+        <h1>Registrerte deltakere til fagkvelden</h1>
+
+        <p class="lead">
+            Bruk filter og drag-and-drop i tabellen for å tilpasse tabellen til ditt behov.<br>
+            Knapper med mulige aksjoner vises når du merker en eller flere rader.
+        </p>
+    </div>
+    <div class="row tabell-operasjoner">
+        <div class="col-md-8">
+            <input type="text" class="form-control sokefelt" placeholder="Filter..." ng-model="filterOptions.filterText">
+        </div>
+        <div class="col-md-4 statuser">
+            <button type="button" class="btn btn-primary" ng-show="canConfirm">Confirm</button>
+            <button type="button" class="btn btn-primary" ng-show="canUnregister">Unregister</button>
+            <button type="button" class="btn btn-primary" ng-show="canCheckIn">Checkin</button>
+            <button type="button" class="btn btn-primary" ng-show="canEmail">Email</button>
+        </div>
+
+    </div>
+    <div class="tabell" ng-grid="gridOptions"></div>
+</div>
+<!-- /.container -->
+
+<script type="text/javascript" src="admin/vendor/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="admin/vendor/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="admin/vendor/angular/angular.js"></script>
+<script type="text/javascript" src="admin/vendor/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="admin/vendor/ng-grid/ng-grid.js"></script>
+<script type="text/javascript" src="admin/scripts/app.js"></script>
+<script type="text/javascript" src="admin/scripts/controllers/admin.js"></script>
+<script src="admin/scripts/services/registrationService.js"></script>
+<script src="admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/scripts/i18n/ng-grid-nb.js"></script>
 </body>
 </html>
