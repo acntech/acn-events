@@ -32,8 +32,8 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#">Event</a></li>
-                <li class="active"><a href="#about">Registreringer</a></li>
-                <li><a href="#contact">Email</a></li>
+                <li class="active"><a href="#registrations">Registreringer</a></li>
+                <li><a href="#settings">Innstillinger</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -55,10 +55,11 @@
             <input type="text" class="form-control sokefelt" placeholder="Filter..." ng-model="filterOptions.filterText">
         </div>
         <div class="col-md-4 statuser">
-            <button type="button" class="btn btn-primary" ng-show="canConfirm">Confirm</button>
+            <button type="button" class="btn btn-primary" ng-show="canConfirm" ng-click="confirm(gridOptions.selectedItems)">Confirm</button>
             <button type="button" class="btn btn-primary" ng-show="canUnregister">Unregister</button>
             <button type="button" class="btn btn-primary" ng-show="canCheckIn">Checkin</button>
             <button type="button" class="btn btn-primary" ng-show="canEmail">Email</button>
+            <button type="button" class="btn btn-warning" ng-show="canUnselect" ng-click="unselect()">Unselect</button>
         </div>
 
     </div>

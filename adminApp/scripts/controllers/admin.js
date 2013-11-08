@@ -1,7 +1,12 @@
 app.controller('AdminCtrl', function ($scope, registrationService) {
-    registrationService.readAll().then(function (receivedRegistrationList) {
-        $scope.registrationList = receivedRegistrationList;
-    });
+
+    var readAll = function () {
+        registrationService.readAll().then(function (receivedRegistrationList) {
+            $scope.registrationList = receivedRegistrationList;
+        });
+    }
+
+    readAll();
 
     $scope.filterOptions = {
         filterText: ''
@@ -11,6 +16,7 @@ app.controller('AdminCtrl', function ($scope, registrationService) {
     $scope.canUregister = false;
     $scope.canCheckin = false;
     $scope.canEmail = false;
+    $scope.canUnselect = false;
 
     $scope.updateLegalActions = function (registrations) {
         var unique = {};
@@ -38,9 +44,11 @@ app.controller('AdminCtrl', function ($scope, registrationService) {
 
         if (registrations.length > 0) {
             $scope.canEmail = true;
+            $scope.canUnselect = true;
         }
         else {
             $scope.canEmail = false;
+            $scope.canUnselect = false;
         }
     }
 
@@ -69,6 +77,10 @@ app.controller('AdminCtrl', function ($scope, registrationService) {
         }
     };
 
+    $scope.unselect = function () {
+        $scope.gridOptions.selectAll(false);
+    };
+
     $scope.filterNephi = function () {
         var filterText = 'name:Nephi';
         if ($scope.filterOptions.filterText === '') {
@@ -77,5 +89,15 @@ app.controller('AdminCtrl', function ($scope, registrationService) {
         else if ($scope.filterOptions.filterText === filterText) {
             $scope.filterOptions.filterText = '';
         }
+    };
+
+    $scope.confirm = function (registrations) {
+        registrationService.confirm(registrations[0]._id).then(function (result) {
+            readAll();
+            console.log(result)
+            alert(result)
+        });
+
+
     };
 });
