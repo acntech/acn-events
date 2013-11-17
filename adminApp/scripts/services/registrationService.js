@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('registrationService', function ($resource, $q) {
+acnfagkveldAdminApp.factory('registrationService', function ($resource, $q) {
     var registrationResource = $resource('/api/event/registrations/');
     var confirmResource = $resource('/api/event/registrations/:id/confirm', {id: '@id' });
 

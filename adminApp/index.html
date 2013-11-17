@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html ng-app="myApp">
+<html xmlns:ng="http://angularjs.org" ng-app="acnfagkveldAdminApp" id="ng-app">
 <head lang="en">
     <meta charset="utf-8">
     <title>Fagkveld administrasjon</title>
@@ -17,7 +17,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-controller="AdminCtrl">
+<body>
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -31,7 +31,7 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Event</a></li>
+                <li><a href="#event">Event</a></li>
                 <li class="active"><a href="#registrations">Registreringer</a></li>
                 <li><a href="#settings">Innstillinger</a></li>
             </ul>
@@ -40,40 +40,19 @@
     </div>
 </div>
 
-
-<div class="container">
-    <div class="tittel">
-        <h1>Registrerte deltakere til fagkvelden</h1>
-
-        <p class="lead">
-            Bruk filter og drag-and-drop i tabellen for å tilpasse tabellen til ditt behov.<br>
-            Knapper med mulige aksjoner vises når du merker en eller flere rader.
-        </p>
-    </div>
-    <div class="row tabell-operasjoner">
-        <div class="col-md-8">
-            <input type="text" class="form-control sokefelt" placeholder="Filter..." ng-model="filterOptions.filterText">
-        </div>
-        <div class="col-md-4 statuser">
-            <button type="button" class="btn btn-primary" ng-show="canConfirm" ng-click="confirm(gridOptions.selectedItems)">Confirm</button>
-            <button type="button" class="btn btn-primary" ng-show="canUnregister">Unregister</button>
-            <button type="button" class="btn btn-primary" ng-show="canCheckIn">Checkin</button>
-            <button type="button" class="btn btn-primary" ng-show="canEmail">Email</button>
-            <button type="button" class="btn btn-warning" ng-show="canUnselect" ng-click="unselect()">Unselect</button>
-        </div>
-
-    </div>
-    <div class="tabell" ng-grid="gridOptions"></div>
-</div>
-<!-- /.container -->
+<div ng-view></div>
 
 <script type="text/javascript" src="admin/vendor/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="admin/vendor/jquery-ui/jquery-ui.js"></script>
 <script type="text/javascript" src="admin/vendor/angular/angular.js"></script>
 <script type="text/javascript" src="admin/vendor/angular-resource/angular-resource.js"></script>
 <script type="text/javascript" src="admin/vendor/ng-grid/ng-grid.js"></script>
+<script type="text/javascript" src="admin/vendor/ng-grid/plugins/ng-grid-csv-export.js"></script>
+
 <script type="text/javascript" src="admin/scripts/app.js"></script>
-<script type="text/javascript" src="admin/scripts/controllers/admin.js"></script>
+<script type="text/javascript" src="admin/scripts/controllers/registration-controller.js"></script>
+<script type="text/javascript" src="admin/scripts/controllers/event-controller.js"></script>
+<script type="text/javascript" src="admin/scripts/controllers/settings-controller.js"></script>
 <script src="admin/scripts/services/registrationService.js"></script>
 <script src="admin/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="admin/scripts/i18n/ng-grid-nb.js"></script>

@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="tittel">
+        <h1>Registrerte deltakere til fagkvelden</h1>
+
+        <p class="lead">
+            Bruk filter og drag-and-drop i tabellen for å tilpasse tabellen til ditt behov.<br>
+            Knapper med mulige aksjoner vises når du merker en eller flere rader.
+        </p>
+    </div>
+    <div class="row tabell-operasjoner">
+        <div class="col-md-8">
+            <input type="text" class="form-control sokefelt" placeholder="Filter..." ng-model="filterOptions.filterText">
+        </div>
+        <div class="col-md-4 statuser">
+            <button type="button" class="btn btn-primary" ng-show="canConfirm" ng-click="confirm(gridOptions.selectedItems)">Confirm</button>
+            <button type="button" class="btn btn-primary" ng-show="canUnregister">Unregister</button>
+            <button type="button" class="btn btn-primary" ng-show="canCheckIn">Checkin</button>
+            <button type="button" class="btn btn-primary" ng-show="canEmail">Email</button>
+            <button type="button" class="btn btn-warning" ng-show="canUnselect" ng-click="unselect()">Unselect</button>
+        </div>
+
+    </div>
+    <div class="tabell" ng-grid="gridOptions"></div>
+</div>

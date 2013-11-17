@@ -1,4 +1,4 @@
-app.controller('AdminCtrl', function ($scope, registrationService) {
+acnfagkveldAdminApp.controller('RegCtrl', function ($scope, registrationService) {
 
     var readAll = function () {
         registrationService.readAll().then(function (receivedRegistrationList) {
@@ -57,17 +57,20 @@ app.controller('AdminCtrl', function ($scope, registrationService) {
         selectedItems: [],
         columnDefs: [
             {field: 'state', displayName: 'Status', enableCellEdit: false},
-            {field: 'person.name', displayName: 'Navn', enableCellEdit: true},
+            {field: 'person.name', displayName: 'Navn', enableCellEdit: true, width: 150},
             {field: 'person.phone', displayName: 'Telefon', enableCellEdit: true},
-            {field: 'person.email', displayName: 'Email', enableCellEdit: true, resizable: true},
+            {field: 'person.email', displayName: 'Email', enableCellEdit: true, resizable: true, width: 220},
             {field: 'created', displayName: 'Opprettet', cellFilter: 'date:\'dd.MMM.yy HH:mm\'', enableCellEdit: false},
-            {field: 'updated', displayName: 'Oppdatert', cellFilter: 'date:\'dd.MMM.yy HH:mm\'', enableCellEdit: false}
+            {field: 'updated', displayName: 'Oppdatert', cellFilter: 'date:\'dd.MMM.yy HH:mm\'', enableCellEdit: false},
+            {field: '_id', displayName: 'ID', enableCellEdit: false, width: 220}
         ],
         showGroupPanel: true,
         jqueryUIDraggable: true,
         filterOptions: $scope.filterOptions,
         showFooter: true,
+        enableHighlighting: true,
         enableColumnResize: true,
+        <!-- plugins: [new ngGridCsvExportPlugin()], -->
         sortInfo: {
             fields: ['updated'], directions: ['desc']
         },
