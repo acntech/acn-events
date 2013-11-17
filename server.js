@@ -12,6 +12,10 @@ var app = express();
 // all environments
 var port = process.env.PORT || 9000;
 
+// authentication
+var autUser = "Dummy",//TODO: FIX THIS SO IT ISN'T HARD CODED!
+    autPass = "Dummy" //TODO: FIX THIS SO IT ISN'T HARD CODED!
+
 app.set('port', port);
 
 app.use(express.logger('dev'));
@@ -31,6 +35,12 @@ app.all('/api/*', function (req, res) {
     proxy.proxyRequest(req, res);
 });
 
+// Authentication
+var auth = express.basicAuth(function (user, pass, callback) {
+    var result = (user === autUser && pass === autPass);
+    callback(null /* error */, result);
+});
+
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
@@ -40,8 +50,14 @@ if ('production' == app.get('env')) {
     app.use(express.static(path.join(__dirname, 'dist')));
 } else {
     app.use(express.static(path.join(__dirname, 'app')));
-    app.use("/admin", express.static(path.join(__dirname, 'adminApp')));
     app.use(express.static(path.join(__dirname, '.tmp')));
+
+
+    app.get('/admin', auth, function(req, res, next) {
+        return next();
+    });
+
+    app.use("/admin", express.static(path.join(__dirname, 'adminApp')));
     app.use(express.errorHandler());
 }
 
