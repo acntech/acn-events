@@ -5,15 +5,15 @@ var acnfagkveldAdminApp = angular.module('acnfagkveldAdminApp', [
     ]).config(function ($routeProvider) {
         $routeProvider
             .when('/registrations', {
-                templateUrl: 'admin/views/registrations.html',
+                templateUrl: 'views/registrations.html',
                 controller: 'RegCtrl'
             })
             .when('/event', {
-                templateUrl: 'admin/views/event.html',
+                templateUrl: 'views/event.html',
                 controller: 'EventCtrl'
             })
             .when('/settings', {
-                templateUrl: 'admin/views/settings.html',
+                templateUrl: 'views/settings.html',
                 controller: 'SettingsCtrl'
             })
             .otherwise({

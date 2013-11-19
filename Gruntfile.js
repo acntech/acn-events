@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
+        adminApp: 'adminApp',
         dist: 'dist',
         heroku: 'heroku',
         distHeroku: 'distHeroku'
@@ -334,6 +335,15 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: '<%= yeoman.dist %>',
                         dest: '<%= yeoman.distHeroku %>/<%= yeoman.app %>',
+                        src: [
+                            './**/*'
+                        ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.adminApp %>',
+                        dest: '<%= yeoman.distHeroku %>/<%= yeoman.adminApp %>',
                         src: [
                             './**/*'
                         ]

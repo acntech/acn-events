@@ -3,6 +3,7 @@ acnfagkveldAdminApp.controller('RegCtrl', function ($scope, registrationService)
     var readAll = function () {
         registrationService.readAll().then(function (receivedRegistrationList) {
             $scope.registrationList = receivedRegistrationList;
+            $scope.unselect();
         });
     }
 
@@ -70,6 +71,7 @@ acnfagkveldAdminApp.controller('RegCtrl', function ($scope, registrationService)
         showFooter: true,
         enableHighlighting: true,
         enableColumnResize: true,
+        multiSelect: false,
         <!-- plugins: [new ngGridCsvExportPlugin()], -->
         sortInfo: {
             fields: ['updated'], directions: ['desc']
@@ -97,10 +99,22 @@ acnfagkveldAdminApp.controller('RegCtrl', function ($scope, registrationService)
     $scope.confirm = function (registrations) {
         registrationService.confirm(registrations[0]._id).then(function (result) {
             readAll();
-            console.log(result)
-            alert(result)
         });
+    };
 
+    $scope.checkin = function (registrations) {
+        registrationService.checkin(registrations[0]._id).then(function (result) {
+            readAll();
+        });
+    };
 
+    $scope.unregister = function (registrations) {
+        registrationService.unregister(registrations[0]._id).then(function (result) {
+            readAll();
+        });
+    };
+
+    $scope.email = function (registrations) {
+        alert("Not implemented yet!")
     };
 });

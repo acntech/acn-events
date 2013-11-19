@@ -14,9 +14,9 @@
         </div>
         <div class="col-md-4 statuser">
             <button type="button" class="btn btn-primary" ng-show="canConfirm" ng-click="confirm(gridOptions.selectedItems)">Confirm</button>
-            <button type="button" class="btn btn-primary" ng-show="canUnregister">Unregister</button>
-            <button type="button" class="btn btn-primary" ng-show="canCheckIn">Checkin</button>
-            <button type="button" class="btn btn-primary" ng-show="canEmail">Email</button>
+            <button type="button" class="btn btn-primary" ng-show="canUnregister" ng-click="unregister(gridOptions.selectedItems)">Unregister</button>
+            <button type="button" class="btn btn-primary" ng-show="canCheckIn" ng-click="checkin(gridOptions.selectedItems)">Checkin</button>
+            <button type="button" class="btn btn-primary" ng-show="canEmail" ng-click="email(gridOptions.selectedItems)">Email</button>
             <button type="button" class="btn btn-warning" ng-show="canUnselect" ng-click="unselect()">Unselect</button>
         </div>
 
