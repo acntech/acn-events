@@ -17,6 +17,7 @@
         "nodemailer": "~0.5.3"
     },
     "devDependencies": {
+        "jpegtran-bin": "0.2.0",
         "grunt": "~0.4.1",
         "grunt-contrib-jade": "~0.8.0",
         "grunt-contrib-copy": "~0.4.1",
