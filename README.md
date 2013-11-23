@@ -7,3 +7,7 @@ npm install
 grunt build:heroku
 cd distHeroku
 node server
+
+
+# The new domain-model:
+The new domain model is made using https://www.draw.io/
