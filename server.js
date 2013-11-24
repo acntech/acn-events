@@ -17,7 +17,10 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 });
 
 // Populate empty DB with dummy data
-require('./lib/db/dummydata');
+var dummyDataPath = path.join(__dirname, 'lib/db/dummydata');
+fs.readdirSync(dummyDataPath).forEach(function (file) {
+  require(dummyDataPath + '/' + file);
+});
 
 // Controllers
 var api = require('./lib/controllers/api');
