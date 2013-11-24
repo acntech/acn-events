@@ -30,6 +30,9 @@ app.get('/api/awesomeThings', api.awesomeThings);
 // Express config
 require('./config/express.js')(app, express, path);
 
+// Routes
+require('./config/routes.js')(app);
+
 // Start server
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
