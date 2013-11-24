@@ -7,6 +7,9 @@ var express = require('express'),
 
 var app = express();
 
+// Express config
+require('./config/express.js')(app, express, path);
+
 // Connect to database
 var db = require('./lib/db/mongo');
 
@@ -29,12 +32,8 @@ var api = require('./lib/controllers/api');
 
 // Routes
 app.get('/api/awesomeThings', api.awesomeThings);
-
-// Express config
-require('./config/express.js')(app, express, path);
-
-// Routes
 require('./config/routes.js')(app);
+
 
 // Start server
 var port = process.env.PORT || 3000;
