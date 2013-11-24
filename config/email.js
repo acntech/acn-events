@@ -40,16 +40,16 @@ function sendMail(subject, text, sendCalendarFile) {
     ]
   }
 
-  console.log('Sending email: ');
-  transport.sendMail(mailOptions, function (error, responseStatus) {
-
-    if (error) {
-      console.error('Failed sending email: ' + error);
-    }
-
-    console.log(responseStatus)
-  });
-  transport.close();
+  console.log('Sending email to: ' + mailOptions.to + ' from: ' + mailOptions.from);
+//  transport.sendMail(mailOptions, function (error, responseStatus) {
+//
+//    if (error) {
+//      console.error('Failed sending email: ' + error);
+//    }
+//
+//    console.log(responseStatus)
+//  });
+//  transport.close();
 }
 exports.sendRegisteredMail = function (id, name, email, phone) {
   var renderedText = registeredText.replace(/%id%/g, id);
