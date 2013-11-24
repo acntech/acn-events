@@ -1,0 +1,388 @@
+@import '../bower_components/sass-bootstrap/lib/bootstrap';
+
+html, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Arial, sans-serif;
+}
+
+$bluegreen: #00919c;
+$darkgreen: #025a61;
+$darkdarkgreen: #014146;
+$white: #ffffff;
+$orange: #f58426;
+$darkorange: #d37f02;
+$lightorange: #f47441;
+$lightblue: #cee0df;
+$darkgrey: #504a4a;
+
+$max-page-width: 980px;
+$navbar-height: 50px;
+
+body {
+  max-width: $max-page-width;
+  margin: 0 auto;
+}
+
+.Flexible-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  color: $bluegreen;
+}
+
+a, a:hover {
+  color: $darkgreen;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin circle($color, $radius: 50px) {
+  @include border-radius(50%);
+  border: 5px solid $color;
+  height: $radius;
+  width: $radius;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
+
+.navbar {
+  @extend .navbar-fixed-top;
+  max-width: $max-page-width;
+  margin: 0 auto;
+
+  background-color: $bluegreen;
+  color: $white;
+  height: $navbar-height;
+  font-weight: bolder;
+  li {
+    height: $navbar-height;
+    a {
+      line-height: $navbar-height - 30px;
+    }
+  }
+  .navbar-toggle {
+    background-color: $darkdarkgreen;
+    border: none;
+    &:hover, &:focus {
+      background-color: $darkdarkgreen;
+    }
+    span {
+      background-color: white;
+    }
+  }
+  .navbar-brand {
+    position: absolute;
+    left: 35px;
+    top: 8px;
+
+    color: $white;
+    background: url('../images/accenture.png') no-repeat;
+    background-size: 100%;
+    width: 135px;
+    height: 56px;
+    margin-left: 0px !important;
+  }
+  .navbar-nav {
+    margin-left: 165px;
+    li > a {
+      color: $white;
+      &:hover, &:focus {
+        background-color: $darkdarkgreen;
+      }
+    }
+    .active {
+      a {
+        background-color: $darkdarkgreen;
+      }
+    }
+  }
+  .navbar-collapse {
+    &.in, &.collapsing {
+      $height: 30px;
+      background-color: $bluegreen;
+      ul {
+        width: 150px;
+        margin: 8px 10px 0 auto;
+      }
+      li, li a {
+        height: initial;
+        line-height: initial;
+        margin: 10px 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+#highperformance {
+  background: url('../images/high-performance.png') no-repeat;
+  width: 135px;
+  height: 16px;
+  background-size: 100%;
+  margin-top: $navbar-height;
+  left: 35px;
+  position: relative;
+}
+
+.agenda {
+  border-left: 1px solid $darkgreen;
+}
+
+@media (max-width: $screen-sm-max) {
+  .agenda {
+    border: none;
+  }
+}
+
+.intro, .agenda, .registreringsinfo, .registreringsformulaer, antall-registrerte {
+  @include make-lg-column(6);
+  @include make-md-column(6);
+  h2:first-child {
+    margin-top: 0;
+  }
+}
+
+.antall-registrerte {
+  @extend .pull-right;
+  padding-right: 15px;
+  color: $lightblue;
+
+  span {
+    font-size: 1.3333333333333333em;
+    color: $lightblue !important;
+    vertical-align: middle;
+  }
+}
+
+.agenda ul {
+  padding-left: 0;
+  li {
+    list-style: none;
+    padding-top: 5px;
+    div {
+      color: $darkgreen;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 1px;
+      padding-left: 10px;
+    }
+    .presentername {
+      color: $orange;
+      clear: left;
+    }
+  }
+}
+
+.profilbilde {
+  $size: 60px;
+  @include circle($bluegreen, $size);
+
+  background-size: $size * 1.1;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  display: inline-block;
+
+  &.margareth {
+    background-image: url('../images/margareth.jpg');
+  }
+  &.joar {
+    background-image: url('../images/joar.jpg');
+  }
+  &.aksel {
+    background-image: url('../images/aksel.jpg');
+  }
+  &.lars-olof {
+    background-image: url('../images/lars-olof.jpg');
+    background-size: $size * 2/3;
+  }
+}
+
+.registrering {
+  @include make-row(0);
+  background-color: $darkgreen;
+  h2, h3, p, span, ul {
+    color: #ffffff;
+  }
+  /* top right bottom left */
+  padding: 10px 70px 0 50px;
+  &.reginfo {
+    padding-bottom: 10px;
+  }
+}
+
+.masthead {
+  background: $darkgrey;
+}
+
+.jumbotron {
+  @include make-row(0);
+  margin-top: $navbar-height;
+  background: url('../images/top-banner.png') no-repeat;
+  background-color: $darkgrey !important;
+  background-position: 80%;
+  background-size: 30%;
+  color: $white;
+  p {
+    color: $white;
+  }
+  .container div {
+    @include make-lg-column(6);
+    @include make-md-column(6);
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .jumbotron {
+    margin-bottom: 0;
+    background: url('../images/top-banner-diffuse.png') no-repeat;
+    background-position: 80%;
+    background-size: 30%;
+  }
+}
+
+@media (max-width: 650px) {
+  .jumbotron {
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jumbotron {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.registrer {
+  @extend .btn;
+  @extend .btn-lg;
+  color: $white;
+  @include border-radius(0);
+  background-color: $orange;
+  border: none;
+  &:hover, &:active, &:focus {
+    background-color: $darkorange;
+    color: $white !important;
+  }
+  &:disabled {
+    background-color: $darkdarkgreen;
+    color: $white !important;
+  }
+}
+
+.input-group-addon {
+  background-color: $bluegreen !important;
+  border: 0;
+  width: 38px;
+}
+
+.input-group {
+  width: 100%;
+  &.phone {
+    width: 50%;
+  }
+}
+
+.kart, #jump-to-register {
+  @extend .visible-md;
+  @extend .visible-lg;
+}
+
+#jump-to-register {
+  padding-left: 0;
+}
+
+.container,
+#main-content {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  > div {
+    padding-left: 15px;
+    padding-right: 15px;
+    &.sted {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.del {
+  @include make-row(0);
+  a {
+    margin-right: 6px;
+    color: $orange;
+    &:hover, &:active {
+      color: $darkorange;
+    }
+  }
+}
+
+.modal {
+  display: block;
+  background-color: $white;
+  max-width: 300px;
+  height: 310px;
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+}
+
+.del {
+  $size: 2em;
+  .fa {
+    font-size: $size;
+  }
+  .fa-home {
+    color: $white;
+    background-color: $orange;
+    @include border-radius(5px);
+    font-size: $size * 0.85;
+    position: relative;
+    top: -2px;
+
+    &:hover, &:active {
+      background-color: $darkorange;
+      color: $white;
+    }
+  }
+}
+
+.alert-danger {
+  background-color: $bluegreen !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.btn-lukk {
+  color: $white;
+  @include border-radius(0);
+  background-color: $orange;
+  border: none;
+  &:hover, &:active, &:focus {
+    background-color: $darkorange;
+    color: $white !important;
+  }
+}
+
+p.error {
+  font-weight: bolder;
+  margin-top: 10px;
+}
