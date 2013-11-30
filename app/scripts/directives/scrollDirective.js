@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('acnEventsApp')
   .directive('scrollOnClick', function () {
     return {
@@ -12,8 +14,8 @@ angular.module('acnEventsApp')
           } else {
             $target = $elm;
           }
-          $("body").animate({scrollTop: $target.offset().top}, "slow");
+          $('body').animate({scrollTop: $target.offset().top}, 'slow');
         });
       }
-    }
+    };
   });

@@ -10,7 +10,7 @@ angular.module('acnEventsApp')
       count: function () {
         var deferred = $q.defer();
         eventResource.get(function (result) {
-          deferred.resolve(result['countConfirmed']);
+          deferred.resolve(result.countConfirmed);
         }, function (error) {
           deferred.reject(error);
         });
@@ -27,7 +27,7 @@ angular.module('acnEventsApp')
       },
       confirm: function (id) {
         var deferred = $q.defer();
-        console.log("confirm");
+        console.log('confirm');
         confirmResource.save({id: id}, function (result) {
           deferred.resolve(result);
         }, function (error) {
@@ -37,7 +37,7 @@ angular.module('acnEventsApp')
       },
       delete: function (id) {
         var deferred = $q.defer();
-        console.log("delete");
+        console.log('delete');
         registrationResource.delete({id: id}, function (result) {
           deferred.resolve(result);
         }, function (error) {

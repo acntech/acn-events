@@ -18,11 +18,11 @@ angular.module('acnEventsApp')
     poll();
 
     $scope.ok = function () {
-      console.log("confirm ok()")
+      console.log('confirm ok()');
       $scope.modal.close();
     };
 
-    registrationService.confirm($routeParams.id).then(function (success) {
+    registrationService.confirm($routeParams.id).then(function () {
         $scope.modal = $modal.open({
           templateUrl: 'confirmModal.html',
           backdrop: true,
