@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('acnEventsApp')
+angular.module('acnEventsApp')//TODO: This is not a service, it's a FACTORY!
   .factory('registrationService', function ($resource, $q) {
     var eventResource = $resource('/api/event/');
     var registrationResource = $resource('/api/event/registrations/:id', {id: '@id' }, {update: {method: 'PUT'} });
