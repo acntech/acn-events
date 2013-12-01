@@ -23,7 +23,7 @@ angular.module('acnEventsApp')
           $scope.numRegistrations = count;
         });
         poll();
-      }, 10000);
+      }, 10000);//TODO: replace with socket.io
     };
     poll();
 
