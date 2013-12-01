@@ -2,6 +2,7 @@ module.exports = function (app) {
 	var registrationCtrl = require('../lib/controllers/registration.js');
 	var masSeatsCtrl  = require('../lib/controllers/max_seats.js');
 	var actionCtrl = require('../lib/controllers/actions.js');
+	var eventCtrl = require('../lib/controllers/eventController.js');
 
 	var regBaseUrl = '/api/event/registrations';
 	var maxSeatsBaseUrl = '/api/event';
@@ -16,4 +17,15 @@ module.exports = function (app) {
 	// Private routes TODO: Authentication is removed. It's not private!
 	app.get(regBaseUrl,  registrationCtrl.readAllRegistrations());
 	app.post(actionCtrl.checkIn.route, registrationCtrl.checkIn());
+
+
+	// ## New routes for the more advanced application: ##
+
+	//Event
+	app.get('/rest/api/1/event', eventCtrl.getAllEvents)
+	app.get('/rest/api/1/event/:id', eventCtrl.getAnEvent)
+	app.post('/rest/api/1/event', eventCtrl.createEvent) //create
+	app.put('/rest/api/1/event/:id', eventCtrl.updateEvent) //update
+	app.delete('/rest/api/1/event/:id', eventCtrl.deleteEvent)
+
 };
