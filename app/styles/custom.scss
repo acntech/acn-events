@@ -134,12 +134,12 @@ a.anchor {
   position: relative;
 }
 
-.agenda {
-  border-left: 1px solid $darkgreen;
+.intro {
+  border-right: 1px solid $darkgreen;
 }
 
 @media (max-width: $screen-sm-max) {
-  .agenda {
+  .intro {
     border: none;
   }
 }
