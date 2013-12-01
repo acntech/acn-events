@@ -1,0 +1,289 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<header class="masthead">
+    <div id="highperformance"></div>
+    <div class="jumbotron banner">
+        <div class="container">
+            <div>
+                <p>{{ Ingress }}</p>
+
+                <div id="jump-to-register">
+                    <a scroll-on-click href="#registrering" class="registrer">
+                        <i class="fa fa-thumbs-up fa-lg"></i> Registrer
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<!-- Fixed navbar -->
+<div id="nav">
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand"></div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a scroll-on-click href="#intro">Intro</a></li>
+                    <li><a scroll-on-click href="#agenda">Agenda</a></li>
+                    <li><a scroll-on-click href="#sted">Sted</a></li>
+                    <li><a scroll-on-click href="#registrering">Registrering</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container" id="main-content">
+<div class="row center-content">
+    <div class="intro">
+        <a class="anchor" id="intro"></a>{{ Description }}
+
+        <a class="anchor" id="sted"></a>
+
+        <h2 class="sted">Sted</h2>
+
+        <p>
+	        {{ Location.URL }}
+            <a href="http://www.teknologihuset.no/">Teknologihuset</a>, Pilestredet 56, 0167 Oslo (like ved
+            Dalsbergstien
+            trikkestopp)
+        </p>
+    </div>
+    <div class="agenda">
+        <a class="anchor" id="agenda"></a>
+
+        <h2>Agenda</h2>
+
+        <p>Onsdag 20. november, 17:00 - 21:00</p>
+
+        <p>
+            Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
+        </p>
+        <ul>
+            <li ng-repeat="happening in Agenda.Happenings">
+                <span class="profilbilde margareth" data-toggle="tooltip"
+                      data-original-title="Margareth Knutsen: UX queen"></span>
+
+                <div>
+                    17:00 - 17:30<br/>
+                    Brukeropplevelse og responsivt design
+                    <p class="presentername">Margareth Knutsen</p>
+                </div>
+            </li>
+            <li>
+                <span class="profilbilde lars-olof" data-toggle="tooltip"
+                      data-original-title="Lars-Olof Moilanen: Frontend nerd"></span>
+
+                <div>
+                    17:30 - 18:00<br/>
+                    Responsivt design med HTML5 og CSS3
+                    <p class="presentername">Lars-Olof Moilanen</p>
+                </div>
+            </li>
+            <li>
+                <span class="profilbilde joar" data-toggle="tooltip" data-original-title="Joar Aurdal: Geek"></span>
+
+                <div>
+                    18:10 - 18:55<br/>
+                    Tilgjengelighet, responsivt design og semantisk web
+                    <p class="presentername">Joar Aurdal</p>
+                </div>
+            </li>
+            <li>
+                <span class="profilbilde aksel" data-toggle="tooltip"
+                      data-original-title="Aksel Gresvig: Frontend guru"></span>
+
+                <div>
+                    19:00 - 20:00<br/>
+                    Frontend utvikling med modern Javascript teknologi
+                    <p class="presentername">Aksel Gresvig</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row sted">
+    <div class="Flexible-container kart">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Pilestredet%2B56%2B0167%2BOslo(Teknologihuset)&ie=UTF8&z=12&t=m&iwloc=near&output=embed">
+        </iframe>
+    </div>
+</div>
+<a class="anchor" id="registrering"></a>
+
+<div class="registrering">
+    <div class="registreringsinfo">
+        <h2>Registrering</h2>
+    </div>
+    <div class="antall-registrerte">
+        <i class="fa fa-thumbs-up fa-lg"></i>
+        <span>{{numRegistrations}}</span>
+    </div>
+</div>
+<div class="registrering reginfo">
+    <div class="registreringsinfo">
+        <p>
+            Deltakelse er gratis. Vi har en begrensning på {{ MaxSeats }} plasser, hvorav 50% er forbeholdt Accenture ansatte,
+            så vær tidlig ute med å registrere deg! Etter registrering vil du få en bekreftelse på mail som du tar
+            med når du ankommer Teknologihuset.
+        </p>
+
+        <h3>Passer for:</h3>
+        <ul>
+            <li>Frontendutviklere</li>
+            <li>Arkitekter</li>
+            <li>Interaksjonsdesignere</li>
+            <li>Backendutviklere nysgjerrige på frontendteknologier</li>
+        </ul>
+    </div>
+    <script type="text/ng-template" id="successModal.html">
+        <div class="modal-header">
+            <h1>Du er registrert</h1>
+        </div>
+        <div class="modal-body">
+            <p>For å fullføre registreringen må du bekrefte din påmelding. Sjekk din email.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="confirmModal.html">
+        <div class="modal-header">
+            <!--<a class="close" ng-click="close()">×</a>-->
+            <h1>Din registrering er bekreftet</h1>
+        </div>
+        <div class="modal-body">
+            <p>Velkommen til fagkveld. Vi sees den 20. november.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="confirmErrorModal.html">
+        <div class="modal-header">
+            <h1>Noe gikk galt</h1>
+        </div>
+        <div class="modal-body">
+            <p>Beklager, noe gikk galt med registreringen din: {{error}}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="unregisterModal.html">
+        <div class="modal-header">
+            <h1>Du er avregistrert</h1>
+        </div>
+        <div class="modal-body">
+            <p>
+                Du er nå avregistrert. Ta kontakt med <a href="mailto:tonny.gundersen@accenture.com">tonny.gundersen@accenture.com</a>
+                hvis du ombestemmer deg.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn registrer" ng-click="ok()">Lukk</button>
+        </div>
+    </script>
+    <div class="registreringsformulaer">
+        <div class="registered-users">
+            <form class="form" name="registrationForm" role="form" novalidate>
+                <div class="form-group">
+                    <label class="sr-only" for="navn">Navn</label>
+
+                    <div class="input-group">
+                            <span class="input-group-addon">
+                                 <span class="fa fa-user fa-md"></span>
+                            </span>
+                        <input id="navn" name="name" ng-model="registration.person.name" required type="text"
+                               class="form-control" placeholder="Navn">
+                    </div>
+                    <span ng-show="registrationForm.name.$dirty && registrationForm.name.$error.required">Navn er påkrevd!</span>
+                    <span ng-show="registrationForm.name.$error.serverMessage">{{registrationForm.person.name.$error.serverMessage}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email</label>
+
+                    <div class="input-group">
+                            <span class="input-group-addon">
+                                 <span class="fa fa-envelope fa-md"></span>
+                            </span>
+                        <input id="email" name="email" ng-model="registration.person.email" required type="email"
+                               class="form-control" placeholder="Email">
+                    </div>
+                    <span ng-show="registrationForm.email.$dirty && registrationForm.email.$error.required">Mail er påkrevd!</span>
+                    <span ng-show="registrationForm.email.$error.serverMessage">{{registrationForm.person.email.$error.serverMessage}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="telefon">Telefon</label>
+
+                    <div class="input-group phone">
+                            <span class="input-group-addon">
+                                 <span class="fa fa-phone fa-md"></span>
+                            </span>
+                        <input id="telefon" name="phone" ng-model="registration.person.phone" required type="tel"
+                               class="form-control" placeholder="Telefon">
+                    </div>
+                    <span ng-show="registrationForm.phone.$dirty && registrationForm.phone.$error.required">Telefon er påkrevd!</span>
+                    <span ng-show="registrationForm.phone.$error.serverMessage">{{registrationForm.person.phone.$error.serverMessage}}</span>
+                </div>
+
+                <p class="alert alert-danger" ng-show="error">
+                    <i class="fa fa-thumbs-down fa-lg"></i>
+                    {{error}}
+                </p>
+
+                <button ng-disabled="registrationForm.$invalid" ng-click="create(registration)" class="registrer">
+                    <i class="fa fa-thumbs-up fa-lg"></i> Registrer
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <h2>Om Accenture og ADI</h2>
+
+    <p>
+        Accenture er et globalt konsulentselskap som leverer tjenester innenfor rådgivning, teknologi og outsourcing.
+        Accenture har 257.000 ansatte og prosjekter i over 120 land.
+        Besøk oss på <a href="http://www.accenture.no">www.accenture.no</a>.<br/><br/>
+
+        Dette fagmøtet arrangeres av Architecture, Development and Integration (ADI) som er en avdeling innenfor
+        Technology Growth Platform (TGP). ADI ledes av Tonny Gundersen, og består av en rekke utviklere, arkitekter,
+        testledere/testere, prosjektledere og interaksjonsdesignere. Møt flere av oss på dette arrangementet.
+    </p>
+</div>
+
+<div class="del">
+    <a href="http://www.accenture.com/no-en/company/overview/Pages/have-question-accenture-norway.aspx"
+       data-toggle="tooltip" title=""
+       data-original-title="Har du spørsmål? Ta kontakt med oss da vel!" target="_blank">
+        <i class="fa fa-home"></i>
+    </a>
+    <a href="http://www.linkedin.com/company/accenture?trk=company_name" data-toggle="tooltip" title=""
+       data-original-title="Koble til Accenture på LinkedIn" target="_blank">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    <a href="http://www.facebook.com/AccentureNorge?fref=ts" data-toggle="tooltip" title=""
+       data-original-title="Koble til Accenture på Facebook" target="_blank">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    <a href="https://twitter.com/accenture" data-toggle="tooltip" title=""
+       data-original-title="Koble til Accenture på Twitter" target="_blank">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    <a href="https://plus.google.com/+Accenture/posts" data-toggle="tooltip" title=""
+       data-original-title="Koble til Accenture på Google+" target="_blank">
+        <i class="fa fa-google-plus-square"></i>
+    </a>
+
+</div>
+</div>
