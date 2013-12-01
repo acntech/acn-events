@@ -25,13 +25,8 @@ fs.readdirSync(dummyDataPath).forEach(function (file) {
   require(dummyDataPath + '/' + file);
 });
 
-// Controllers
-var api = require('./lib/controllers/api');
-
-
 
 // Routes
-app.get('/api/awesomeThings', api.awesomeThings);
 require('./config/routes.js')(app);
 
 
