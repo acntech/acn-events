@@ -9,7 +9,7 @@ module.exports = function (app, express, path) {
 
   app.configure('development', function () {
     app.use(express.static(path.join(__dirname, '../' , '.tmp')));
-    app.use(express.static(path.join(__dirname, '../' , 'app')));
+    app.use(express.static(path.join(__dirname, '../' , 'frontend')));
     app.use(express.errorHandler());
   });
 
