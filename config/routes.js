@@ -3,6 +3,7 @@ module.exports = function (app) {
 	var masSeatsCtrl  = require('../lib/controllers/max_seats.js');
 	var actionCtrl = require('../lib/controllers/actions.js');
 	var eventCtrl = require('../lib/controllers/eventController.js');
+	var userCtrl = require('../lib/controllers/userController.js');
 
 	var regBaseUrl = '/api/event/registrations';
 	var maxSeatsBaseUrl = '/api/event';
@@ -27,5 +28,12 @@ module.exports = function (app) {
 	app.post('/rest/api/1/event', eventCtrl.createEvent) //create
 	app.put('/rest/api/1/event/:id', eventCtrl.updateEvent) //update
 	app.delete('/rest/api/1/event/:id', eventCtrl.deleteEvent)
+
+	//User
+	app.get('/rest/api/1/user', userCtrl.getAllUsers)
+	app.get('/rest/api/1/user/:id', userCtrl.getAnUser)
+	app.post('/rest/api/1/user', userCtrl.createUser) //create
+	app.put('/rest/api/1/user/:id', userCtrl.updateUser) //update
+	app.delete('/rest/api/1/user/:id', userCtrl.deleteUser)
 
 };
