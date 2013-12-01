@@ -24,6 +24,7 @@ module.exports = function (app) {
 
 	//Event
 	app.get('/rest/api/1/event', eventCtrl.getAllEvents)
+	app.get('/rest/api/1/event/query', eventCtrl.getAnEventByField)
 	app.get('/rest/api/1/event/:id', eventCtrl.getAnEvent)
 	app.post('/rest/api/1/event', eventCtrl.createEvent) //create
 	app.put('/rest/api/1/event/:id', eventCtrl.updateEvent) //update
