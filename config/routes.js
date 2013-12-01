@@ -14,7 +14,6 @@ module.exports = function (app) {
   app.post(actionCtrl.confirm.route, registrationCtrl.confirm());
 
   // Private routes TODO: Authentication is removed. It's not private!
-  app.get('/api/helloworld', registrationCtrl.helloWorld());
   app.get(regBaseUrl,  registrationCtrl.readAllRegistrations());
   app.post(actionCtrl.checkIn.route, registrationCtrl.checkIn());
 };
