@@ -68,7 +68,7 @@
         <p>{{ event.Agenda.info }}</p>
         <ul>
             <li ng-repeat="happening in event.Agenda.Happenings">
-                <span class="profilbilde margareth" data-toggle="tooltip"
+                <span class="profilbilde" data-toggle="tooltip" style="background-image: url('/images/joar.jpg');"
                       data-original-title="Margareth Knutsen: UX queen"></span>
                 <div>
 	                {{ happening.StartTime | date:'HH:mm' }} - {{ happening.EndTime | date:'HH:mm' }}<br/>
