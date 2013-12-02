@@ -4,7 +4,7 @@
     <div class="jumbotron banner">
         <div class="container">
             <div>
-                <p>{{ Ingress }}</p>
+                <p>{{ event.Ingress }}</p>
 
                 <div id="jump-to-register">
                     <a scroll-on-click href="#registrering" class="registrer">
@@ -45,14 +45,14 @@
 <div class="container" id="main-content">
 <div class="row center-content">
     <div class="intro">
-        <a class="anchor" id="intro"></a>{{ Description }}
+        <a class="anchor" id="intro"></a>{{ event.Description }}
 
         <a class="anchor" id="sted"></a>
 
         <h2 class="sted">Sted</h2>
 
         <p>
-	        {{ Location.URL }}
+	        {{ event.Location.URL }}
             <a href="http://www.teknologihuset.no/">Teknologihuset</a>, Pilestredet 56, 0167 Oslo (like ved
             Dalsbergstien
             trikkestopp)
@@ -69,7 +69,7 @@
             Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
         </p>
         <ul>
-            <li ng-repeat="happening in Agenda.Happenings">
+            <li ng-repeat="happening in event.Agenda.Happenings">
                 <span class="profilbilde margareth" data-toggle="tooltip"
                       data-original-title="Margareth Knutsen: UX queen"></span>
 
