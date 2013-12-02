@@ -63,49 +63,17 @@
 
         <h2>Agenda</h2>
 
-        <p>Onsdag 20. november, 17:00 - 21:00</p>
+        <p>{{ event.StartDate |date:'EEEE d. MMMM HH:mm' }} - {{ event.EndDate | date:'HH:mm' }}</p>
 
-        <p>
-            Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
-        </p>
+        <p>{{ event.Agenda.info }}</p>
         <ul>
             <li ng-repeat="happening in event.Agenda.Happenings">
                 <span class="profilbilde margareth" data-toggle="tooltip"
                       data-original-title="Margareth Knutsen: UX queen"></span>
-
                 <div>
-                    17:00 - 17:30<br/>
-                    Brukeropplevelse og responsivt design
+	                {{ happening.StartTime | date:'HH:mm' }} - {{ happening.EndTime | date:'HH:mm' }}<br/>
+                    {{ happening.Description }}
                     <p class="presentername">Margareth Knutsen</p>
-                </div>
-            </li>
-            <li>
-                <span class="profilbilde lars-olof" data-toggle="tooltip"
-                      data-original-title="Lars-Olof Moilanen: Frontend nerd"></span>
-
-                <div>
-                    17:30 - 18:00<br/>
-                    Responsivt design med HTML5 og CSS3
-                    <p class="presentername">Lars-Olof Moilanen</p>
-                </div>
-            </li>
-            <li>
-                <span class="profilbilde joar" data-toggle="tooltip" data-original-title="Joar Aurdal: Geek"></span>
-
-                <div>
-                    18:10 - 18:55<br/>
-                    Tilgjengelighet, responsivt design og semantisk web
-                    <p class="presentername">Joar Aurdal</p>
-                </div>
-            </li>
-            <li>
-                <span class="profilbilde aksel" data-toggle="tooltip"
-                      data-original-title="Aksel Gresvig: Frontend guru"></span>
-
-                <div>
-                    19:00 - 20:00<br/>
-                    Frontend utvikling med modern Javascript teknologi
-                    <p class="presentername">Aksel Gresvig</p>
                 </div>
             </li>
         </ul>
