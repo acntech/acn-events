@@ -7,7 +7,7 @@ angular.module('acnEventsApp').service('resourceService', function ($resource) {
 
 	this.confirmResource = $resource('/api/event/registrations/:id/confirm', {id: '@id' }, {update: {method: 'PUT'} });
 
-	this.eventResource = $resource('/rest/api/1/event/:id', {id: '@id' }, {update: {method: 'PUT'} });
+	this.eventResource = $resource('/rest/api/1/event/:id', {id: '@id'}, {update: {method: 'PUT'} });
 
 	this.userResource = $resource('/rest/api/1/user/:id', {id: '@id' }, {update: {method: 'PUT'} });
 })

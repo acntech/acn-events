@@ -4,7 +4,10 @@ var app = angular.module('acnEventsApp')
 app.controller('DynamicEventFrontpageController', function ($scope, $modal, registrationService, $timeout, $routeParams, resourceService) {
 
 
-	$scope.event = resourceService.eventResource.get({id: $routeParams.uri})
+	resourceService.eventResource.get({id: 'uri:'+$routeParams.uri}, function(data){
+		console.log("inside uri getting")
+		$scope.event = data
+	})
 
 	var reset = function () {
 		$scope.registration = {
