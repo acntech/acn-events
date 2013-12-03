@@ -13,6 +13,12 @@ $darkorange: #d37f02;
 $lightorange: #f47441;
 $lightblue: #cee0df;
 $darkgrey: #504a4a;
+$darkred: #660000;
+$darkdarkred: #440000;
+$lightred: #aa0f33;
+$grey: #666666;
+$olivegreen: #8e8a14;
+$darkolivegreen: #64610e;
 
 $max-page-width: 980px;
 $navbar-height: 50px;
@@ -28,11 +34,11 @@ body {
 }
 
 h1, h2, h3 {
-  color: $bluegreen;
+  color: $lightred;
 }
 
 a, a:hover {
-  color: $darkgreen;
+  color: $darkred;
 }
 
 @mixin border-radius($radius) {
@@ -60,7 +66,7 @@ a.anchor {
   max-width: $max-page-width;
   margin: 0 auto;
 
-  background-color: $bluegreen;
+  background-color: $lightred;
   color: $white;
   height: $navbar-height;
   font-weight: bolder;
@@ -71,10 +77,10 @@ a.anchor {
     }
   }
   .navbar-toggle {
-    background-color: $darkdarkgreen;
+    background-color: $darkdarkred;
     border: none;
     &:hover, &:focus {
-      background-color: $darkdarkgreen;
+      background-color: $darkdarkred;
     }
     span {
       background-color: white;
@@ -97,19 +103,19 @@ a.anchor {
     li > a {
       color: $white;
       &:hover, &:focus {
-        background-color: $darkdarkgreen;
+        background-color: $darkdarkred;
       }
     }
     .active {
       a {
-        background-color: $darkdarkgreen;
+        background-color: $darkdarkred;
       }
     }
   }
   .navbar-collapse {
     &.in, &.collapsing {
       $height: 30px;
-      background-color: $bluegreen;
+      background-color: $lightred;
       ul {
         width: 150px;
         margin: 8px 10px 0 auto;
@@ -135,7 +141,7 @@ a.anchor {
 }
 
 .intro {
-  border-right: 1px solid $darkgreen;
+  border-right: 1px solid $darkred;
 }
 
 @media (max-width: $screen-sm-max) {
@@ -178,14 +184,14 @@ a.anchor {
     list-style: none;
     padding-top: 5px;
     div {
-      color: $darkgreen;
+      color: $lightred;
       display: inline-block;
       vertical-align: top;
       padding-top: 1px;
       padding-left: 10px;
     }
     .presentername {
-      color: $orange;
+      color: $olivegreen;
       clear: left;
     }
   }
@@ -193,7 +199,7 @@ a.anchor {
 
 .profilbilde {
   $size: 60px;
-  @include circle($bluegreen, $size);
+  @include circle($lightred, $size);
 
   background-size: $size * 1.1;
   background-repeat: no-repeat;
@@ -217,7 +223,7 @@ a.anchor {
 
 .registrering {
   @include make-row(0);
-  background-color: $darkgreen;
+  background-color: $darkred;
   h2, h3, p, span, ul {
     color: #ffffff;
   }
@@ -277,20 +283,20 @@ a.anchor {
   @extend .btn-lg;
   color: $white;
   @include border-radius(0);
-  background-color: $orange;
+  background-color: $olivegreen;
   border: none;
   &:hover, &:active, &:focus {
-    background-color: $darkorange;
+    background-color: $darkolivegreen;
     color: $white !important;
   }
   &:disabled {
-    background-color: $darkdarkgreen;
+    background-color: $darkdarkred;
     color: $white !important;
   }
 }
 
 .input-group-addon {
-  background-color: $bluegreen !important;
+  background-color: $lightred !important;
   border: 0;
   width: 38px;
 }
@@ -335,9 +341,9 @@ a.anchor {
   @include make-row(0);
   a {
     margin-right: 6px;
-    color: $orange;
+    color: $olivegreen;
     &:hover, &:active {
-      color: $darkorange;
+      color: $darkolivegreen;
     }
   }
 }
@@ -360,21 +366,21 @@ a.anchor {
   }
   .fa-home {
     color: $white;
-    background-color: $orange;
+    background-color: $olivegreen;
     @include border-radius(5px);
     font-size: $size * 0.85;
     position: relative;
     top: -2px;
 
     &:hover, &:active {
-      background-color: $darkorange;
+      background-color: $darkolivegreen;
       color: $white;
     }
   }
 }
 
 .alert-danger {
-  background-color: $bluegreen !important;
+  background-color: $lightred !important;
   border: 0 !important;
   border-radius: 0 !important;
 }
@@ -382,10 +388,10 @@ a.anchor {
 .btn-lukk {
   color: $white;
   @include border-radius(0);
-  background-color: $orange;
+  background-color: $olivegreen;
   border: none;
   &:hover, &:active, &:focus {
-    background-color: $darkorange;
+    background-color: $darkolivegreen;
     color: $white !important;
   }
 }
