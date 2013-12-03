@@ -73,5 +73,11 @@
         <script src="scripts/controllers/deleteregistration.js"></script>
         <script src="scripts/directives/scrollDirective.js"></script>
         <!-- endbuild -->
+
+	    <script>//Hide bootstrap menu
+		    $('body').on("click", ".navbar-collapse li a", function() {
+			    $(".navbar-collapse").removeClass("in").addClass("collapse");
+		    });
+	    </script>
 </body>
 </html>
