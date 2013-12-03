@@ -15,56 +15,55 @@ var unregisteredText = fs.readFileSync(path.join(__dirname, '../email', 'unregis
 var unregisteredSubject = 'Du er avregistrert på Accenture fagkveld 20. november';
 
 
-function sendMail(subject, text, sendCalendarFile) {
-  var transport = nodemailer.createTransport('SMTP', {
-    service: 'Gmail',
-    auth: {
-      user: config.mailAutUser,
-      pass: config.mailAutPass
-    }
-  });
+function sendMail(subject, text, sendCalendarFile, email) {
+	var transport = nodemailer.createTransport(),
+		mailSender = config.fromEmail,
+		mailReciver = null;
 
-  var mailOptions = {
-    from: config.fromEmail,
-    to: config.toEmail,
-    subject: subject,
-    text: text
-  };
+	if (email.endsWith('@accenture.com')){
+		mailReciver = email
+	} else {
+		mailReciver = config.toEmail
+	}
 
-  if (sendCalendarFile) {
-    mailOptions['attachments'] = [
-      {
-        fileName: 'accenture-fagkveld.ics',
-        streamSource: fs.createReadStream(path.join(__dirname, '../email', 'accenture-fagkveld.ics'))
-      }
-    ]
-  }
+	var mailOptions = {
+		from: mailSender,
+		to: mailReciver,
+		subject: subject,
+		text: text
+	};
 
-  console.log('Sending email to: ' + mailOptions.to + ' from: ' + mailOptions.from);
-//  transport.sendMail(mailOptions, function (error, responseStatus) {
-//
-//    if (error) {
-//      console.error('Failed sending email: ' + error);
-//    }
-//
-//    console.log(responseStatus)
-//  });
-//  transport.close();
+	if (sendCalendarFile) {
+		mailOptions['attachments'] = [
+			{
+				fileName: 'accenture-fagkveld.ics',
+				streamSource: fs.createReadStream(path.join(__dirname, '../email', 'accenture-fagkveld.ics'))
+			}
+		]
+	}
+
+	console.log('Sending email to: ' + mailReciver + ' from: ' + mailSender);
+	transport.sendMail(mailOptions, function (error, responseStatus) {
+
+		if (error) console.error('Failed sending email: ' + error);
+		console.log("Sendt mail OK:", responseStatus)
+	});
+	transport.close();
 }
 exports.sendRegisteredMail = function (id, name, email, phone) {
-  var renderedText = registeredText.replace(/%id%/g, id);
-  renderedText = renderedText.replace(/%name%/g, name);
-  renderedText = renderedText.replace(/%email%/g, email);
-  renderedText = renderedText.replace(/%phone%/g, phone);
-  renderedText = renderedText.replace(/%frontendHost%/g, config.frontendHost);
-  sendMail(registeredSubject, renderedText, true);
+	var renderedText = registeredText.replace(/%id%/g, id)
+		.replace(/%name%/g, name)
+		.replace(/%email%/g, email)
+		.replace(/%phone%/g, phone)
+		.replace(/%frontendHost%/g, config.frontendHost);
+	sendMail(registeredSubject, renderedText, true, email);
 };
 
 exports.sendUnRegisteredMail = function (id, name, email, phone) {
-  var renderedText = unregisteredText.replace(/%id%/g, id);
-  renderedText = renderedText.replace(/%name%/g, name);
-  renderedText = renderedText.replace(/%email%/g, email);
-  renderedText = renderedText.replace(/%phone%/g, phone);
-  renderedText = renderedText.replace(/%frontendHost%/g, config.frontendHost);
-  sendMail(unregisteredSubject, renderedText, false);
+	var renderedText = unregisteredText.replace(/%id%/g, id)
+		.replace(/%name%/g, name)
+		.replace(/%email%/g, email)
+		.replace(/%phone%/g, phone)
+		.replace(/%frontendHost%/g, config.frontendHost);
+	sendMail(unregisteredSubject, renderedText, false, email);
 };
