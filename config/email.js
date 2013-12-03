@@ -3,9 +3,6 @@ var fs = require('fs');
 var path = require('path');
 var config = require('./config');
 
-
-console.log(path.join(__dirname, '../email', 'registeredMail.txt'));
-
 // Registered constants
 var registeredText = fs.readFileSync(path.join(__dirname, '../email', 'registeredMail.txt')).toString();
 var registeredSubject = 'Bekreft din deltakelse på Accenture fagkveld 20. november';
