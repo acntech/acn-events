@@ -12,7 +12,8 @@
 1. Check out this repo: `git clone git@github.com:acntech/acn-events.git`
 1. Go to repo: `cd acn-events`
 1. Download node dependencies (build time): `npm install`
-1. Download web app dependencies (run time): `bower install` 
+1. Download web app dependencies (run time): `bower install`
+1. test
 
 ## To start the server:
 1. Run this command: `grunt server:dist`
