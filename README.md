@@ -15,4 +15,4 @@
 1. Download web app dependencies (run time): `bower install` 
 
 ## To start the server:
-1. Run this command: `grunt server`
+1. Run this command: `grunt server:dist`
