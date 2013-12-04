@@ -1,24 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html lang="nb-NO" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="nb-NO" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
+<html lang="nb-NO" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html lang="nb-NO" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <!-- build:css(.tmp) styles/main.css -->
+    <title>Brukeropplevelse realisert med moderne web-teknologi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accenture arrangerer åpen teknologikveld for frontendutviklere, interaksjonsdesignere og alle andre med interesse for brukeropplevelse realisert med moderne frontendteknologier. For mer informasjon besøk http://acnfagkveld.herokuapp.com">
+    <meta name="author" content="Accenture Norway">
+    <meta property="og:title" content="Brukeropplevelse realisert med moderne web-teknologi">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Brukeropplevelse realisert med moderne web-teknologi">
+    <meta property="og:url" content="http://acnfagkveld.herokuapp.com/">
+    <meta property="og:image" content="http://acnfagkveld.herokuapp.com/images/accenture_logo_og.jpg">
+    <meta property="og:description" content="Accenture arrangerer åpen teknologikveld for frontendutviklere, interaksjonsdesignere og alle andre med interesse for brukeropplevelse realisert med moderne frontendteknologier. For mer informasjon besøk http://acnfagkveld.herokuapp.com">
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
 </head>
-<body ng-app="acnEventsApp">
+<body data-ng-app="acnEventsApp">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -30,7 +34,7 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="container" ng-view=""></div>
+<div class="container" data-ng-view=""></div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
