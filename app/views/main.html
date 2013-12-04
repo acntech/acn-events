@@ -10,7 +10,7 @@
                 </p>
 
                 <div id="jump-to-register">
-                    <a scroll-on-click href="#registrering" class="registrer">
+                    <a data-scroll-on-click href="#registrering" class="registrer">
                         <i class="fa fa-thumbs-up fa-lg"></i> Registrer
                     </a>
                 </div>
@@ -34,10 +34,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a scroll-on-click href="#intro">Intro</a></li>
-                    <li><a scroll-on-click href="#agenda">Agenda</a></li>
-                    <li><a scroll-on-click href="#sted">Sted</a></li>
-                    <li><a scroll-on-click href="#registrering">Registrering</a></li>
+                    <li><a data-scroll-on-click href="#intro">Intro</a></li>
+                    <li><a data-scroll-on-click href="#agenda">Agenda</a></li>
+                    <li><a data-scroll-on-click href="#sted">Sted</a></li>
+                    <li><a data-scroll-on-click href="#registrering">Registrering</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -130,7 +130,7 @@
 </div>
 <div class="row sted">
     <div class="Flexible-container kart">
-        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        <iframe
                 src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Pilestredet%2B56%2B0167%2BOslo(Teknologihuset)&ie=UTF8&z=12&t=m&iwloc=near&output=embed">
         </iframe>
     </div>
@@ -207,7 +207,7 @@
             </p>
         </div>
         <div class="modal-footer">
-            <button class="btn registrer" ng-click="ok()">Lukk</button>
+            <button class="btn registrer" data-ng-click="ok()">Lukk</button>
         </div>
     </script>
     <div class="registreringsformulaer">
@@ -220,11 +220,11 @@
                             <span class="input-group-addon">
                                  <span class="fa fa-user fa-md"></span>
                             </span>
-                        <input id="navn" name="name" ng-model="registration.person.name" required type="text"
+                        <input id="navn" name="name" data-ng-model="registration.person.name" required type="text"
                                class="form-control" placeholder="Navn">
                     </div>
-                    <span ng-show="registrationForm.name.$dirty && registrationForm.name.$error.required">Navn er påkrevd!</span>
-                    <span ng-show="registrationForm.name.$error.serverMessage">{{registrationForm.person.name.$error.serverMessage}}</span>
+                    <span data-ng-show="registrationForm.name.$dirty && registrationForm.name.$error.required">Navn er påkrevd!</span>
+                    <span data-ng-show="registrationForm.name.$error.serverMessage">{{registrationForm.person.name.$error.serverMessage}}</span>
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="email">Email</label>
@@ -233,11 +233,11 @@
                             <span class="input-group-addon">
                                  <span class="fa fa-envelope fa-md"></span>
                             </span>
-                        <input id="email" name="email" ng-model="registration.person.email" required type="email"
+                        <input id="email" name="email" data-ng-model="registration.person.email" required type="email"
                                class="form-control" placeholder="Email">
                     </div>
-                    <span ng-show="registrationForm.email.$dirty && registrationForm.email.$error.required">Mail er påkrevd!</span>
-                    <span ng-show="registrationForm.email.$error.serverMessage">{{registrationForm.person.email.$error.serverMessage}}</span>
+                    <span data-ng-show="registrationForm.email.$dirty && registrationForm.email.$error.required">Mail er påkrevd!</span>
+                    <span data-ng-show="registrationForm.email.$error.serverMessage">{{registrationForm.person.email.$error.serverMessage}}</span>
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="telefon">Telefon</label>
@@ -246,19 +246,19 @@
                             <span class="input-group-addon">
                                  <span class="fa fa-phone fa-md"></span>
                             </span>
-                        <input id="telefon" name="phone" ng-model="registration.person.phone" required type="tel"
+                        <input id="telefon" name="phone" data-ng-model="registration.person.phone" required type="tel"
                                class="form-control" placeholder="Telefon">
                     </div>
-                    <span ng-show="registrationForm.phone.$dirty && registrationForm.phone.$error.required">Telefon er påkrevd!</span>
-                    <span ng-show="registrationForm.phone.$error.serverMessage">{{registrationForm.person.phone.$error.serverMessage}}</span>
+                    <span data-ng-show="registrationForm.phone.$dirty && registrationForm.phone.$error.required">Telefon er påkrevd!</span>
+                    <span data-ng-show="registrationForm.phone.$error.serverMessage">{{registrationForm.person.phone.$error.serverMessage}}</span>
                 </div>
 
-                <p class="alert alert-danger" ng-show="error">
+                <p class="alert alert-danger" data-ng-show="error">
                     <i class="fa fa-thumbs-down fa-lg"></i>
                     {{error}}
                 </p>
 
-                <button ng-disabled="registrationForm.$invalid" ng-click="create(registration)" class="registrer">
+                <button data-ng-disabled="registrationForm.$invalid" data-ng-click="create(registration)" class="registrer">
                     <i class="fa fa-thumbs-up fa-lg"></i> Registrer
                 </button>
             </form>
