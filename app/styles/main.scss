@@ -1,17 +1,419 @@
 @import '../bower_components/sass-bootstrap/lib/bootstrap';
 
-//This path must be set before
 $fa-font-path: "/bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
-@import 'custom';
-@import 'navbar-fixed-top';
-@import 'footer';
+
+// BODY VARS
+$body-max-page-width: 980px;
+$links-font-color: #025a61;
+$headings-font-color: #00919c;
 
 
+// NAVBAR VARS
+$navbar-bg-color: #00919c;
+$navbar-height: 50px;
+$navbar-max-width: $body-max-page-width;
+$navbar-toggle-bg-color: $navbar-bg-color;
+$navbar-toggle-hover-bg-color: #014146;
+$navbar-toggle-lines-color: #ffffff;
+$navbar-item-hover-bg-color: $navbar-toggle-hover-bg-color;
+$navbar-item-font-color: #ffffff;
 
-/* Flexible iFrame */
+// MARKETING VARS
+$marketing-bg-color: #504a4a;
+$marketing-font-color: #ffffff;
 
-.Flexible-container {
+// REGISTER VARS
+$register-btn-bg-color: #f58426;
+$register-btn-font-color: #ffffff;
+$register-btn-disabled-bg-color: #014146;
+$register-btn-disabled-font-color: #ffffff;
+$register-btn-hover-bg-color: #d37f02;
+$register-btn-hover-font-color: #ffffff;
+$register-form-bg-color: #025a61;
+$register-form-font-color: #ffffff;
+$register-number-of-attendees-font-color: #cee0df;
+$register-input-icon-bg-color: #00919c;
+
+// MAIN CONTENT VARS
+$main-section-divider-color: #025a61;
+
+// AGENDA VARS
+$agenda-presenter-font-color: #025a61;
+$agenda-presenter-name-font-color: #f58426;
+$agenda-presenter-picture-border-color: #00919c;
+
+// SHARE ICONS VARS
+$share-icon-bg-color:#f58426;
+$share-icon-hover-bg-color:#d37f02;
+
+// GENERAL
+body {
+  max-width: $body-max-page-width;
+  margin: auto !important;
+}
+
+html, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Arial, sans-serif;
+}
+
+a, a:hover {
+  color: $links-font-color;
+}
+
+h1, h2, h3 {
+  color: $headings-font-color !important;
+}
+
+.container {
+  margin: auto !important;
+}
+
+// NAVIGATION BAR
+.navbar {
+  max-width: $navbar-max-width;
+  margin: 0 auto;
+  background-color: $navbar-bg-color;
+  height: $navbar-height;
+  font-weight: bolder;
+
+  li {
+    height: $navbar-height;
+    a {
+      line-height: $navbar-height - 30px;
+    }
+  }
+  // NAVIGATION BAR IN TOGGLE MODUS (MOBILE SIZE)
+  .navbar-toggle {
+    background-color: $navbar-toggle-bg-color;
+    border: none;
+    &:hover, &:focus {
+      background-color: $navbar-toggle-hover-bg-color;
+      border: none !important;
+    }
+    span {
+      background-color: $navbar-toggle-lines-color;
+      border: none !important;
+    }
+  }
+  // NAVIGATION BAR HIGH PERFORMANCE LOGO
+  .navbar-brand {
+    position: absolute;
+    left: 35px;
+    top: 8px;
+    background: url('../images/accenture.png') no-repeat;
+    background-size: 100%;
+    width: 135px;
+    height: 56px;
+    margin-left: 0px !important;
+  }
+  // NAVIGATION BAR ITEMS
+  .navbar-nav {
+    li > a {
+      color: $navbar-item-font-color;
+      &:hover, &:focus {
+        background-color: $navbar-item-hover-bg-color;
+      }
+    }
+    .active {
+      a {
+        background-color: $navbar-item-hover-bg-color;
+      }
+    }
+  }
+  // NAVIGATION BAR ITEMS WHEN COLLAPSED (MOBILE SIZE)
+  .navbar-collapse {
+
+    &.in, &.collapsing {
+      background-color: $navbar-bg-color;
+    }
+  }
+}
+
+// Remove left and right only when >= 992 px so fixed navigation bar can be centered in IE
+@media (min-width: $screen-md-min) {
+  .navbar-fixed-top {
+    width: 100%;
+    left: auto !important;
+    right: auto !important;
+  }
+}
+
+// We need space between the navigation items and navigation brand, but only when >= 772 px
+@media (min-width: $screen-sm-min) {
+  .navbar {
+    .navbar-nav {
+      margin-left: 165px;
+    }
+  }
+}
+
+// High performance logo top left
+#highperformance {
+  background: url('../images/high-performance.png') no-repeat;
+  width: 135px;
+  height: 16px;
+  background-size: 100%;
+  margin-top: $navbar-height;
+  left: 35px;
+  position: relative;
+}
+
+// Used to put High performance logo below navigation bar
+a.anchor {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
+
+// Marketing section below navigation bar
+.marketing {
+  background: $marketing-bg-color;
+}
+
+.jumbotron {
+  @include make-row(0);
+  margin-top: $navbar-height;
+  background: url('../images/top-banner.png') no-repeat;
+  background-color: $marketing-bg-color !important;
+  background-position: 80%;
+  background-size: 30%;
+  color: $marketing-font-color;
+  p {
+    color: $marketing-font-color;
+  }
+  .container div {
+    @include make-lg-column(6);
+    @include make-md-column(6);
+    padding-left: 0px;
+  }
+
+  .container{
+    width: 100%;
+    padding-left: 0px;
+  }
+
+
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+
+}
+
+// Showing diffused background image when < 992 px
+@media (max-width: $screen-sm-max) {
+  .jumbotron {
+    margin-bottom: 0;
+    background: url('../images/top-banner-diffuse.png') no-repeat;
+    background-position: 80%;
+    background-size: 30%;
+  }
+}
+
+@media (max-width: 650px) {
+  .jumbotron {
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jumbotron {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.kart, #jump-to-register {
+  @extend .visible-md;
+  @extend .visible-lg;
+}
+
+#jump-to-register {
+  padding-left: 0;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin circle($color, $radius: 50px) {
+  @include border-radius(50%);
+  border: 5px solid $color;
+  height: $radius;
+  width: $radius;
+}
+
+// Register button
+.registrer {
+  @extend .btn;
+  @extend .btn-lg;
+  color: $register-btn-font-color;
+  @include border-radius(0);
+  background-color: $register-btn-bg-color;
+  border: none;
+  &:hover, &:active, &:focus {
+    background-color: $register-btn-hover-bg-color;
+    color: $register-btn-hover-font-color !important;
+  }
+  &:disabled {
+    background-color: $register-btn-disabled-bg-color;
+    color: $register-btn-disabled-font-color !important;
+  }
+}
+
+// MAIN CONTENT
+.container,
+#main-content {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  > div {
+    padding-left: 15px;
+    padding-right: 15px;
+    &.sted {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.center-content {
+  margin-bottom: 20px;
+}
+
+// Intro section
+.intro {
+  padding-left: 15px !important;
+  border-right: 1px solid $main-section-divider-color;
+  margin-left: -0.11063829787234%;
+  *margin-left: -0.104255319148938%;
+}
+
+@media (max-width: $screen-sm-max) {
+  .intro{
+    border: none !important;
+  }
+
+  .agenda{
+    border: none !important;
+  }
+}
+
+.intro, .agenda, .registreringsinfo, .registreringsformulaer {
+  @include make-lg-column(6);
+  @include make-md-column(6);
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  padding-left: 30px;
+}
+
+// Agenda
+.agenda{
+  padding-left: 15px !important;
+  border-left: 1px solid $main-section-divider-color;
+  margin-left: -0.138297872340425%;
+  *margin-left: -0.13191489361702%;
+}
+.agenda ul {
+  padding-left: 0;
+  li {
+    list-style: none;
+    padding-top: 5px;
+    div {
+      color: $agenda-presenter-font-color;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 1px;
+      padding-left: 10px;
+    }
+    .presentername {
+      color: $agenda-presenter-name-font-color;
+      clear: left;
+    }
+  }
+}
+
+.profilbilde {
+  $size: 60px;
+  @include circle($agenda-presenter-picture-border-color, $size);
+
+  background-size: $size * 1.1;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  display: inline-block;
+
+  &.margareth {
+    background-image: url('../images/margareth.jpg');
+  }
+  &.joar {
+    background-image: url('../images/joar.jpg');
+  }
+  &.aksel {
+    background-image: url('../images/aksel.jpg');
+  }
+  &.lars-olof {
+    background-image: url('../images/lars-olof.jpg');
+    background-size: $size * 2/3;
+  }
+}
+
+// Register form
+.registrering {
+  @include make-row(0);
+  background-color: $register-form-bg-color;
+  h2, h3, p, span, ul {
+    color: $register-form-font-color !important;
+  }
+  /* top right bottom left */
+  padding: 10px 70px 0 0px;
+  &.reginfo {
+    padding-bottom: 10px;
+  }
+}
+
+.registreringsinfo {
+  float: left;
+}
+
+.antall-registrerte {
+  @extend .pull-right;
+  padding-right: 15px;
+  color: $register-number-of-attendees-font-color;
+
+  span {
+    font-size: 1.3333333333333333em;
+    color: $register-number-of-attendees-font-color !important;
+    vertical-align: middle;
+  }
+}
+
+.input-group-addon {
+  background-color: $register-input-icon-bg-color !important;
+  border: 0 !important;
+  width: 45px !important;
+}
+
+.input-group {
+  width: 100%;
+  .phone {
+    width: 50% !important;
+  }
+}
+
+// MAP
+.kart {
+  max-width: $body-max-page-width !important;
+  margin: auto !important;
   position: relative;
   padding-bottom: 20%;
   padding-top: 30px;
@@ -19,12 +421,55 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   overflow: hidden;
 }
 
-.Flexible-container iframe,
-.Flexible-container object,
-.Flexible-container embed {
+.kart iframe,
+.kart object,
+.kart embed {
+  border: 0;
+  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+// About ADI
+.adi {
+  @include make-row(0);
+  /* top right bottom left */
+  padding: 10px 70px 0 30px !important;
+}
+
+// Share icons at the bottom of page
+.del {
+  padding-left: 30px;
+  @include make-row(0);
+  a {
+    margin-right: 6px;
+    color: $share-icon-bg-color;
+    &:hover, &:active {
+      color: $share-icon-hover-bg-color;
+    }
+  }
+}
+
+.del {
+  $size: 2em;
+  .fa {
+    font-size: $size;
+  }
+  .fa-home {
+    color: #ffffff;
+    background-color: $share-icon-bg-color;
+    @include border-radius(5px);
+    font-size: $size * 0.85;
+    position: relative;
+    top: -2px;
+
+    &:hover, &:active {
+      background-color: $share-icon-hover-bg-color;
+      color: #ffffff;
+    }
+  }
+
 }
