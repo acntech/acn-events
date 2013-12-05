@@ -241,7 +241,7 @@ a.anchor {
 .jumbotron {
   @include make-row(0);
   margin-top: $navbar-height;
-  background: url('../images/top-banner.png') no-repeat;
+  background: url('../images/top-banner.jpg') no-repeat;
   background-color: $darkgrey !important;
   background-position: 80%;
   background-size: 30%;
@@ -258,7 +258,7 @@ a.anchor {
 @media (max-width: $screen-sm-max) {
   .jumbotron {
     margin-bottom: 0;
-    background: url('../images/top-banner-diffuse.png') no-repeat;
+    background: url('../images/top-banner-diffuse.jpg') no-repeat;
     background-position: 80%;
     background-size: 30%;
   }
