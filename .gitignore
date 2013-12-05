@@ -6,3 +6,4 @@ app/bower_components
 heroku
 .idea
 *.iml
+setEnvVariables-DO_NOT_COMMIT_THIS_FILE.sh
