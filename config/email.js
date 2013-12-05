@@ -16,7 +16,13 @@ var unregisteredSubject = 'Du er avregistrert på Accenture fagkveld 20. novembe
 
 
 function sendMail(subject, text, sendCalendarFile, email) {
-	var transport = nodemailer.createTransport(),
+	var transport = nodemailer.createTransport('SMTP', {
+			service: 'Gmail',
+			auth: {
+				user: process.env.GOOGLE_SMTP_USERNAME,
+				pass: process.env.GOOGLE_SMTP_PASSWORD
+			}
+		}),
 		mailSender = config.fromEmail,
 		mailReciver = null;
 
