@@ -132,9 +132,6 @@ module.exports = function (grunt) {
       },
       dist: {},
       server: {
-        options: {
-          debugInfo: true
-        }
       }
     },
     // not used since Uglify task does concat,
