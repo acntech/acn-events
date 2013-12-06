@@ -1,28 +1,6 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<header class="masthead">
-    <div id="highperformance"></div>
-    <div class="jumbotron banner">
-        <div class="container">
-            <div>
-                <p>
-                    Lyst å høre mer om hvordan man oppnår god brukeropplevelse ved bruk av moderne web-teknologi?
-                    Bli med på Accentures fagkveld onsdag 20. november på Teknologihuset!
-                </p>
-
-                <div id="jump-to-register">
-                    <a data-scroll-on-click href="#registrering" class="registrer">
-                        <i class="fa fa-thumbs-up fa-lg"></i> Registrer
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</header>
-
-<!-- Fixed navbar -->
+<!-- START Fixed Top Navbar -->
 <div id="nav">
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,107 +12,141 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a data-scroll-on-click href="#intro">Intro</a></li>
-                    <li><a data-scroll-on-click href="#agenda">Agenda</a></li>
-                    <li><a data-scroll-on-click href="#sted">Sted</a></li>
-                    <li><a data-scroll-on-click href="#registrering">Registrering</a></li>
+                    <li><a href="#intro" id="introBtn">Intro</a></li>
+                    <li><a href="#agenda" id="agendaBtn">Agenda</a></li>
+                    <li><a href="#sted" id="stedBtn">Sted</a></li>
+                    <li><a href="#registrering" id="registreringBtn">Registrering</a></li>
                 </ul>
             </div>
-            <!--/.nav-collapse -->
         </div>
     </div>
 </div>
+<!-- END Fixed Top Navbar -->
 
-<div class="container" id="main-content">
-<div class="row center-content">
-    <div class="intro">
-        <a class="anchor" id="intro"></a>
+<!-- START Main jumbotron for a primary marketing message or call to action -->
+<header class="marketing">
+    <div id="highperformance"></div>
+    <div class="jumbotron banner">
+        <div class="container">
+            <div>
+                <p>
+                    Lyst å høre mer om hvordan man oppnår god brukeropplevelse ved bruk av moderne web-teknologi?
+                    Bli med på Accentures fagkveld onsdag 20. november på Teknologihuset!
+                </p>
 
-        <h2>Intro</h2>
-
-        <p>Nåtidens brukere forventer å være dypt involvert i hvordan applikasjonen de bruker ser ut og oppfører seg. De
-            skal ha et responsivt design, det skal ha universell utforming, det skal være tilgjengelig for alle typer
-            brukere og det skal benyttes moderne web-teknologi. </p>
-
-        <p>
-            Accenture inviterer til et fagmøte hvor vi vil dele erfaringer rundt hvordan vi har oppnådd slik
-            brukerinvolvering,
-            og hvordan kravene fra nåtidens brukere realiseres igjennom bruk av moderne webrammeverk. Vi vil først gå
-            igjennom prosesser for brukerinvolvering og hvordan dette leder til et visuelt design, og deretter gjøre et
-            teknisk dykk ned i rammeverkene som vi har tatt i bruk. Rammeverkene vi vil dele erfaringer fra er
-            Backbone.js og Angular.js.
-        </p>
-
-        <a class="anchor" id="sted"></a>
-
-        <h2 class="sted">Sted</h2>
-
-        <p>
-            <a href="http://www.teknologihuset.no/">Teknologihuset</a>, Pilestredet 56, 0167 Oslo (like ved
-            Dalsbergstien
-            trikkestopp)
-        </p>
+                <div id="jump-to-register">
+                    <a href="#registrering" id="registreringBtn" class="registrer">
+                        <i class="fa fa-thumbs-up fa-lg"></i> Registrer
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="agenda">
-        <a class="anchor" id="agenda"></a>
+</header>
+<!-- END Main jumbotron for a primary marketing message or call to action -->
 
-        <h2>Agenda</h2>
+<!-- START Intro, Place and Agenda -->
+<div class="container" id="main-content">
+    <div class="row center-content">
+        <div class="intro">
+            <a class="anchor" id="intro"></a>
 
-        <p>Onsdag 20. november, 17:00 - 21:00</p>
+            <h2>Intro</h2>
 
-        <p>
-            Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
-        </p>
-        <ul>
-            <li>
+            <p>Nåtidens brukere forventer å være dypt involvert i hvordan applikasjonen de bruker ser ut og oppfører
+                seg. De
+                skal ha et responsivt design, det skal ha universell utforming, det skal være tilgjengelig for alle
+                typer
+                brukere og det skal benyttes moderne web-teknologi. </p>
+
+            <p>
+                Accenture inviterer til et fagmøte hvor vi vil dele erfaringer rundt hvordan vi har oppnådd slik
+                brukerinvolvering,
+                og hvordan kravene fra nåtidens brukere realiseres igjennom bruk av moderne webrammeverk. Vi vil først
+                gå
+                igjennom prosesser for brukerinvolvering og hvordan dette leder til et visuelt design, og deretter gjøre
+                et
+                teknisk dykk ned i rammeverkene som vi har tatt i bruk. Rammeverkene vi vil dele erfaringer fra er
+                Backbone.js og Angular.js.
+            </p>
+
+            <a class="anchor" id="sted"></a>
+
+            <h2 class="sted">Sted</h2>
+
+            <p>
+                <a href="http://www.teknologihuset.no/">Teknologihuset</a>, Pilestredet 56, 0167 Oslo (like ved
+                Dalsbergstien
+                trikkestopp)
+            </p>
+        </div>
+        <div class="agenda">
+            <a class="anchor" id="agenda"></a>
+
+            <h2>Agenda</h2>
+
+            <p>Onsdag 20. november, 17:00 - 21:00</p>
+
+            <p>
+                Mat og drikke serveres fra kl. 18:00. Etter presentasjonene blir det diskusjon og mingling.
+            </p>
+            <ul>
+                <li>
                 <span class="profilbilde margareth" data-toggle="tooltip"
                       data-original-title="Margareth Knutsen: UX queen"></span>
 
-                <div>
-                    17:00 - 17:30<br/>
-                    Brukeropplevelse og responsivt design
-                    <p class="presentername">Margareth Knutsen</p>
-                </div>
-            </li>
-            <li>
+                    <div>
+                        17:00 - 17:30<br/>
+                        Brukeropplevelse og responsivt design
+                        <p class="presentername">Margareth Knutsen</p>
+                    </div>
+                </li>
+                <li>
                 <span class="profilbilde lars-olof" data-toggle="tooltip"
                       data-original-title="Lars-Olof Moilanen: Frontend nerd"></span>
 
-                <div>
-                    17:30 - 18:00<br/>
-                    Responsivt design med HTML5 og CSS3
-                    <p class="presentername">Lars-Olof Moilanen</p>
-                </div>
-            </li>
-            <li>
-                <span class="profilbilde joar" data-toggle="tooltip" data-original-title="Joar Aurdal: Geek"></span>
+                    <div>
+                        17:30 - 18:00<br/>
+                        Responsivt design med HTML5 og CSS3
+                        <p class="presentername">Lars-Olof Moilanen</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="profilbilde joar" data-toggle="tooltip" data-original-title="Joar Aurdal: Geek"></span>
 
-                <div>
-                    18:10 - 18:55<br/>
-                    Tilgjengelighet, responsivt design og semantisk web
-                    <p class="presentername">Joar Aurdal</p>
-                </div>
-            </li>
-            <li>
+                    <div>
+                        18:10 - 18:55<br/>
+                        Tilgjengelighet, responsivt design og semantisk web
+                        <p class="presentername">Joar Aurdal</p>
+                    </div>
+                </li>
+                <li>
                 <span class="profilbilde aksel" data-toggle="tooltip"
                       data-original-title="Aksel Gresvig: Frontend guru"></span>
 
-                <div>
-                    19:00 - 20:00<br/>
-                    Frontend utvikling med modern Javascript teknologi
-                    <p class="presentername">Aksel Gresvig</p>
-                </div>
-            </li>
-        </ul>
+                    <div>
+                        19:00 - 20:00<br/>
+                        Frontend utvikling med modern Javascript teknologi
+                        <p class="presentername">Aksel Gresvig</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+<!-- END Intro, Place and Agenda -->
+
+<!-- STAR map for place of the meetup -->
 <div class="row sted">
-    <div class="Flexible-container kart">
+    <div class="kart">
         <iframe
                 src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Pilestredet%2B56%2B0167%2BOslo(Teknologihuset)&ie=UTF8&z=12&t=m&iwloc=near&output=embed">
         </iframe>
     </div>
 </div>
+<!-- END map for place of the meetup -->
+
+<!-- START Register form -->
 <a class="anchor" id="registrering"></a>
 
 <div class="registrering">
@@ -258,14 +270,18 @@
                     {{error}}
                 </p>
 
-                <button data-ng-disabled="registrationForm.$invalid" data-ng-click="create(registration)" class="registrer">
+                <button data-ng-disabled="registrationForm.$invalid" data-ng-click="create(registration)"
+                        class="registrer">
                     <i class="fa fa-thumbs-up fa-lg"></i> Registrer
                 </button>
             </form>
         </div>
     </div>
 </div>
-<div class="row">
+<!-- END Register form -->
+
+<!-- START About ADI -->
+<div class="adi">
     <h2>Om Accenture og ADI</h2>
 
     <p>
@@ -278,7 +294,9 @@
         testledere/testere, prosjektledere og interaksjonsdesignere. Møt flere av oss på dette arrangementet.
     </p>
 </div>
+<!-- END About ADI -->
 
+<!-- START Share icons at the bottom of page -->
 <div class="del">
     <a href="http://www.accenture.com/no-en/company/overview/Pages/have-question-accenture-norway.aspx"
        data-toggle="tooltip" title=""
@@ -303,4 +321,4 @@
     </a>
 
 </div>
-</div>
+<!-- END Share icons at the bottom of page -->
