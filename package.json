@@ -54,6 +54,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "postinstall": "echo Starting postinstall steps:; ./node_modules/grunt-google-cdn/node_modules/bower/bin/bower install ; grunt build"
+    "postinstall": "echo Starting postinstall steps:; ./node_modules/grunt-google-cdn/node_modules/.bin/bower cache-clean; ./node_modules/grunt-google-cdn/node_modules/bower/bin/bower install ; grunt build"
   }
 }
