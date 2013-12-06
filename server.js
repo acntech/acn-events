@@ -7,6 +7,8 @@ var express = require('express'),
 
 var app = express();
 
+require('sugar') //add syntactic sugar to javascript, see http://sugarjs.com
+
 // Express config
 require('./config/express.js')(app, express, path);
 
