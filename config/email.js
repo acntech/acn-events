@@ -48,8 +48,13 @@ function sendMail(subject, text, sendCalendarFile, email) {
 	console.log('Sending email to: ' + mailReciver + ' from: ' + mailSender);
 	transport.sendMail(mailOptions, function (error, responseStatus) {
 
-		if (error) console.error('Failed sending email: ' + error);
-		console.log("Sendt mail OK:", responseStatus)
+		if (error){
+			console.error('Failed sending email: ' + error);
+		} else if (! responseStatus){
+			console.log("Sending of mail was a success!")
+		} else {
+			console.log("Contacted the server but the sending of the mail failed:", responseStatus)
+		}
 	});
 	transport.close();
 }
