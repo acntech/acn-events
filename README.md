@@ -1,5 +1,5 @@
-## Screen shot of the event registration page
-![Screen shot of the event registration page](screenshot.png)
+## Screenshot of the event registration page
+![Screenshot of the event registration page](screenshot.png)
 
 ## Prerequisites:
 1. Install node (google it)
