@@ -9524,7 +9524,6 @@ a.anchor {
 
 .registrering h2,
 .registrering h3,
-.registrering p,
 .registrering span,
 .registrering ul {
   color: white !important;
@@ -9536,6 +9535,7 @@ a.anchor {
 
 .registreringsinfo {
   float: left;
+  color: white !important;
 }
 
 .antall-registrerte {
@@ -9649,4 +9649,8 @@ a.anchor {
 .del .fa-home:active {
   background-color: #64610e;
   color: #ffffff;
+}
+
+.alert-danger {
+  color: black !important;
 }
