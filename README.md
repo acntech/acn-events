@@ -22,7 +22,7 @@
 
 ## To contact the developers:
 The developers of this app chat at the acnteck room at IRC:
-http://webchat.freenode.net/?channels=acnteck&nick=
+http://webchat.freenode.net/?channels=acntech&nick=
 
 ( Link for auto connecting without writing the nick every time:
-	http://webchat.freenode.net/?channels=acnteck&nick=>>your_name_here<< )
+	http://webchat.freenode.net/?channels=acntech&nick=>>your_name_here<< )
