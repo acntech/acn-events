@@ -28,7 +28,7 @@ Prerequisites:
 
 Deploy:
 
-1. git remote add heroku <heroku git url>
+1. git remote add heroku 'heroku git url here'
 1. git push heroku master
 
 ## To contact the developers:
