@@ -13,65 +13,66 @@ var unregisteredSubject = 'Du er avregistrert på Accenture fagkveld 20. novembe
 
 
 function sendMail(subject, text, sendCalendarFile, email) {
-	var transport = nodemailer.createTransport('SMTP', {
-			service: 'Gmail',
-			auth: {
-				user: process.env.GOOGLE_SMTP_USERNAME,
-				pass: process.env.GOOGLE_SMTP_PASSWORD
-			}
-		}),
-		mailSender = config.fromEmail,
-		mailReciver = null;
+    var transport = nodemailer.createTransport('SMTP', {
+            service: 'Gmail',
+            auth: {
+                user: process.env.GOOGLE_SMTP_USERNAME,
+                pass: process.env.GOOGLE_SMTP_PASSWORD
+            }
+        }),
+        mailSender = config.fromEmail,
+        mailReciver = null;
 
-	if (email.endsWith('@accenture.com')){
-		mailReciver = email
-	} else {
-		mailReciver = config.toEmail
-	}
+    if (email.endsWith('@accenture.com')){
+        mailReciver = email
+    } else {
+        mailReciver = config.toEmail
+    }
 
-	var mailOptions = {
-		from: mailSender,
-		to: mailReciver,
-		subject: subject,
-		text: text
-	};
+    var mailOptions = {
+        from: mailSender,
+        to: mailReciver,
+        subject: subject,
+        text: text
+    };
 
-	if (sendCalendarFile) {
-		mailOptions['attachments'] = [
-			{
-				fileName: 'accenture-fagkveld.ics',
-				streamSource: fs.createReadStream(path.join(__dirname, '../email', 'accenture-fagkveld.ics'))
-			}
-		]
-	}
+    if (sendCalendarFile) {
+        mailOptions['attachments'] = [
+            {
+                fileName: 'accenture-fagkveld.ics',
+                streamSource: fs.createReadStream(path.join(__dirname, '../email', 'accenture-fagkveld.ics'))
+            }
+        ]
+    }
 
-	console.log('Sending email to: ' + mailReciver + ' from: ' + mailSender);
-	transport.sendMail(mailOptions, function (error, responseStatus) {
+    console.log('Sending email to: ' + mailReciver + ' from: ' + mailSender);
+    transport.sendMail(mailOptions, function (error, responseStatus) {
 
-		if (error){
-			console.error('Failed sending email: ' + error);
-		} else if (! responseStatus){
-			console.log("Sending of mail was a success!")
-		} else {
-			console.log("Contacted the server but the sending of the mail failed:", responseStatus)
-		}
-	});
-	transport.close();
+        if (error){
+            console.error('Failed sending email: ' + error);
+        }
+        else
+        {
+            console.log('Email successfully sent to: ' + mailReciver + ', response status: ');
+            console.log(responseStatus);
+        }
+    });
+    transport.close();
 }
 exports.sendRegisteredMail = function (id, name, email, phone) {
-	var renderedText = registeredText.replace(/%id%/g, id)
-		.replace(/%name%/g, name)
-		.replace(/%email%/g, email)
-		.replace(/%phone%/g, phone)
-		.replace(/%frontendHost%/g, config.frontendHost);
-	sendMail(registeredSubject, renderedText, true, email);
+    var renderedText = registeredText.replace(/%id%/g, id)
+        .replace(/%name%/g, name)
+        .replace(/%email%/g, email)
+        .replace(/%phone%/g, phone)
+        .replace(/%frontendHost%/g, config.frontendHost);
+    sendMail(registeredSubject, renderedText, true, email);
 };
 
 exports.sendUnRegisteredMail = function (id, name, email, phone) {
-	var renderedText = unregisteredText.replace(/%id%/g, id)
-		.replace(/%name%/g, name)
-		.replace(/%email%/g, email)
-		.replace(/%phone%/g, phone)
-		.replace(/%frontendHost%/g, config.frontendHost);
-	sendMail(unregisteredSubject, renderedText, false, email);
+    var renderedText = unregisteredText.replace(/%id%/g, id)
+        .replace(/%name%/g, name)
+        .replace(/%email%/g, email)
+        .replace(/%phone%/g, phone)
+        .replace(/%frontendHost%/g, config.frontendHost);
+    sendMail(unregisteredSubject, renderedText, false, email);
 };
