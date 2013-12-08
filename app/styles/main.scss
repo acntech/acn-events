@@ -5,16 +5,16 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 // BODY VARS
 $body-max-page-width: 980px;
-$links-font-color: #025a61;
-$headings-font-color: #00919c;
+$links-font-color: #660000;
+$headings-font-color: #aa0f33;
 
 
 // NAVBAR VARS
-$navbar-bg-color: #00919c;
+$navbar-bg-color: #aa0f33;
 $navbar-height: 50px;
 $navbar-max-width: $body-max-page-width;
 $navbar-toggle-bg-color: $navbar-bg-color;
-$navbar-toggle-hover-bg-color: #014146;
+$navbar-toggle-hover-bg-color: #440000;
 $navbar-toggle-lines-color: #ffffff;
 $navbar-item-hover-bg-color: $navbar-toggle-hover-bg-color;
 $navbar-item-font-color: #ffffff;
@@ -24,28 +24,28 @@ $marketing-bg-color: #504a4a;
 $marketing-font-color: #ffffff;
 
 // REGISTER VARS
-$register-btn-bg-color: #f58426;
+$register-btn-bg-color: #8e8a14;
 $register-btn-font-color: #ffffff;
-$register-btn-disabled-bg-color: #014146;
+$register-btn-disabled-bg-color: #440000;
 $register-btn-disabled-font-color: #ffffff;
-$register-btn-hover-bg-color: #d37f02;
+$register-btn-hover-bg-color: #64610e;
 $register-btn-hover-font-color: #ffffff;
-$register-form-bg-color: #025a61;
+$register-form-bg-color: #660000;
 $register-form-font-color: #ffffff;
 $register-number-of-attendees-font-color: #cee0df;
-$register-input-icon-bg-color: #00919c;
+$register-input-icon-bg-color: #aa0f33;
 
 // MAIN CONTENT VARS
-$main-section-divider-color: #025a61;
+$main-section-divider-color: #660000;
 
 // AGENDA VARS
-$agenda-presenter-font-color: #025a61;
-$agenda-presenter-name-font-color: #f58426;
-$agenda-presenter-picture-border-color: #00919c;
+$agenda-presenter-font-color: #aa0f33;
+$agenda-presenter-name-font-color: #8e8a14;
+$agenda-presenter-picture-border-color: #aa0f33;
 
 // SHARE ICONS VARS
-$share-icon-bg-color:#f58426;
-$share-icon-hover-bg-color:#d37f02;
+$share-icon-bg-color:#8e8a14;
+$share-icon-hover-bg-color:#64610e;
 
 // GENERAL
 body {
@@ -175,7 +175,7 @@ a.anchor {
 .jumbotron {
   @include make-row(0);
   margin-top: $navbar-height;
-  background: url('../images/top-banner.png') no-repeat;
+  background: url('../images/top-banner.jpg') no-repeat;
   background-color: $marketing-bg-color !important;
   background-position: 80%;
   background-size: 30%;
@@ -204,7 +204,7 @@ a.anchor {
 @media (max-width: $screen-sm-max) {
   .jumbotron {
     margin-bottom: 0;
-    background: url('../images/top-banner-diffuse.png') no-repeat;
+    background: url('../images/top-banner-diffuse.jpg') no-repeat;
     background-position: 80%;
     background-size: 30%;
   }
