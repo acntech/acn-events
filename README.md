@@ -25,11 +25,15 @@ Prerequisites:
 
 1. A Heroku user account. [Signup is free and instant](https://api.heroku.com/signup/devcenter).
 1. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/), which gives you git, Foreman, and the Heroku command-line interface.
+1. Read [Getting starter with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
 Deploy:
+1. If deploying to new application on your own account read [Getting starter with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
 1. git remote add heroku 'heroku git url here'
 1. git push heroku master
+
+Don't forget to add MongoLab add-on.
 
 ## To contact the developers:
 The developers of this app chat at the acnteck room at IRC:
