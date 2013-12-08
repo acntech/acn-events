@@ -25,6 +25,7 @@ Prerequisites:
 
 1. A Heroku user account. [Signup is free and instant](https://api.heroku.com/signup/devcenter).
 1. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/), which gives you git, Foreman, and the Heroku command-line interface.
+1. Read [Getting starter with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
 Deploy:
 
