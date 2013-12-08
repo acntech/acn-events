@@ -22,9 +22,12 @@
 
 ## To deploy to Heroku:
 Prerequisites:
+
 1. A Heroku user account. [Signup is free and instant](https://api.heroku.com/signup/devcenter).
 1. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/), which gives you git, Foreman, and the Heroku command-line interface.
+
 Deploy:
+
 1. git remote add heroku <heroku git url>
 1. git push heroku master
 
