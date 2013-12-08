@@ -47,6 +47,9 @@ $agenda-presenter-picture-border-color: #aa0f33;
 $share-icon-bg-color:#8e8a14;
 $share-icon-hover-bg-color:#64610e;
 
+// ALERT DISPLAYED ABOVE REGISTER BUTTON
+$alert-font-color:#000000;
+
 // GENERAL
 body {
   max-width: $body-max-page-width;
@@ -371,7 +374,7 @@ a.anchor {
 .registrering {
   @include make-row(0);
   background-color: $register-form-bg-color;
-  h2, h3, p, span, ul {
+  h2, h3, span, ul {
     color: $register-form-font-color !important;
   }
   /* top right bottom left */
@@ -383,6 +386,7 @@ a.anchor {
 
 .registreringsinfo {
   float: left;
+  color: $register-form-font-color !important;
 }
 
 .antall-registrerte {
@@ -471,5 +475,8 @@ a.anchor {
       color: #ffffff;
     }
   }
+}
 
+.alert-danger {
+  color: $alert-font-color !important;
 }
