@@ -18,7 +18,14 @@
 1. Download web app dependencies (run time): `bower install`
 
 ## To start the server:
-1. Run this command: `grunt server:dist`
+1. Run this command: `grunt server`
+
+## To deploy to Heroku:
+1. Prerequisites:
+22. A Heroku user account. [Signup is free and instant](https://api.heroku.com/signup/devcenter).
+23. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/), which gives you git, Foreman, and the Heroku command-line interface.
+1. git remote add heroku <heroku git url>
+2. git push heroku master
 
 ## To contact the developers:
 The developers of this app chat at the acnteck room at IRC:
