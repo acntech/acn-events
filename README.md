@@ -1,3 +1,6 @@
+## Screen shot of the event registration page
+![Screen shot of the event registration page](screenshot.png)
+
 ## Prerequisites:
 1. Install node (google it)
 1. Install npm (google it)
