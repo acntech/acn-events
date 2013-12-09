@@ -3,8 +3,20 @@
 angular.module('acnEventsApp')
   .factory('registrationService', function ($resource, $q) {
     var eventResource = $resource('/api/event/');
-    var registrationResource = $resource('/api/event/registrations/:id', {id: '@id' }, {update: {method: 'PUT'} });
-    var confirmResource = $resource('/api/event/registrations/:id/confirm', {id: '@id' }, {update: {method: 'PUT'} });
+    var registrationResource = $resource('/api/event/registrations/:id', {
+      id: '@id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
+    var confirmResource = $resource('/api/event/registrations/:id/confirm', {
+      id: '@id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
 
     return {
       count: function () {
@@ -17,33 +29,17 @@ angular.module('acnEventsApp')
         return deferred.promise;
       },
       create: function (registration) {
-        var deferred = $q.defer();
-        registrationResource.save(registration, function (result) {
-          deferred.resolve(result);
-        }, function (error) {
-          deferred.reject(error);
-        });
-        return deferred.promise;
+        return registrationResource.save(registration).$promise;
       },
       confirm: function (id) {
-        var deferred = $q.defer();
-        console.log('confirm');
-        confirmResource.save({id: id}, function (result) {
-          deferred.resolve(result);
-        }, function (error) {
-          deferred.reject(error);
-        });
-        return deferred.promise;
+        return confirmResource.save({
+          id: id
+        }).$promise;
       },
       delete: function (id) {
-        var deferred = $q.defer();
-        console.log('delete');
-        registrationResource.delete({id: id}, function (result) {
-          deferred.resolve(result);
-        }, function (error) {
-          deferred.reject(error);
-        });
-        return deferred.promise;
+        return registrationResource.delete({
+          id: id
+        }).$promise;
       }
     };
   });
