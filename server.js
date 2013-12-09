@@ -2,10 +2,13 @@
 
 // Module dependencies.
 var express = require('express'),
+	app = express(),
+	server = require('http').createServer(app),
+	io = require('socket.io').listen(server),
     path = require('path'),
-    fs = require('fs');
-
-var app = express();
+    fs = require('fs'),
+	ee = require('/lib/eventEmitter/eventHandlers')(io)
+	
 
 require('sugar') //add syntactic sugar to javascript, see http://sugarjs.com
 
@@ -24,8 +27,12 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 // Routes
 require('./config/routes.js')(app);
 
+ee.on('registeredAttendeesChange', function(){
+
+})
+
 // Start server
 var port = process.env.PORT || 3000;
-app.listen(port, function () {
+server.listen(port, function () {
   console.log('Express server listening on port %d and is in the "%s" mode', port, app.get('env'));
 });
