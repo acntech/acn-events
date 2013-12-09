@@ -1,0 +1,58 @@
+<p>Hei <%= name %>,</p>
+
+<p>Du har registrert deg på fagkvelden "Brukeropplevelse realisert med moderne web-teknologi" med Accenture.</p>
+
+<p>
+  Vi holder av plass til deg hvis du bekrefter din deltakelse ved å klikke på lenken under:<br />
+  <a href="<%= frontendHost %>/#/registrations/<%= id %>/confirm">
+    <%= frontendHost %>/#/registrations/<%= id %>/confirm
+  </a>
+</p>
+
+<p>Jeg ser fram til en faglig og sosial kveld sammen med deg!</p>
+
+<p>
+  Mvh<br />
+  Tonny Gundersen,<br />
+  leder Accenture Architecture, Delivery and Integration
+</p>
+
+
+<hr />
+
+<p>
+  For å avregistrere deg klikk her:
+  <a href="<%= frontendHost %>/#/registrations/<%= id %>/unregister">
+    <%= frontendHost %>/#/registrations/<%= id %>/unregister
+  </a>
+</p>
+
+<hr />
+
+<section>
+  <dl>
+    <dt>Sted</dt>
+      <dd>Teknologihuset, Pilestredet 56, 0167 Oslo</dd>
+    <dt>Dato</dt>
+      <dd>Onsdag 20. november 2013</dd>
+    <dt>Tid</dt>
+      <dd>17:00 - 21:00</dd>
+    <dt>Mat &amp; drikke</dt>
+      <dd>Tapas, mineralann/øl serveres fra 18:00</dd>
+  </dl>
+</section>
+
+<hr />
+
+<section>
+  <b>Følgende informasjon er lagret om deg:</b>
+  <dl>
+    <dt>Navn</dt>
+      <dd><%= name %></dd>
+    <dt>Telefon</dt>
+      <dd><%= phone %></dd>
+    <dt>Email</dt>
+      <dd><%= email %></dd>
+  </dl>
+</section>
+<hr />
