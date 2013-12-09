@@ -10,6 +10,12 @@
 1. Install compass gem: `gem install compass`
 1. Install grunt: `sudo npm install -g grunt`
 1. Install bower: `sudo npm install -g bower`
+1. Set env variables to
+
+* GOOGLE_SMTP_USERNAME
+* GOOGLE_SMTP_PASSWORD
+* 
+heroku config:set GOOGLE_SMTP_USERNAME=gmail-username-here GOOGLE_SMTP_PASSWORD=gmail-password-here
 
 ## To start development:
 1. Check out this repo: `git clone git@github.com:acntech/acn-events.git`
