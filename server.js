@@ -6,7 +6,8 @@ var express = require('express'),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server),
     path = require('path'),
-    fs = require('fs')
+    fs = require('fs'),
+    ee = require('./lib/eventEmitter/myEventEmitter')
 
 
 require('sugar') //add syntactic sugar to javascript, see http://sugarjs.com
@@ -26,6 +27,9 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 // Routes
 require('./config/routes.js')(app);
 
+server.on('connect', function(){
+    ee.emit('registeredAttendeesChange')
+})
 
 // Start server
 var port = process.env.PORT || 3000;
