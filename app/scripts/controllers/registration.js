@@ -26,6 +26,11 @@ angular.module('acnEventsApp')
       }, 10000);
     };
     poll();
+	var socket = io.connect(window.location.origin);
+	socket.on('attending', function (data) {
+		console.log(data);
+		$scope.numRegistrations = data.attending
+	});
 
     $scope.ok = function () {
       $scope.modal.close();
