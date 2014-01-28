@@ -24,15 +24,13 @@ angular.module('acnEventsApp', [
                 }
             })
             .state('confirm', {
-                url: "/registrations/:id/confirm",
-                controller: 'ConfirmRegistrationCtrl'
-            })
-            .state('confirm.success', {
+                url: "/registrations/{id}/confirm",
+                controller: 'ConfirmRegistrationCtrl',
                 views: {
-                    "marketing": { templateUrl: "views/marketing.confirm.success.html" }
+                    "marketing": { templateUrl: "views/marketing.confirm.success.html", controller: 'ConfirmRegistrationCtrl' }
                 }
             })
-            .state('confirm.error', {
+            .state('confirm-error', {
                 views: {
                     "marketing": { templateUrl: "views/marketing.confirm.error.html" }
                 }

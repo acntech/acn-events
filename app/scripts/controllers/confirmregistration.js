@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('acnEventsApp')
-    .controller('ConfirmRegistrationCtrl', function ($scope, $routeParams, registrationService, $state) {
-        console.log("Confirming registration")
-        registrationService.confirm($routeParams.id).then(function () {
-                $state.go('confirm.success');
+    .controller('ConfirmRegistrationCtrl', function ($scope, $stateParams, registrationService, $state) {
+        console.log("Confirming registration with id: " + $stateParams.id)
+        registrationService.confirm($stateParams.id).then(function () {
+                $scope.error = null;
+                console.log("Confirmed successfully registration with id: " + $stateParams.id)
             },
             function (error) {
                 $scope.error = error.data || error;
-                console.error('Error confirming registration. Error: ' + error)
-                $state.go('confirm.error');
+                console.error(error)
+                $state.go('confirm-error');
             });
     });
