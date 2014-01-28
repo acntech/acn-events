@@ -9309,6 +9309,11 @@ a.anchor {
   padding-left: 0px;
 }
 
+.jumbotron h1 {
+  color: white !important;
+  margin-top: 0;
+}
+
 @media (max-width: 991px) {
   .jumbotron {
     margin-bottom: 0;

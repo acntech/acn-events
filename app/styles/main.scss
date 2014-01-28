@@ -8,7 +8,6 @@ $body-max-page-width: 980px;
 $links-font-color: #660000;
 $headings-font-color: #aa0f33;
 
-
 // NAVBAR VARS
 $navbar-bg-color: #aa0f33;
 $navbar-height: 50px;
@@ -22,6 +21,7 @@ $navbar-item-font-color: #ffffff;
 // MARKETING VARS
 $marketing-bg-color: #504a4a;
 $marketing-font-color: #ffffff;
+$marketing-headings-font-color: #ffffff;
 
 // REGISTER VARS
 $register-btn-bg-color: #8e8a14;
@@ -44,11 +44,11 @@ $agenda-presenter-name-font-color: #8e8a14;
 $agenda-presenter-picture-border-color: #aa0f33;
 
 // SHARE ICONS VARS
-$share-icon-bg-color:#8e8a14;
-$share-icon-hover-bg-color:#64610e;
+$share-icon-bg-color: #8e8a14;
+$share-icon-hover-bg-color: #64610e;
 
 // ALERT DISPLAYED ABOVE REGISTER BUTTON
-$alert-font-color:#000000;
+$alert-font-color: #000000;
 
 // GENERAL
 body {
@@ -192,14 +192,18 @@ a.anchor {
     padding-left: 0px;
   }
 
-  .container{
+  .container {
     width: 100%;
     padding-left: 0px;
   }
 
+  h1 {
+    color: $marketing-headings-font-color !important;
+    margin-top: 0;
+  }
 
-    padding-top: 30px !important;
-    padding-bottom: 30px !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
 
 }
 
@@ -301,11 +305,11 @@ a.anchor {
 }
 
 @media (max-width: $screen-sm-max) {
-  .intro{
+  .intro {
     border: none !important;
   }
 
-  .agenda{
+  .agenda {
     border: none !important;
   }
 }
@@ -321,12 +325,13 @@ a.anchor {
 }
 
 // Agenda
-.agenda{
+.agenda {
   padding-left: 15px !important;
   border-left: 1px solid $main-section-divider-color;
   margin-left: -0.138297872340425%;
   *margin-left: -0.13191489361702%;
 }
+
 .agenda ul {
   padding-left: 0;
   li {
