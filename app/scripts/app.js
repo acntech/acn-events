@@ -13,21 +13,28 @@ angular.module('acnEventsApp', [
                 url: "",
                 controller: 'RegistrationCtrl',
                 views: {
-                    "registerform": { templateUrl: "views/registerform.html",controller: 'RegistrationCtrl' },
-                    "marketing": { templateUrl: "views/marketing.register.html",controller: 'RegistrationCtrl' }
+                    "registerform": { templateUrl: "views/registerform.html", controller: 'RegistrationCtrl' },
+                    "marketing": { templateUrl: "views/marketing.register.html", controller: 'RegistrationCtrl' }
                 }
             })
             .state('registered', {
                 controller: 'RegistrationCtrl',
                 views: {
-                    "marketing": { templateUrl: "views/marketing.registered.html",controller: 'RegistrationCtrl' }
+                    "marketing": { templateUrl: "views/marketing.registered.html", controller: 'RegistrationCtrl' }
                 }
             })
             .state('confirm', {
                 url: "/registrations/:id/confirm",
-                controller: 'ConfirmRegistrationCtrl',
+                controller: 'ConfirmRegistrationCtrl'
+            })
+            .state('confirm.success', {
                 views: {
-                    "marketing": { templateUrl: "views/marketing.confirmed.html",controller: 'ConfirmRegistrationCtrl' }
+                    "marketing": { templateUrl: "views/marketing.confirm.success.html" }
+                }
+            })
+            .state('confirm.error', {
+                views: {
+                    "marketing": { templateUrl: "views/marketing.confirm.error.html" }
                 }
             })
     });
