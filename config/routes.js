@@ -12,4 +12,14 @@ module.exports = function (app) {
   app.post(actionCtrl.register.route, registrationCtrl.register());
   app.delete(actionCtrl.unregister.route, registrationCtrl.unregister());
   app.post(actionCtrl.confirm.route, registrationCtrl.confirm());
+
+
+	app.get('/scoreSpeaches/:speakerId', function(req, res){
+		res.send('<form action="/scoreSpeaches" method="post"><input type="text"></form>')
+	})
+	app.post('/scoreSpeaches/:speakerId', function(req, res){
+		console.log("speakerId", req.params.speakerId)
+		console.log("speakerId", req.params)
+		res.redirect('..')
+	})
 };
