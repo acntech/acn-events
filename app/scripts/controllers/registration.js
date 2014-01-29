@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('acnEventsApp')
-    .controller('RegistrationCtrl', function ($scope, $modal, registrationService, $timeout, $location, $state) {
-
+    .controller('RegistrationCtrl', function ($scope, registrationService, $timeout, $state) {
         var reset = function () {
             $scope.registration = {
                 person: {}
@@ -27,13 +26,21 @@ angular.module('acnEventsApp')
         };
         poll();
 
-        $scope.ok = function () {
-            $scope.modal.close();
-        };
-
         $scope.create = function (registration) {
-            $scope.error = null;
-            $state.go('registered');
+            console.log("Handling new registration: ")
+            console.log(registration)
+            registrationService.create(registration).then(
+                function () {
+                    $scope.error = "";
+                    console.log("Registration successfully stored");
+                    $state.go('registered');
+                },
+                function (error) {
+                    console.log("Registration failed: ");
+                    console.log(error)
+                    $scope.error = error.data || error;
+                }
+            );
         };
 
         reset();

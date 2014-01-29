@@ -11,7 +11,7 @@ var config = {
     port: process.env.PORT || 5000,
     db: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/heroku_app18823270',
     fromEmail: 'Fagkveld mailer <mailer.acn@gmail.com>',
-    toEmail: 'Simen Sægrov <karl.gustav.roksund@accenture.com>',
+    toEmail: 'Ismar Slomic <ismar.slomic@accenture.com>',
     frontendHost: 'http://acnfagkveld.herokuapp.com',
     maxSeats: 100
   },
@@ -23,7 +23,7 @@ var config = {
     port: process.env.PORT || 5000,
     db: 'mongodb://localhost/heroku_app18823270_test',
     fromEmail: 'Fagkveld mailer <mailer.acn@gmail.com>',
-    toEmail: 'Simen Sægrov <karl.gustav.roksund@accenture.com>',
+    toEmail: 'Ismar Slomic <ismar.slomic@accenture.com>',
     frontendHost: 'http://localhost:4000',
     maxSeats: 100
   }

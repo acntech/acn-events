@@ -1,45 +1,18 @@
 'use strict';
 
 angular.module('acnEventsApp')
-  .controller('DeleteRegistrationCtrl', function ($scope, $modal, $routeParams, registrationService, $timeout) {
-
-    registrationService.count().then(function (count) {
-      $scope.numRegistrations = count;
+    .controller('DeleteRegistrationCtrl', function ($scope, $stateParams, registrationService) {
+        console.log("Unregistering registration with id: " + $stateParams.id)
+        registrationService.delete($stateParams.id).then(
+            function () {
+                $scope.confirmTitle="Alt i orden!";
+                $scope.confirmMessage="Du er nå avregistrert!";
+                console.log("Unregistrated successfully with id: " + $stateParams.id)
+            },
+            function (error) {
+                $scope.confirmTitle="Noe gikk galt!";
+                $scope.confirmMessage=error.data || error;
+                console.log("Failed unregistering registration with id: " + $stateParams.id + " : ")
+                console.log(error)
+            });
     });
-
-    var poll = function () {
-      $timeout(function () {
-        registrationService.count().then(function (count) {
-          $scope.numRegistrations = count;
-        });
-        poll();
-      }, 10000);
-    };
-    poll();
-
-    $scope.ok = function () {
-      $scope.modal.close();
-    };
-
-    registrationService.delete($routeParams.id).then(function (success) {
-        console.log(success); //todo: redirect to "registered" page
-        $scope.modal = $modal.open({
-          templateUrl: 'unregisterModal.html',
-          backdrop: true,
-          keyboard: true,
-          backdropClick: true,
-          scope: $scope
-        });
-      },
-      function (error) {
-        $scope.error = error.data || error;
-        $scope.modal = $modal.open({
-          templateUrl: 'confirmErrorModal.html',
-          backdrop: true,
-          keyboard: true,
-          backdropClick: true,
-          scope: $scope
-        });
-      });
-
-  });
