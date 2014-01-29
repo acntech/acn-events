@@ -14,12 +14,12 @@ module.exports = function (app) {
   app.post(actionCtrl.confirm.route, registrationCtrl.confirm());
 
 
-	app.get('/scoreSpeaches/:speakerId', function(req, res){
-		res.send('<form action="/scoreSpeaches" method="post"><input type="text"></form>')
+	app.get('/scoreSpeeches/:speakerId', function(req, res){
+		res.send('<form action="/scoreSpeeches" method="post"><input type="text"></form>')
 	})
-	app.post('/scoreSpeaches/:speakerId', function(req, res){
-		console.log("speakerId", req.params.speakerId)
+	app.post('/scoreSpeeches', function(req, res){
 		console.log("speakerId", req.params)
-		res.redirect('..')
+		console.log("speakerId", req.params)
+		res.redirect('/')
 	})
 };
