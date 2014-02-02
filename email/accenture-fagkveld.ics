@@ -19,34 +19,31 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 CLASS:PUBLIC
-CREATED:20131028T194353Z
-DESCRIPTION:Lyst å høre mer om hvordan oppnå god brukeropplevelse ved br
-	uk av moderne teknologi? Bli med på Accentures fagkveld!\n\nLes mer på h
-	ttp://acnfagkveld.herokuapp.com\n\n
-DTEND;TZID="Romance Standard Time":20131120T210000
-DTSTAMP:20131028T194353Z
-DTSTART;TZID="Romance Standard Time":20131120T170000
-LAST-MODIFIED:20131028T194353Z
+CREATED:20140202T181712Z
+DESCRIPTION:Lyst til å høre om REST-prinsippene og praktisk bruk av REST-
+	grensesnitt? Bli med på Accentures fagkveld onsdag 26. februar på Teknol
+	ogihuset! \n\nLes mer på http://acnfagkveld.herokuapp.com\n
+DTEND;TZID="Romance Standard Time":20140226T210000
+DTSTAMP:20140202T181712Z
+DTSTART;TZID="Romance Standard Time":20140226T170000
+LAST-MODIFIED:20140202T181712Z
 LOCATION:Teknologihuset\, Pilestredet 56\, 0167 Oslo
 ORGANIZER;CN="Gundersen, Tonny":mailto:tonny.gundersen@accenture.com
 PRIORITY:5
 SEQUENCE:0
-SUMMARY;LANGUAGE=no:Brukeropplevelse realisert med moderne web-teknologi
+SUMMARY;LANGUAGE=no:REST-grensesnitt mellom frontend og backend
 TRANSP:OPAQUE
-UID:040000008200E00074C5B7101A82E0080000000050FDAE271ED4CE01000000000000000
-	0100000003EE2F429857910418FFAFC964BB0EEED
+UID:040000008200E00074C5B7101A82E00800000000A0783B604B20CF01000000000000000
+	010000000A1B4F4618917184ABF96FEEA9D4A6F2D
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
 	N">\n<HTML>\n<HEAD>\n<META NAME="Generator" CONTENT="MS Exchange Server ve
 	rsion 14.02.5004.000">\n<TITLE></TITLE>\n</HEAD>\n<BODY>\n<!-- Converted f
 	rom text/rtf format -->\n\n<P DIR=LTR><SPAN LANG="no"><FONT FACE="Calibri"
-	>Lyst å høre mer om hvordan man oppnår god brukeropplevelse ved bruk av mode
-	rne web-teknologi? Bli med på Accentures fagkveld den 20. november på Teknologihuset!</FONT></SPAN></P>\n\n<P DI
-	R=LTR><SPAN LANG="no"></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="no"><FONT FACE
-	="Calibri">Les mer på</FONT></SPAN><SPAN LANG="no"> </SPAN><A HREF="http:
-	//acnfagkveld.herokuapp.com"><SPAN LANG="no"><U><FONT COLOR="#0000FF" F
-	ACE="Calibri">http://acnfagkveld.herokuapp.com</FONT></U></SPAN><SPAN L
-	ANG="no"></SPAN></A><SPAN LANG="no"></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="
-	no"></SPAN></P>\n\n</BODY>\n</HTML>
+	>Lyst til å høre om REST-prinsippene og praktisk bruk av REST-grensesnit
+	t? Bli med på Accentures fagkveld onsdag 26. februar på Teknologihuset! 
+	</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="no"><FONT FACE="Calibri">Les 
+	mer på <A HREF="http://acnfagkveld.herokuapp.com">http://acnfagkveld.hero
+	kuapp.com</A></FONT></SPAN><SPAN LANG="no"></SPAN></P>\n\n</BODY>\n</HTML>
 X-MICROSOFT-CDO-BUSYSTATUS:OOF
 X-MICROSOFT-CDO-IMPORTANCE:1
 X-MICROSOFT-DISALLOW-COUNTER:TRUE
