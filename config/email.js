@@ -8,10 +8,10 @@ var templatesDir = path.resolve(__dirname, '..', 'email');
 var emailTemplates = require('email-templates');
 
 // Registered constants
-var registeredSubject = 'Bekreft din deltakelse på Accenture fagkveld 20. november';
+var registeredSubject = 'Bekreft din deltakelse på Accenture fagkveld 26. februar';
 
 // Unregistered constants
-var unregisteredSubject = 'Du er avregistrert på Accenture fagkveld 20. november';
+var unregisteredSubject = 'Du er avregistrert på Accenture fagkveld 26. februar';
 
 function sendMail(sendCalendarFile, templateName, subject, id, name, email, phone, fn) {
     emailTemplates(templatesDir, function (err, template) {
