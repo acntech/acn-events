@@ -6633,14 +6633,14 @@ a.anchor {
   background-repeat: no-repeat;
   background-position: 30%;
   display: inline-block; }
-  .profilbilde.margareth {
-    background-image: url("../images/margareth.jpg"); }
+  .profilbilde.kg {
+    background-image: url("../images/kg.jpg"); }
   .profilbilde.joar {
     background-image: url("../images/joar.jpg"); }
-  .profilbilde.aksel {
-    background-image: url("../images/aksel.jpg"); }
-  .profilbilde.lars-olof {
-    background-image: url("../images/lars-olof.jpg");
+  .profilbilde.rune {
+    background-image: url("../images/rune.jpg"); }
+  .profilbilde.ketil {
+    background-image: url("../images/ketil.jpg");
     background-size: 40px; }
 
 .registrering {
