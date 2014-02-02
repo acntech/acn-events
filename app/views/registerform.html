@@ -13,7 +13,7 @@
 <div class="registrering reginfo">
     <div class="registreringsinfo">
         <p>
-            Deltakelse er gratis. Vi har en begrensning på 100 plasser, hvorav 50 er forbeholdt Accenture ansatte,
+            Deltakelse er gratis. Vi har en begrensning på 80 plasser, hvorav 40 er forbeholdt Accenture ansatte,
             så vær tidlig ute med å registrere deg! Etter registrering vil du få en bekreftelse på mail som du tar
             med når du ankommer Teknologihuset.
         </p>
@@ -21,59 +21,10 @@
         <h3>Passer for:</h3>
         <ul>
             <li>Frontendutviklere</li>
+            <li>Backendutviklere</li>
             <li>Arkitekter</li>
-            <li>Interaksjonsdesignere</li>
-            <li>Backendutviklere nysgjerrige på frontendteknologier</li>
         </ul>
     </div>
-    <script type="text/ng-template" id="successModal.html">
-        <div class="modal-header">
-            <h1>Du er registrert</h1>
-        </div>
-        <div class="modal-body">
-            <p>For å fullføre registreringen må du bekrefte din påmelding. Sjekk din email.</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn registrer" ng-click="ok()">Lukk</button>
-        </div>
-    </script>
-    <script type="text/ng-template" id="confirmModal.html">
-        <div class="modal-header">
-            <!--<a class="close" ng-click="close()">×</a>-->
-            <h1>Din registrering er bekreftet</h1>
-        </div>
-        <div class="modal-body">
-            <p>Velkommen til fagkveld. Vi sees den 20. november.</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn registrer" ng-click="ok()">Lukk</button>
-        </div>
-    </script>
-    <script type="text/ng-template" id="confirmErrorModal.html">
-        <div class="modal-header">
-            <h1>Noe gikk galt</h1>
-        </div>
-        <div class="modal-body">
-            <p>Beklager, noe gikk galt med registreringen din: {{error}}</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn registrer" ng-click="ok()">Lukk</button>
-        </div>
-    </script>
-    <script type="text/ng-template" id="unregisterModal.html">
-        <div class="modal-header">
-            <h1>Du er avregistrert</h1>
-        </div>
-        <div class="modal-body">
-            <p>
-                Du er nå avregistrert. Ta kontakt med <a href="mailto:tonny.gundersen@accenture.com">tonny.gundersen@accenture.com</a>
-                hvis du ombestemmer deg.
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn registrer" data-ng-click="ok()">Lukk</button>
-        </div>
-    </script>
     <div class="registreringsformulaer">
         <div class="registered-users">
             <form class="form" name="registrationForm" role="form" novalidate>
